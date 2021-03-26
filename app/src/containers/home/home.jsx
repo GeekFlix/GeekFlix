@@ -1,6 +1,6 @@
 import React from 'react';
 
-import collagePelis from '../../assets/img/collagePelis.jpeg'
+import collagePelis from '../../assets/img/collagePelis4.jpeg'
 
 import './home.css'
 
