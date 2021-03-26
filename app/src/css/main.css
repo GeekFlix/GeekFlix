@@ -1,8 +1,22 @@
 /*Colors*/
 /*Sizes*/
 /*Margin and Padding*/
-.prueba {
-  background-color: #6db193;
+.stepCollection {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.stepCollection .stepOne {
+  background-color: aquamarine;
+  height: 128px;
+  width: 128px;
+}
+.stepCollection .stepTwo {
+  background-color: burlywood;
+}
+.stepCollection .stepThree {
+  background-color: chocolate;
 }
 
 /*# sourceMappingURL=main.css.map */

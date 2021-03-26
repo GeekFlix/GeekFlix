@@ -1,3 +1,20 @@
-.prueba {
-    background-color: $green;
+.stepCollection {
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    .stepOne {
+        background-color: aquamarine;
+
+        height: $mp-q;
+        width: $mp-q;
+    }
+    .stepTwo {
+        background-color: burlywood;
+    }
+    .stepThree {
+        background-color: chocolate;
+    }
 }

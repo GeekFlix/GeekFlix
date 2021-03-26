@@ -6,8 +6,10 @@ import './App.css';
 import Home from './containers/home/home';
 
 
+
 import './css/main.css';
 import Register from './containers/Register/Register';
+
 
 function App() {
   return (
@@ -19,7 +21,7 @@ function App() {
         <Switch>
 
           <Route path='/' exact component={Home}/>
-          <Route path='/' exact components={Register}/>
+          <Route path='/register' exact component={Register}/>
 
         </Switch>
       
