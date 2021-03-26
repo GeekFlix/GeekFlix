@@ -1,0 +1,12 @@
+.homeContainer {
+  width: 100vmax;
+  height: 63vmax;
+  display: flex;
+  flex-direction: column;
+  background-color: turquoise;
+}
+
+
+
+
+
