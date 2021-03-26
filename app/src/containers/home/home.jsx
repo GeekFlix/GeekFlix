@@ -1,13 +1,13 @@
 import React from 'react';
 
-import collagePelis from '../../assets/img/collagePelis4.jpeg'
+import collageMovies from '../../assets/img/collagePelis5.jpeg'
 
 import './home.css'
 
 const home = () => {
   return (
     <div className="homeContainer">
-      <img src={collagePelis}/>
+      <img src={collageMovies}/>
     </div>
   )
 }
