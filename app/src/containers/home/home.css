@@ -3,7 +3,8 @@
   /* height: 63vmax; */
   display: flex;
   flex-direction: column;
-  background-color: #323232
+  background-color: #323232;
+  
 }
 
 .imgMovie {
@@ -16,10 +17,13 @@
   height: 5em;
   display: flex;
   align-items: center;
-  justify-content: right;
+  justify-content: flex-end;
   position: absolute;
   z-index: 2;
-}
+ }
+ .loginContainer{
+  margin-right: 1.5em;
+ }
 
 
 

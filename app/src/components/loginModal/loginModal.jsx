@@ -24,7 +24,7 @@ const ModalLogin = (props) => {
         </ModalBody>
         
         <ModalFooter>
-          <Button className="primaryButton" color="" onClick={toggle}>Do Something</Button>{' '}
+          <Button className="btnSomething" onClick={toggle}>Do Something</Button>{' '}
           <Button color="secondary" onClick={toggle}>Cancel</Button>
         </ModalFooter>
       </Modal>
