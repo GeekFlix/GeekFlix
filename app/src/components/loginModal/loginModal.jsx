@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
-
 import 'bootstrap/dist/css/bootstrap.css';
+
 
 
 const ModalLogin = (props) => {
@@ -16,7 +16,8 @@ const ModalLogin = (props) => {
 
   return (
     <div>
-      <Button color="danger" onClick={toggle}>{buttonLabel}</Button>
+
+      <Button className="btnModalActive" onClick={toggle}>Iniciar sesión</Button>
       <Modal isOpen={modal} modalTransition={{ timeout: 700 }} backdropTransition={{ timeout: 1300 }}
         toggle={toggle} className={className}>
         <ModalHeader toggle={toggle}>Modal title</ModalHeader>

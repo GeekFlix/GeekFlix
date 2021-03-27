@@ -1,3 +1,12 @@
+
 .btnSomething{
     background-color: $green;
+}
+.btnModalActive{
+    @include btnSesion
+}
+.btn-secondary {
+    color: #fff;
+    background-color: $darkgreen;
+    border-color: #6c757d;
 }
