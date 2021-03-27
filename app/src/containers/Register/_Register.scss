@@ -1,20 +1,31 @@
 .stepCollection {
 
     display: flex;
-    flex-direction: row;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
+    justify-content: space-evenly;
 
-    .stepOne {
-        background-color: aquamarine;
+    background-color: $black;
 
-        height: $mp-q;
-        width: $mp-q;
+    height: 100vh;
+    
+    .progressBar {
+        width: $mp-z;
     }
-    .stepTwo {
-        background-color: burlywood;
+
+    .nav {
+        display:flex;
+        flex-direction: row;
+        justify-content: space-around;
+        width: $mp-z;
+        
+        
     }
-    .stepThree {
-        background-color: chocolate;
+
+    .containerForm {
+        display: flex;
+
+        color: $white;    
     }
 }
+

@@ -3,7 +3,8 @@ import React from 'react'
 
 import { Link } from 'react-router-dom';
 
-//React Bootstrap
+import { Form, FormGroup, Label, Input, FormFeedback, FormText, Button, Progress } from 'reactstrap';
+
 
 
 
@@ -11,46 +12,38 @@ const Register = () => {
     return (
         <div>
             <div className="stepCollection">
-                        <div className="containerInput">
-                            <div className="input1">
-                               <input type="text" name="username" placeholder="Username"/>Nombre de Usuario :
-                            </div>
-                            <div className="input2">
-                               <input type="email" name="email" placeholder="myemail@email.com"/>Email :
-                            </div>
-                            <div className="input3">
-                               <input tye="password" name="password"/>Contraseña :
-                            </div>
-                        </div>
                 <ul className="nav">
-                    <li><Link to="/register">Crear cuenta</Link>
-                        {/* <div className="containerInput">
-                           <div className="input">
-                               <input type="text" name="username" placeholder="Username">Nombre de Usuario :</input>
-                            </div>
-                           <div className="input">
-                               <input type="email" name="email" placeholder="myemail@email.com">Email :</input>
-                            </div>
-                           <div className="input">
-                               <input tye="password" name="password">Contraseña :</input>
-                            </div>
-                        </div> */}
-                    </li>
-
-                    <li><Link to="/pay">Detalles de pago</Link></li>
-
-                    <li><Link to="/login">Comenzar a ver</Link></li>
-
+                    <Link to="/register">Crear cuenta</Link>  
+                    <Link to="/payment">Detalles de pago</Link>
+                    <Link to="/login">Comenzar a ver</Link>
                 </ul>
-                {/* <div className="stepOne">
-                    Crear cuenta
+                <div className="progressBar">
+                    <Progress value="1" max="3" />
+                </div>  
+                <div className="containerForm">
+                    <Form>
+                        <FormGroup>
+                            <Label for="exampleEmail">USERNAME</Label>
+                            <Input/>
+                            <FormFeedback valid>Sweet! that name is available</FormFeedback>
+                            <FormText>Example help text that remains unchanged.</FormText>
+                        </FormGroup>
+                        <FormGroup>
+                            <Label for="examplePassword">EMAIL</Label>
+                            <Input/>
+                            <FormFeedback>Oh noes! that name is already taken</FormFeedback>
+                            <FormText>Example help text that remains unchanged.</FormText>
+                        </FormGroup>
+                        <FormGroup>
+                            <Label for="examplePassword">PASSWORD</Label>
+                            <Input/>
+                            <FormFeedback>Oh noes! that name is already taken</FormFeedback>
+                            <FormText>Example help text that remains unchanged.</FormText>
+                        </FormGroup>
+                        <Button>Enviar</Button>
+                    </Form>
                 </div>
-                <div className="stepTwo">
-                    Detalles de pago
-                </div>
-                <div className="stepThree">
-                    Comenzar a ver
-                </div> */}
+                
             </div>
         </div>
     )
@@ -59,4 +52,4 @@ const Register = () => {
 export default Register
 
 
-
+// Input: valid={propiedades de validación}, invalid={propiedades de validación}
