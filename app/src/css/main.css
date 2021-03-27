@@ -4,7 +4,6 @@
 .stepCollection {
   display: flex;
   flex-direction: column;
-<<<<<<< HEAD
   align-items: center;
   justify-content: space-evenly;
   background-color: #323232;
@@ -24,16 +23,6 @@
   display: flex;
   color: #f4e5c2;
 }
-=======
-  align-items: center; }
-  .stepCollection .nav {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    height: 32px; }
-  .stepCollection .containerForm {
-    display: flex; }
->>>>>>> e4305b593c798288cec8f56d0dfb35e8726a2685
 
 .btnSomething {
   background-color: #6db193; }

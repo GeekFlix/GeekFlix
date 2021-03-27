@@ -1,0 +1,22 @@
+.container-nav-progress {
+
+    background-color: $black;
+    
+
+    .progressBar {
+    width: $mp-z;
+    }
+
+    .nav {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: $mp-z;
+    
+    }
+
+}
+
+
+
+
