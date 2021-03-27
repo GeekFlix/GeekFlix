@@ -12,11 +12,12 @@ const home = () => {
     <div className="homeContainer">
       <div>
         <div className="header">
+          <div className="loginContainer">
+            <ModalLogin/>
+          </div>
         </div>
         <img className="imgMovie" alt="collage" src={collageMovies}/>
-        <div className="loginContainer">
-          <ModalLogin/>
-        </div>
+        
       </div>
     </div>
   )
