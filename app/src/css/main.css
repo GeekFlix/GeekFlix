@@ -4,6 +4,7 @@
 .stepCollection {
   display: flex;
   flex-direction: column;
+<<<<<<< HEAD
   align-items: center;
   justify-content: space-evenly;
   background-color: #323232;
@@ -23,9 +24,80 @@
   display: flex;
   color: #f4e5c2;
 }
+=======
+  align-items: center; }
+  .stepCollection .nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    height: 32px; }
+  .stepCollection .containerForm {
+    display: flex; }
+>>>>>>> e4305b593c798288cec8f56d0dfb35e8726a2685
 
 .btnSomething {
-  background-color: #6db193;
-}
+  background-color: #6db193; }
 
-/*# sourceMappingURL=main.css.map */
+.paymentContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 70em;
+  background-color: #323232; }
+  .paymentContainer .visa {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 15em; }
+    .paymentContainer .visa .visaText {
+      color: darkgray; }
+    .paymentContainer .visa .visaInput {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 0.5em; }
+  .paymentContainer .date {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 1em; }
+    .paymentContainer .date .dateText {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: darkgray; }
+    .paymentContainer .date .date-field {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      width: 18em;
+      margin-top: 0.5em; }
+  .paymentContainer .cvv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1em;
+    flex-direction: column; }
+    .paymentContainer .cvv .cvvText {
+      color: darkgrey; }
+    .paymentContainer .cvv .cvvInput {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 0.5em; }
+  .paymentContainer .cardName {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1em;
+    flex-direction: column; }
+    .paymentContainer .cardName .nameText {
+      color: darkgrey; }
+    .paymentContainer .cardName .nameInput {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 0.5em; }

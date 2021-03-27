@@ -1,0 +1,12 @@
+//Importaciones de los archivos scss para compilar a css
+@import './scss/variables';
+@import './scss/mixins';
+
+
+
+//Importación de contenedores con scss
+@import './containers/Register/Register.scss';
+@import './components/loginModal/loginModal.scss';
+@import './containers/payment/payment.scss';
+
+//Importación de componentes con scss

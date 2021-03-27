@@ -14,7 +14,7 @@ const Register = () => {
             <div className="stepCollection">
                 <ul className="nav">
                     <Link to="/register">Crear cuenta</Link>  
-                    <Link to="/pay">Detalles de pago</Link>
+                    <Link to="/payment">Detalles de pago</Link>
                     <Link to="/login">Comenzar a ver</Link>
                 </ul>
                 <div className="progressBar">
