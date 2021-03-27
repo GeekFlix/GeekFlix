@@ -3,7 +3,7 @@ import React from 'react'
 
 import { Link } from 'react-router-dom';
 
-import { Form, FormGroup, Label, Input, FormFeedback, FormText } from 'reactstrap';
+import { Form, FormGroup, Label, Input, FormFeedback, FormText, Button, Progress } from 'reactstrap';
 
 
 
@@ -17,6 +17,9 @@ const Register = () => {
                     <Link to="/pay">Detalles de pago</Link>
                     <Link to="/login">Comenzar a ver</Link>
                 </ul>
+                <div className="progressBar">
+                    <Progress value="1" max="3" />
+                </div>  
                 <div className="containerForm">
                     <Form>
                         <FormGroup>
@@ -37,6 +40,7 @@ const Register = () => {
                             <FormFeedback>Oh noes! that name is already taken</FormFeedback>
                             <FormText>Example help text that remains unchanged.</FormText>
                         </FormGroup>
+                        <Button>Enviar</Button>
                     </Form>
                 </div>
                 

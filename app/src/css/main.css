@@ -5,15 +5,22 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-evenly;
+  background-color: #323232;
+  height: 100vh;
+}
+.stepCollection .progressBar {
+  width: 700px;
 }
 .stepCollection .nav {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  height: 32px;
+  width: 700px;
 }
 .stepCollection .containerForm {
   display: flex;
+  color: #f4e5c2;
 }
 
 .btnSomething {

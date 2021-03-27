@@ -3,17 +3,27 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-evenly;
+
+    background-color: $black;
+
+    height: 100vh;
     
+    .progressBar {
+        width: $mp-z;
+    }
+
     .nav {
         display:flex;
         flex-direction: row;
         justify-content: space-around;
-        height: $mp-k;
-
+        width: $mp-z;
     }
 
     .containerForm {
         display: flex;
-        
+
+        color: $white;    
     }
 }
+
