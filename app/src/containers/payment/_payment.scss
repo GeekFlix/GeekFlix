@@ -14,7 +14,7 @@
         flex-direction: column;
 
         .visaText {
-            color: darkgray;
+            color: $white;
 
         }
 
@@ -37,7 +37,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            color: darkgray;
+            color: $white;
         }
         .date-field {
             display: flex;
@@ -57,7 +57,7 @@
         flex-direction: column;
 
         .cvvText {
-            color: darkgrey;
+            color: $white;
         }
 
         .cvvInput {
@@ -77,7 +77,7 @@
         flex-direction: column;
         
         .nameText {
-            color: darkgrey;
+            color: $white;
         }
 
         .nameInput {
@@ -87,6 +87,13 @@
             margin-top: 0.5em;
 
         }
+    }
+
+    .payBtn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 1em;
     }
 
 }

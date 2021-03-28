@@ -1,6 +1,45 @@
-import React from 'react'
+import React, { useState } from 'react'
 import * as FaIcons from 'react-icons/ri';
+import { useHistory } from 'react-router-dom';
+import axios from 'axios'
+import { Button } from 'reactstrap';
 
+
+const Payment = () => {
+
+    const history = useHistory()
+
+    const [payment,setPayment] = useState({
+        visa: '',
+        month: '',
+        year: '',
+        cvv: '',
+        cardName: ''
+    })
+
+    const stateHandler = (event) => {
+        setPayment({...payment, 
+            [event.target.name]: event.target.type === 'number' ? +event.target.value : event.target.value});
+
+    };
+
+    const handleOnKeyDown = ( event ) => {
+        if(event.keyCode === 13) sendData()
+    }
+
+    const sendData = async () => {
+        console.log('YEEEAh!');
+        
+        const data = await axios.post('http://localhost:3000/payment/', payment)
+        console.log(data);
+
+        return setTimeout(() => {
+            history.push('/login')
+        }, 1000);
+
+    }
+
+<<<<<<< HEAD
 import RegisterHeader from '../../components/registerHeader/registerHeader';
 
 
@@ -8,20 +47,25 @@ const payment = () => {
     return (
         <div className="paymentContainer">
         <RegisterHeader/>
+=======
+    return (
+        <div className="paymentContainer">
+            <pre color="white">{JSON.stringify(payment, null,2)}</pre>
+>>>>>>> 487821ea7f92adfe080539432b277f75f88cf222
             <div className="visa">
                 {/* <div className="visaIcon">
                     <FaIcons.RiVisaLine/>
                 </div> */}
                 <div className="visaText">VISA/Mastercard Número</div>
-                <input type="text" className="visaInput" maxLength="14" name="visa"/>
+                <input type="text" className="visaInput" maxLength="14" name="visa" onChange={stateHandler} onKeyDown={handleOnKeyDown}/>
             </div>
             <div className="date">
                 <div className="dateText">
                     Fecha de vencimiento (MM/AAAA)
                 </div>
                 <div className="date-field">
-                    <div className="month">
-                        <select name="Month" defaultValue={"DEFAULT"}>
+                    <div className="months">
+                        <select name="month" defaultValue={"DEFAULT"} onChange={stateHandler} onKeyDown={handleOnKeyDown}>
                             <option value="DEFAULT" disabled>- Select One -</option>
                             <option value="january">01</option>
                             <option value="february">02</option>
@@ -37,8 +81,8 @@ const payment = () => {
                             <option value="december">12</option>
                         </select>
                     </div>
-                    <div className="year">
-                        <select name="Year" defaultValue={"DEFAULT"}>
+                    <div className="years">
+                        <select name="year" defaultValue={"DEFAULT"} onChange={stateHandler} onKeyDown={handleOnKeyDown}>
                             <option value="DEFAULT" disabled>- Select One -</option>
                             <option value="2021">2021</option>
                             <option value="2022">2022</option>
@@ -68,18 +112,19 @@ const payment = () => {
                 <div className="cvvText">
                     cvv
                 </div>
-                <input type="text" className="cvvInput" maxLength="3" name="cvv"/>
+                <input type="text" className="cvvInput" maxLength="3" name="cvv" onChange={stateHandler} onKeyDown={handleOnKeyDown}/>
             </div>
             <div className="cardName">
                 <div className="nameText">
                     Nombre en la Tarjeta(máximo 30 caracteres) 
                 </div>
-                <input type="text" className="nameInput" maxLength="30" name="cardName"/>
+                <input type="text" className="nameInput" maxLength="30" name="cardName" onChange={stateHandler} onKeyDown={handleOnKeyDown}/>
             </div>
-                        
-            
+            <div className="payBtn">
+                <Button onClick={()=> sendData()}>Enviar</Button>            
+            </div>
         </div>
     )
 }
 
-export default payment
+export default Payment

@@ -1,6 +1,8 @@
 /*Colors*/
 /*Sizes*/
 /*Margin and Padding*/
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap");
 .stepCollection {
   display: flex;
   flex-direction: column;
@@ -8,9 +10,44 @@
   justify-content: space-evenly;
   background-color: #323232;
   height: 100vh; }
+<<<<<<< HEAD
   .stepCollection .containerForm {
     display: flex;
     color: #f4e5c2; }
+=======
+  .stepCollection .progressBar {
+    width: 700px; }
+  .stepCollection .nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 700px; }
+  .stepCollection .containerForm {
+    display: flex;
+    color: #f4e5c2; }
+
+.btnSomething {
+  background-color: #6db193; }
+>>>>>>> 487821ea7f92adfe080539432b277f75f88cf222
+
+.btnModalActive {
+  width: 9em;
+  height: 2em;
+  background-color: #295f4e;
+  transition: 0.7s;
+  border-radius: 0.2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #f4e5c2; }
+  .btnModalActive:hover {
+    background-color: #6db193;
+    transition: 0.7s; }
+
+.btn-secondary {
+  color: #fff;
+  background-color: #295f4e;
+  border-color: #6c757d; }
 
 .paymentContainer {
   display: flex;
@@ -25,7 +62,7 @@
     align-items: center;
     flex-direction: column; }
     .paymentContainer .visa .visaText {
-      color: darkgray; }
+      color: #f4e5c2; }
     .paymentContainer .visa .visaInput {
       display: flex;
       justify-content: center;
@@ -41,7 +78,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      color: darkgray; }
+      color: #f4e5c2; }
     .paymentContainer .date .date-field {
       display: flex;
       flex-direction: row;
@@ -55,7 +92,7 @@
     margin-top: 1em;
     flex-direction: column; }
     .paymentContainer .cvv .cvvText {
-      color: darkgrey; }
+      color: #f4e5c2; }
     .paymentContainer .cvv .cvvInput {
       display: flex;
       justify-content: center;
@@ -68,12 +105,13 @@
     margin-top: 1em;
     flex-direction: column; }
     .paymentContainer .cardName .nameText {
-      color: darkgrey; }
+      color: #f4e5c2; }
     .paymentContainer .cardName .nameInput {
       display: flex;
       justify-content: center;
       align-items: center;
       margin-top: 0.5em; }
+<<<<<<< HEAD
 
 .btnSomething {
   background-color: #6db193; }
@@ -88,3 +126,105 @@
     flex-direction: row;
     justify-content: space-around;
     width: 700px; }
+=======
+  .paymentContainer .payBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1em; }
+
+.homeContainer {
+  width: 100%;
+  /* height: 63vmax; */
+  display: flex;
+  flex-direction: column;
+  background-color: #323232; }
+
+.imgMovie {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  opacity: .4; }
+
+.header {
+  background-color: #323232c2;
+  width: 100%;
+  height: 6em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  z-index: 2; }
+
+.containerEmpty {
+  width: 20%;
+  height: 5em; }
+
+.containerLogo {
+  width: 60%;
+  height: 5em;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+.logo {
+  display: flex;
+  justify-content: center;
+  height: 4em;
+  width: 6em; }
+
+.loginContainer {
+  width: 20%;
+  height: 5em;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+.joinTv {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 28em;
+  background-color: black;
+  border-top: #323232 8px solid; }
+  .joinTv .textPrincipalJoinTv {
+    display: flex;
+    flex-direction: column;
+    width: 50%; }
+    .joinTv .textPrincipalJoinTv .textTitleJoinTv {
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      width: 100%;
+      height: 50%;
+      color: white;
+      font-family: 'Inter', sans-serif;
+      font-size: 2.5em;
+      text-align: left;
+      margin-left: 20%; }
+    .joinTv .textPrincipalJoinTv .textSecundaryJoinTv {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      width: 100%;
+      height: 50%;
+      color: white;
+      font-family: 'Noto Sans', sans-serif;
+      font-size: 1.25em;
+      text-align: left;
+      margin-left: 20%; }
+
+.btnModalActive {
+  width: 9em;
+  height: 2em;
+  background-color: #295f4e;
+  transition: 0.7s;
+  border-radius: 0.2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #f4e5c2; }
+  .btnModalActive:hover {
+    background-color: #6db193;
+    transition: 0.7s; }
+>>>>>>> 487821ea7f92adfe080539432b277f75f88cf222
