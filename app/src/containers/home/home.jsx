@@ -2,7 +2,7 @@ import React from 'react';
 
 import collageMovies from '../../assets/img/collageMovies.jpg';
 // import Button from '../../components/button/button';
-import ModalLogin from '../../components/loginModal/loginModal';
+import ModalLogin from '../login/login';
 import logo from "../../assets/img/geekflix-green.png";
 
 
@@ -17,7 +17,6 @@ const home = () => {
           <div className="containerLogo">
             <div className="logo"><img src={logo} alt=""/></div></div>
           <div className="loginContainer">
-            <ModalLogin/>
           </div>
         </div>
         <img className="imgMovie" alt="collage" src={collageMovies}/>
