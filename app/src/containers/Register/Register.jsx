@@ -9,44 +9,43 @@ import { Form, FormGroup, Label, Input, FormFeedback, FormText, Button, Progress
 
 
 const Register = () => {
-    return (
-        <div>
-            <div className="stepCollection">
-                <ul className="nav">
-                    <Link to="/register">Crear cuenta</Link>  
-                    <Link to="/payment">Detalles de pago</Link>
-                    <Link to="/login">Comenzar a ver</Link>
-                </ul>
-                <div className="progressBar">
-                    <Progress value="1" max="3" />
-                </div>  
-                <div className="containerForm">
-                    <Form>
-                        <FormGroup>
-                            <Label for="exampleEmail">USERNAME</Label>
-                            <Input/>
-                            <FormFeedback valid>Sweet! that name is available</FormFeedback>
-                            <FormText>Example help text that remains unchanged.</FormText>
-                        </FormGroup>
-                        <FormGroup>
-                            <Label for="examplePassword">EMAIL</Label>
-                            <Input/>
-                            <FormFeedback>Oh noes! that name is already taken</FormFeedback>
-                            <FormText>Example help text that remains unchanged.</FormText>
-                        </FormGroup>
-                        <FormGroup>
-                            <Label for="examplePassword">PASSWORD</Label>
-                            <Input/>
-                            <FormFeedback>Oh noes! that name is already taken</FormFeedback>
-                            <FormText>Example help text that remains unchanged.</FormText>
-                        </FormGroup>
-                        <Button>Enviar</Button>
-                    </Form>
-                </div>
-                
-            </div>
+  return (
+    <div>
+      <div className="stepCollection">
+        <ul className="nav">
+          <Link to="/register">Crear cuenta</Link>  
+          <Link to="/payment">Detalles de pago</Link>
+          <Link to="/login">Comenzar a ver</Link>
+        </ul>
+        <div className="progressBar">
+            <Progress value="1" max="3" />
+        </div>  
+        <div className="containerForm">
+          <Form>
+            <FormGroup>
+              <Label for="exampleEmail">USERNAME</Label>
+              <Input/>
+              <FormFeedback valid>Sweet! that name is available</FormFeedback>
+              <FormText>Example help text that remains unchanged.</FormText>
+            </FormGroup>
+            <FormGroup>
+              <Label for="examplePassword">EMAIL</Label>
+              <Input/>
+              <FormFeedback>Oh noes! that name is already taken</FormFeedback>
+              <FormText>Example help text that remains unchanged.</FormText>
+            </FormGroup>
+            <FormGroup>
+              <Label for="examplePassword">PASSWORD</Label>
+              <Input/>
+              <FormFeedback>Oh noes! that name is already taken</FormFeedback>
+              <FormText>Example help text that remains unchanged.</FormText>
+            </FormGroup>
+            <Button>Enviar</Button>
+          </Form>
         </div>
-    )
+      </div>
+    </div>
+  )
 }
 
 export default Register
