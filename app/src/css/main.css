@@ -10,44 +10,9 @@
   justify-content: space-evenly;
   background-color: #323232;
   height: 100vh; }
-<<<<<<< HEAD
   .stepCollection .containerForm {
     display: flex;
     color: #f4e5c2; }
-=======
-  .stepCollection .progressBar {
-    width: 700px; }
-  .stepCollection .nav {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    width: 700px; }
-  .stepCollection .containerForm {
-    display: flex;
-    color: #f4e5c2; }
-
-.btnSomething {
-  background-color: #6db193; }
->>>>>>> 487821ea7f92adfe080539432b277f75f88cf222
-
-.btnModalActive {
-  width: 9em;
-  height: 2em;
-  background-color: #295f4e;
-  transition: 0.7s;
-  border-radius: 0.2em;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #f4e5c2; }
-  .btnModalActive:hover {
-    background-color: #6db193;
-    transition: 0.7s; }
-
-.btn-secondary {
-  color: #fff;
-  background-color: #295f4e;
-  border-color: #6c757d; }
 
 .paymentContainer {
   display: flex;
@@ -111,22 +76,6 @@
       justify-content: center;
       align-items: center;
       margin-top: 0.5em; }
-<<<<<<< HEAD
-
-.btnSomething {
-  background-color: #6db193; }
-
-.container-nav-progress {
-  background-color: #323232;
-  width: 700px; }
-  .container-nav-progress .progressBar {
-    width: 700px; }
-  .container-nav-progress .nav {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    width: 700px; }
-=======
   .paymentContainer .payBtn {
     display: flex;
     justify-content: center;
@@ -227,4 +176,46 @@
   .btnModalActive:hover {
     background-color: #6db193;
     transition: 0.7s; }
->>>>>>> 487821ea7f92adfe080539432b277f75f88cf222
+
+.btnSomething {
+  background-color: #295f4e; }
+  .btnSomething:hover {
+    background-color: #6db193; }
+
+.modal {
+  width: 15em;
+  height: 30em;
+  background-color: #323232; }
+
+.header .modal-header {
+  height: 5em;
+  font-size: 2em;
+  background-color: #323232; }
+
+.body {
+  width: 15em;
+  height: 30em;
+  background-color: #323232; }
+
+.footer {
+  background-color: #323232; }
+
+.container-nav-progress {
+  background-color: #323232;
+  width: 700px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center; }
+  .container-nav-progress .progressBar {
+    width: 700px;
+    background-color: #6db193; }
+  .container-nav-progress .nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 700px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center; }

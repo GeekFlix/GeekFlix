@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.css';
 import Input from '../input/input'
+import axios from 'axios';
 
 
 
@@ -30,7 +31,6 @@ const ModalLogin = (props) => {
 
   return (
     <div>
-<<<<<<< HEAD
       <Button className="btnSomething" onClick={toggle}>Iniciar Sesión</Button>
       <Modal className="modal" isOpen={modal} modalTransition={{ timeout: 700 }} backdropTransition={{ timeout: 1300 }}
         toggle={toggle} className={classNameProps}>
@@ -49,14 +49,6 @@ const ModalLogin = (props) => {
             Password:
             <Input type="password" maxLength="100" onChange={handleState}/>
           </div>
-=======
-
-      <Button className="btnModalActive" onClick={toggle}>Iniciar sesión</Button>
-      <Modal isOpen={modal} modalTransition={{ timeout: 700 }} backdropTransition={{ timeout: 1300 }}
-        toggle={toggle} className={className}>
-        <ModalHeader toggle={toggle}>Modal title</ModalHeader>
-        <ModalBody>
->>>>>>> ba92459e684c09e15922687fb1647487646ee556
         </ModalBody>
         <ModalFooter className="footer.modal">
           <Button className="btnSomething" onClick={sendLogin()}>Iniciar Sesión</Button>

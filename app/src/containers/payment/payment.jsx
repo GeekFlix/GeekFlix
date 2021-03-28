@@ -4,6 +4,8 @@ import { useHistory } from 'react-router-dom';
 import axios from 'axios'
 import { Button } from 'reactstrap';
 
+import RegisterHeader from '../../components/registerHeader/registerHeader';
+
 
 const Payment = () => {
 
@@ -34,24 +36,15 @@ const Payment = () => {
         console.log(data);
 
         return setTimeout(() => {
-            history.push('/login')
+            history.push('/loginregister')
         }, 1000);
 
     }
 
-<<<<<<< HEAD
-import RegisterHeader from '../../components/registerHeader/registerHeader';
-
-
-const payment = () => {
     return (
         <div className="paymentContainer">
-        <RegisterHeader/>
-=======
-    return (
-        <div className="paymentContainer">
+            <RegisterHeader/>
             <pre color="white">{JSON.stringify(payment, null,2)}</pre>
->>>>>>> 487821ea7f92adfe080539432b277f75f88cf222
             <div className="visa">
                 {/* <div className="visaIcon">
                     <FaIcons.RiVisaLine/>

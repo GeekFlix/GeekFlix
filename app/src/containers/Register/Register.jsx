@@ -1,4 +1,5 @@
 import React from 'react'
+import { useHistory } from 'react-router';
 
 
 import { Form, FormGroup, Label, Input, FormFeedback, FormText, Button } from 'reactstrap';
@@ -6,6 +7,16 @@ import { Form, FormGroup, Label, Input, FormFeedback, FormText, Button } from 'r
 import RegisterHeader from '../../components/registerHeader/registerHeader';
 
 const Register = () => {
+
+    const history = useHistory();
+
+    const next = () => {
+        return setTimeout(() => {
+        history.push('/payment')
+        }, 1000);
+    }
+    
+
     return (
         <div>
             <div className="stepCollection">
@@ -30,7 +41,7 @@ const Register = () => {
                             <FormFeedback>Oh noes! that name is already taken</FormFeedback>
                             <FormText>Example help text that remains unchanged.</FormText>
                         </FormGroup>
-                        <Button>Enviar</Button>
+                        <Button onClick={next}>Enviar</Button>
                     </Form>
                 </div>
                 
