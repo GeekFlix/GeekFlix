@@ -1,12 +1,30 @@
 
 .btnSomething{
+  background-color: $darkgreen;
+  &:hover {
     background-color: $green;
+  }
 }
-.btnModalActive{
-    @include btnSesion
+
+.modal {
+  width: 15em;
+  height: 30em;
+  background-color: $black;
 }
-.btn-secondary {
-    color: #fff;
-    background-color: $darkgreen;
-    border-color: #6c757d;
+
+.header .modal-header {
+  height: 5em;
+  font-size: 2em;
+  background-color: $black;
 }
+
+.body {
+  width: 15em;
+  height: 30em;
+  background-color: $black;
+}
+
+.footer {
+  background-color: $black;
+}
+

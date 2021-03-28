@@ -4,6 +4,8 @@ import { useHistory } from 'react-router-dom';
 import axios from 'axios'
 import { Button } from 'reactstrap';
 
+import RegisterHeader from '../../components/registerHeader/registerHeader';
+
 
 const Payment = () => {
 
@@ -11,8 +13,8 @@ const Payment = () => {
 
     const [payment,setPayment] = useState({
         visa: '',
-        dateMonth: '',
-        dateYear: '',
+        month: '',
+        year: '',
         cvv: '',
         cardName: ''
     })
@@ -30,15 +32,18 @@ const Payment = () => {
     const sendData = async () => {
         console.log('YEEEAh!');
         
-        const data = await axios.post('http://localhost:3000/payment', payment)
+        const data = await axios.post('http://localhost:3000/payment/', payment)
         console.log(data);
 
-        return history.pushState('/login')
+        return setTimeout(() => {
+            history.push('/loginregister')
+        }, 1000);
 
     }
 
     return (
         <div className="paymentContainer">
+            <RegisterHeader/>
             <pre color="white">{JSON.stringify(payment, null,2)}</pre>
             <div className="visa">
                 {/* <div className="visaIcon">
@@ -52,8 +57,8 @@ const Payment = () => {
                     Fecha de vencimiento (MM/AAAA)
                 </div>
                 <div className="date-field">
-                    <div className="month">
-                        <select name="dateMonth" defaultValue={"DEFAULT"} onChange={stateHandler} onKeyDown={handleOnKeyDown}>
+                    <div className="months">
+                        <select name="month" defaultValue={"DEFAULT"} onChange={stateHandler} onKeyDown={handleOnKeyDown}>
                             <option value="DEFAULT" disabled>- Select One -</option>
                             <option value="january">01</option>
                             <option value="february">02</option>
@@ -69,8 +74,8 @@ const Payment = () => {
                             <option value="december">12</option>
                         </select>
                     </div>
-                    <div className="year">
-                        <select name="dateYear" defaultValue={"DEFAULT"} onChange={stateHandler} onKeyDown={handleOnKeyDown}>
+                    <div className="years">
+                        <select name="year" defaultValue={"DEFAULT"} onChange={stateHandler} onKeyDown={handleOnKeyDown}>
                             <option value="DEFAULT" disabled>- Select One -</option>
                             <option value="2021">2021</option>
                             <option value="2022">2022</option>
