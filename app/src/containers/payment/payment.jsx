@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import * as FaIcons from 'react-icons/ri';
+// import * as FaIcons from 'react-icons/ri';
 import { useHistory } from 'react-router-dom';
 import axios from 'axios'
 import { Button } from 'reactstrap';
@@ -7,7 +7,7 @@ import { Button } from 'reactstrap';
 
 const Payment = () => {
 
-    const history = useHistory()
+    const history = useHistory();
 
     const [payment,setPayment] = useState({
         visa: '',
