@@ -1,25 +1,25 @@
 import React from 'react'
+import { useHistory } from 'react-router';
 
 
-import { Link } from 'react-router-dom';
+import { Form, FormGroup, Label, Input, FormFeedback, FormText, Button } from 'reactstrap';
 
-import { Form, FormGroup, Label, Input, FormFeedback, FormText, Button, Progress } from 'reactstrap';
-
-
-
+import RegisterHeader from '../../components/registerHeader/registerHeader';
 
 const Register = () => {
+
+    const history = useHistory();
+
+    const next = () => {
+      return setTimeout(() => {
+      history.push('/payment')
+      }, 1000);
+    }
+    
   return (
     <div>
       <div className="stepCollection">
-        <ul className="nav">
-          <Link to="/register">Crear cuenta</Link>  
-          <Link to="/payment">Detalles de pago</Link>
-          <Link to="/login">Comenzar a ver</Link>
-        </ul>
-        <div className="progressBar">
-            <Progress value="1" max="3" />
-        </div>  
+        <RegisterHeader/>
         <div className="containerForm">
           <Form>
             <FormGroup>
@@ -40,9 +40,9 @@ const Register = () => {
               <FormFeedback>Oh noes! that name is already taken</FormFeedback>
               <FormText>Example help text that remains unchanged.</FormText>
             </FormGroup>
-            <Button>Enviar</Button>
+            <Button onClick={next}>Enviar</Button>
           </Form>
-        </div>
+        </div> 
       </div>
     </div>
   )

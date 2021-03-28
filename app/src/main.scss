@@ -3,7 +3,6 @@
 @import './scss/mixins';
 
 
-
 //Importación de contenedores con scss
 @import './containers/Register/Register.scss';
 @import './containers/login/login.scss';
@@ -11,4 +10,7 @@
 @import './containers/home/home.scss';
 @import './components/btn/btn.scss';
 
+
 //Importación de componentes con scss
+@import './components/loginModal/loginModal.scss';
+@import './components/registerHeader/registerHeader';

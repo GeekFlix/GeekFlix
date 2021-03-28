@@ -1,12 +1,21 @@
 import React from 'react';
+import {useHistory} from 'react-router-dom';
 
 
 const Btn = (props) => {
-  return (
-    <div className="btnModalActive">
-      
-    </div>
-  )
-}
+
+let history = useHistory();
+
+const give = () =>{
+    history.push(`/${props.destiny}`);
+};
+
+    return(
+        <div onClick={()=>give()} className="btnClick">
+            {props.text}
+
+        </div>
+    );
+};
 
 export default Btn
