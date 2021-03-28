@@ -1,9 +1,13 @@
 import React from 'react'
 import * as FaIcons from 'react-icons/ri';
 
+import RegisterHeader from '../../components/registerHeader/registerHeader';
+
+
 const payment = () => {
     return (
         <div className="paymentContainer">
+        <RegisterHeader/>
             <div className="visa">
                 {/* <div className="visaIcon">
                     <FaIcons.RiVisaLine/>

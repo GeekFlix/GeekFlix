@@ -9,6 +9,7 @@ const Register = () => {
     return (
         <div>
             <div className="stepCollection">
+                <RegisterHeader/>
                 <div className="containerForm">
                     <Form>
                         <FormGroup>

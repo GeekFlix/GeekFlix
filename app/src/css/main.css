@@ -7,25 +7,10 @@
   align-items: center;
   justify-content: space-evenly;
   background-color: #323232;
-  height: 100vh;
-}
-.stepCollection .progressBar {
-  width: 700px;
-}
-.stepCollection .nav {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  width: 700px;
-  color: #6db193;
-}
-.stepCollection .containerForm {
-  display: flex;
-  color: #f4e5c2;
-}
-
-.btnSomething {
-  background-color: #6db193; }
+  height: 100vh; }
+  .stepCollection .containerForm {
+    display: flex;
+    color: #f4e5c2; }
 
 .paymentContainer {
   display: flex;
@@ -38,8 +23,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    margin-top: 15em; }
+    flex-direction: column; }
     .paymentContainer .visa .visaText {
       color: darkgray; }
     .paymentContainer .visa .visaInput {
@@ -90,3 +74,17 @@
       justify-content: center;
       align-items: center;
       margin-top: 0.5em; }
+
+.btnSomething {
+  background-color: #6db193; }
+
+.container-nav-progress {
+  background-color: #323232;
+  width: 700px; }
+  .container-nav-progress .progressBar {
+    width: 700px; }
+  .container-nav-progress .nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 700px; }
