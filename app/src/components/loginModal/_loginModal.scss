@@ -1,7 +1,9 @@
+
 .btnSomething{
   background-color: $darkgreen;
   &:hover {
     background-color: $green;
+<<<<<<< HEAD
   }
 }
 
@@ -27,3 +29,14 @@
   background-color: $black;
 }
 
+=======
+}
+.btnModalActive{
+    @include btnSesion
+}
+.btn-secondary {
+    color: #fff;
+    background-color: $darkgreen;
+    border-color: #6c757d;
+}
+>>>>>>> ba92459e684c09e15922687fb1647487646ee556

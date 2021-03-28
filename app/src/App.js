@@ -1,14 +1,14 @@
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
 //import Navbar from './components/navbar/navbar';
+import Home from './containers/home/home';
+import Register from './containers/Register/Register';
+import payment from './containers/payment/payment';
+import Payment from './containers/payment/payment';
 
 
 import './App.css';
-import Home from './containers/home/home';
-
-
 import './css/main.css';
-import Register from './containers/Register/Register';
-import payment from './containers/payment/payment';
+
 
 function App() {
   return (
@@ -21,7 +21,7 @@ function App() {
 
           <Route path='/' exact component={Home}/>
           <Route path='/register' exact component={Register}/>
-          <Route path='/payment' exact component={payment}/>
+          <Route path='/payment' exact component={Payment}/>
         </Switch>
       
       </BrowserRouter>

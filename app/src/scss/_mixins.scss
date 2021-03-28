@@ -1,0 +1,17 @@
+@mixin btnSesion {
+    width: 9em;
+    height: 2em;
+    background-color: $darkgreen;
+    transition: 0.7s;
+    border-radius: 0.2em;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    color: $white;
+       
+    &:hover{
+        background-color: $green;
+        transition: 0.7s;
+    }
+}
+
