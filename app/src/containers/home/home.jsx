@@ -2,9 +2,10 @@ import React from 'react';
 
 import collageMovies from '../../assets/img/collageMovies.jpg';
 
-import ModalLogin from '../../components/loginModal/loginModal';
+
 import logo from '../../assets/img/geekflix-green.png';
 import { Link } from 'react-router-dom';
+import Btn from '../../components/btn/btn';
 
 
 
@@ -18,13 +19,13 @@ const home = () => {
           <div className="containerLogo">
             <div className="logo"><img src={logo} alt=""/></div></div>
           <div className="loginContainer">
-            <ModalLogin/>
+            <Btn destiny="login" text="Iniciar sesión"/>
           </div>
         </div>
         <div className="textForRegister">
           <div className="textRegisterTitle"><h1>Todas las películas y series que desees y mucho más...</h1></div>
-          <div className="textRegisterSubtitle"><h3>Disfruta donde quieras. Cancela cuando quieras.</h3></div>
-          <div className="textRegisterFinal"><h5>...Pero para todo ello inicie sesión o <Link to="/register" className="styleLink">SUSCRIBANSE!!</Link></h5></div>
+          <div className="textRegisterSubtitle"><h2>Disfruta donde quieras. Cancela cuando quieras.</h2></div>
+          <div className="textRegisterFinal"><h4>...Pero para todo ello inicie sesión o <Link to="/register" className="styleLink">SUSCRIBANSE!!</Link></h4></div>
         </div>
         <img className="imgMovie" alt="collage" src={collageMovies}/>
         

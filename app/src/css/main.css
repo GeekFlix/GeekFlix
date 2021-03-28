@@ -244,7 +244,7 @@
       width: 100%;
       height: 100%; }
 
-.btnModalActive {
+.btnClick {
   width: 9em;
   height: 2em;
   background-color: #295f4e;
@@ -254,7 +254,7 @@
   align-items: center;
   justify-content: center;
   color: #f4e5c2; }
-  .btnModalActive:hover {
+  .btnClick:hover {
     background-color: #6db193;
     transition: 0.7s; }
 
