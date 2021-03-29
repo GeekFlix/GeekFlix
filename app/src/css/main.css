@@ -3,31 +3,113 @@
 /*Margin and Padding*/
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap");
 .stepCollection {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-evenly;
   background-color: #323232;
   height: 100vh; }
-  .stepCollection .containerForm {
+  .stepCollection .nav {
+    width: 480px;
+    height: 96px;
     display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center; }
+    .stepCollection .nav .go {
+      cursor: pointer;
+      color: #295f4e;
+      font-size: larger; }
+    .stepCollection .nav .toRegister {
+      color: #6db193; }
+  .stepCollection Form {
+    height: 224px;
+    width: 96px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
     color: #f4e5c2; }
+    .stepCollection Form Input {
+      margin-top: 10px; }
+    .stepCollection Form .registerButton {
+      width: 9em;
+      height: 2em;
+      background-color: #295f4e;
+      transition: 0.7s;
+      border-radius: 0.2em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #f4e5c2; }
+      .stepCollection Form .registerButton:hover {
+        background-color: #6db193;
+        transition: 0.7s; }
 
 .loginBody {
   width: 100%;
-  height: 100em;
+  height: 43em;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: #323232; }
+  .loginBody .imgGeek {
+    width: 40px;
+    height: 128px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center; }
   .loginBody .formContainer {
-    width: 30em;
-    height: 80em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around; }
+    .loginBody .formContainer .inputs {
+      height: 25em;
+      color: #f4e5c2;
+      display: flex;
+      flex-direction: column;
+      align-items: center; }
+      .loginBody .formContainer .inputs .titleLoginDown {
+        width: 320px;
+        height: 480px; }
+        .loginBody .formContainer .inputs .titleLoginDown p {
+          color: #6db193;
+          font-family: 'Inter', sans-serif;
+          font-size: 32px; }
+    .loginBody .formContainer .contentLogin {
+      width: 480px;
+      height: 320px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start; }
+      .loginBody .formContainer .contentLogin .titleLoginUp {
+        color: #f4e5c2;
+        font-size: 20px;
+        font-family: 'Noto Sans', sans-serif; }
+      .loginBody .formContainer .contentLogin .imgLogin {
+        width: 224px; }
+        .loginBody .formContainer .contentLogin .imgLogin .img {
+          height: 320px;
+          width: 23em;
+          border-radius: 16px; }
+  .loginBody .btnStyle {
+    margin-top: 1em;
+    width: 9em;
+    height: 2em;
+    background-color: #295f4e;
+    transition: 0.7s;
+    border-radius: 0.2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     color: #f4e5c2; }
-  .loginBody .buttonStyle {
-    margin-top: 1em; }
+    .loginBody .btnStyle:hover {
+      background-color: #6db193;
+      transition: 0.7s; }
 
 .paymentContainer {
   display: flex;
@@ -96,6 +178,33 @@
     justify-content: center;
     align-items: center;
     margin-top: 1em; }
+  .paymentContainer Button {
+    width: 9em;
+    height: 2em;
+    background-color: #295f4e;
+    transition: 0.7s;
+    border-radius: 0.2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #f4e5c2; }
+    .paymentContainer Button:hover {
+      background-color: #6db193;
+      transition: 0.7s; }
+
+.nav {
+  width: 480px;
+  height: 96px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center; }
+  .nav .go {
+    cursor: pointer;
+    color: #295f4e;
+    font-size: larger; }
+  .nav .toPayment {
+    color: #6db193; }
 
 .homeContainer {
   width: 100%;
@@ -296,22 +405,40 @@
 .footer {
   background-color: #323232; }
 
-.container-nav-progress {
-  background-color: #323232;
-  width: 700px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center; }
-  .container-nav-progress .progressBar {
-    width: 700px;
-    background-color: #6db193; }
-  .container-nav-progress .nav {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    width: 700px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center; }
+.carouselContainer {
+  scroll-behavior: smooth; }
+  .carouselContainer .wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 100%); }
+    .carouselContainer .wrapper section {
+      width: 100%;
+      position: relative;
+      display: grid;
+      grid-template-columns: repeat(6, auto);
+      margin: 20px 0; }
+      .carouselContainer .wrapper section .item {
+        padding: 0 2px;
+        transition: 250ms all; }
+        .carouselContainer .wrapper section .item:hover {
+          margin: 0 40px;
+          transform: scale(1.2); }
+      .carouselContainer .wrapper section a {
+        position: absolute;
+        color: #f4e5c2;
+        text-decoration: none;
+        font-size: 6em;
+        background: black;
+        width: 80px;
+        padding: 15px;
+        text-align: center;
+        z-index: 1; }
+        .carouselContainer .wrapper section a:nth-of-type(1) {
+          top: 0;
+          bottom: 0;
+          left: 0;
+          background: linear-gradient(-90deg, rgba(0, 0, 0, 0) 0%, black 100%); }
+        .carouselContainer .wrapper section a:nth-of-type(2) {
+          top: 0;
+          bottom: 0;
+          right: 0;
+          background: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, black 100%); }
