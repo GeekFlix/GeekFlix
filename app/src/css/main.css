@@ -3,6 +3,8 @@
 /*Margin and Padding*/
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap");
 .stepCollection {
   display: flex;
   flex-direction: column;
@@ -48,18 +50,66 @@
 
 .loginBody {
   width: 100%;
-  height: 100em;
+  height: 43em;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: #323232; }
+  .loginBody .imgGeek {
+    width: 40px;
+    height: 128px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center; }
   .loginBody .formContainer {
-    width: 30em;
-    height: 80em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around; }
+    .loginBody .formContainer .inputs {
+      height: 25em;
+      color: #f4e5c2;
+      display: flex;
+      flex-direction: column;
+      align-items: center; }
+      .loginBody .formContainer .inputs .titleLoginDown {
+        width: 320px;
+        height: 480px; }
+        .loginBody .formContainer .inputs .titleLoginDown p {
+          color: #6db193;
+          font-family: 'Inter', sans-serif;
+          font-size: 32px; }
+    .loginBody .formContainer .contentLogin {
+      width: 480px;
+      height: 320px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start; }
+      .loginBody .formContainer .contentLogin .titleLoginUp {
+        color: #f4e5c2;
+        font-size: 20px;
+        font-family: 'Noto Sans', sans-serif; }
+      .loginBody .formContainer .contentLogin .imgLogin {
+        width: 224px; }
+        .loginBody .formContainer .contentLogin .imgLogin .img {
+          height: 320px;
+          width: 23em;
+          border-radius: 16px; }
+  .loginBody .btnStyle {
+    margin-top: 1em;
+    width: 9em;
+    height: 2em;
+    background-color: #295f4e;
+    transition: 0.7s;
+    border-radius: 0.2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     color: #f4e5c2; }
-  .loginBody .buttonStyle {
-    margin-top: 1em; }
+    .loginBody .btnStyle:hover {
+      background-color: #6db193;
+      transition: 0.7s; }
 
 .paymentContainer {
   display: flex;
