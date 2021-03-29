@@ -8,7 +8,7 @@ import Carousel from '../../components/carousel/carousel';
 
 
 
-const homeRegister = () => {
+const homeMovie = () => {
     
     return(
         <div>
@@ -20,4 +20,4 @@ const homeRegister = () => {
  
 }
 
-export default homeRegister
+export default homeMovie
