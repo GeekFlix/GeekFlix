@@ -1,32 +1,24 @@
-.container-nav-progress {
+// .container-nav-progress {
 
-    background-color: $black;
-    width: $mp-z;
+//     background-color: $black;
+ 
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: space-evenly;
+//     align-items: center;
 
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
 
-    .progressBar {
-    width: $mp-z;
-    background-color: $green;
-    }
-
-    .nav {
-    display:flex;
-    flex-direction: row;
-    justify-content: space-around;
-    width: $mp-z;
-
-    display:flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
+//     .nav {
+        
+//         display:flex; 
+//         flex-direction: row;
+        
+//         align-items: center;
+        
+//     }
     
-    }
 
-}
+// }
 
 
 

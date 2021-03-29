@@ -3,17 +3,59 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-evenly;
+  
 
     background-color: $black;
 
     height: 100vh;
     
+    .nav {
+        width: $mp-x;
+        height: $mp-p;
 
-    .containerForm {
-        display: flex;
+        display:flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
 
-        color: $white;    
+        .go {
+            cursor: pointer;
+            color: $darkgreen;
+            font-size: larger;
+        }
+
+        .toRegister {
+            color: $green;
+        }
+        
+        
+        
     }
+
+    Form {
+        height: $mp-t;
+        width: $mp-p;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        
+
+        color: $white;   
+
+        Input {
+            margin-top: $mp-f;
+        }
+
+        
+        .registerButton {
+            @include btnSesion
+            
+        }
+
+    }
+
+  
 }
 
