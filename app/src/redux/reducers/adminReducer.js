@@ -11,7 +11,7 @@ const  adminReducer = (state = initialState, action) => {
     case ADMINLOGIN:
       return {
           ...state,
-          admin: action.payload.clinic,
+          admin: action.payload.admin,
           token: action.payload.token
       }
     case ADMINLOGOUT:

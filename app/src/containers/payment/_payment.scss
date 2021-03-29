@@ -96,4 +96,31 @@
         margin-top: 1em;
     }
 
+    Button {
+        @include btnSesion
+    }
+
+}
+
+  
+.nav {
+    width: $mp-x;
+    height: $mp-p;
+
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    .go {
+        cursor: pointer;
+        color: $darkgreen;
+        font-size: larger;
+    }
+
+    .toPayment {
+        color: $green;
+    }
+
+    
 }
