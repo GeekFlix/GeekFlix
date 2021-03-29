@@ -405,7 +405,6 @@
 .footer {
   background-color: #323232; }
 
-<<<<<<< HEAD
 .container-nav-progress {
   background-color: #323232;
   width: 700px;
@@ -427,9 +426,6 @@
     align-items: center; }
 
 html {
-=======
-.carouselContainer {
->>>>>>> 999f1eafb25481fa8ffef9c0eba9d52982600daa
   scroll-behavior: smooth; }
 
 .wrapper {
