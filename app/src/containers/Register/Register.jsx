@@ -9,7 +9,7 @@ import axios from 'axios';
 import { connect } from 'react-redux';
 import {REGISTER} from '../../redux/types/userTypes';
 
-
+                     
 
 const Register = (props) => {
 
@@ -23,19 +23,30 @@ const Register = (props) => {
     })
 
     //Handlers para el manejo del error y validación de los datos
+    const stateHandler = (event) => {
+        setRegister({...dataRegister, 
+            [event.target.name]: event.target.type === 'number' ? +event.target.value : event.target.value});
+
+    };
     
 
     const sendData = async () => {
         
         console.log('Estamos dentrísimo !!')
-        
+        console.log(dataRegister, 'esto es dataRegister')
         //Nos traemos por Axios los datos del backend
-        let result = await axios.post(`localhost:3000/user/`, dataRegister);
+        let result = await axios.post('http://localhost:3000/user/', dataRegister);
+        
 
         //Mandamos los datos de Register por Redux a store
         props.dispatch({ type: REGISTER, payload: result })
+        
 
         setRegister(result.data);
+
+        
+        console.log(result.data, 'esto es result.data')
+        
 
         //Salimos de la vista Register hacia Payment
         return setTimeout(() => {
@@ -46,6 +57,7 @@ const Register = (props) => {
 
     return (
         <div>
+            <pre>{JSON.stringify(dataRegister, null,2)}</pre>
             <div className="stepCollection">
                 <div className="steps">
                     <ul className="nav">
@@ -57,23 +69,23 @@ const Register = (props) => {
                 <div className="registerForm">
                     <Form>
                         <FormGroup className="registerFormGroup">
-                            <Label for="exampleUserName">Username </Label>
+                            <Label for="username">Username </Label>
                             <br></br>
-                            <Input/>
+                            <Input type="text" id="userName" name="userName" onChange={stateHandler}/>
                             <FormFeedback></FormFeedback>
                             <FormText></FormText>
                         </FormGroup>
                         <FormGroup>
-                            <Label for="exampleEmail">Email </Label>
+                            <Label for="email">Email </Label>
                             <br></br>
-                            <Input/>
+                            <Input type="text" id="email" name="email" onChange={stateHandler}/>
                             <FormFeedback></FormFeedback>
                             <FormText></FormText>
                         </FormGroup>
                         <FormGroup>
-                            <Label for="examplePassword">Contraseña </Label>
+                            <Label for="password">Contraseña </Label>
                             <br></br>
-                            <Input/>
+                            <Input type="password" id="password" name="password" onChange={stateHandler}/>
                             <FormFeedback></FormFeedback>
                             <FormText></FormText>
                         </FormGroup>
