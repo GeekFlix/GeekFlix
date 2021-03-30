@@ -18,6 +18,7 @@ function App() {
     <div className="App">
       
       <BrowserRouter>
+        
         <Switch>
           <Route path='/' exact component={Home}/>
           <Route path='/register' exact component={Register}/>
@@ -25,8 +26,9 @@ function App() {
           <Route path='/login' exact component={Login}/>
           <Route path='/home-movie' exact component={HomeMovie}/>
         </Switch>
+      
       </BrowserRouter>
-
+      
     </div>
   );
 };
