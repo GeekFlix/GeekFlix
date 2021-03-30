@@ -88,5 +88,11 @@
 
     @include btnSesion
   }
+
+  .errorMessage {
+    color: $white;
+    font-family: 'Inter', sans-serif;
+    font-size: $mp-k;
+  }
 }
 
