@@ -1,20 +1,21 @@
+
 import React, {useState} from 'react'
 import { useHistory } from 'react-router';
-import checkError from '../../tools/error.handlers'
-import axios from 'axios';
+// import checkError from '../../tools/error.handlers'
 
 
 
 import { Form, FormGroup, Label, Input, FormFeedback, FormText, Button } from 'reactstrap';
 
+import axios from 'axios';
 import { connect } from 'react-redux';
 import {REGISTER} from '../../redux/types/userTypes';
 
+                     
 
 const Register = (props) => {
-    const history = useHistory();
 
-    const [message,setMessage] = useState();
+    const history = useHistory();
 
     //Hoooks
     const [dataRegister, setRegister] = useState ({
@@ -33,42 +34,42 @@ const Register = (props) => {
 
     const sendData = async () => {
         
-        // Error management
-    
-        setMessage('');
-    
-        let errorMessage = checkError(dataRegister);
+        console.log('Estamos dentrísimo !!')
+        console.log(dataRegister, 'esto es dataRegister')
+        //Nos traemos por Axios los datos del backend
+        let result = await axios.post('http://localhost:3000/user/', dataRegister);
         
-        setMessage(errorMessage);
-    
-        if(errorMessage){
-            return;
-        };
 
-        try {
-            
-            //Nos traemos por Axios los datos del backend
-            let result = await axios.post('http://localhost:3000/user/', dataRegister);
-            
-    
-            //Mandamos los datos de Register por Redux a store
-            props.dispatch({ type: REGISTER, payload: result })
-            
-            setRegister(result.data);
-    
-            console.log(result.data, 'esto es result.data')
-    
-            //Salimos de la vista Register hacia Payment
-            return setTimeout(() => {
-            history.push('/payment')
-            }, 1000);
+        //Mandamos los datos de Register por Redux a store
+        props.dispatch({ type: REGISTER, payload: result })
+        
 
-        } catch (error) {
-            setMessage('User, email or password incorrect');
-        };
+        setRegister(result.data);
 
+        
+        console.log(result.data, 'esto es result.data')
+        
+
+        //Salimos de la vista Register hacia Payment
+        return setTimeout(() => {
+        history.push('/payment')
+        }, 1000);
     };
 
+   
+    const [message,setMessage] = useState('');
+
+    //Error management
+
+    // setMessage('');
+
+    // let errorMessage = checkError("el estado que utilices");
+    
+    // setMessage(errorMessage);
+
+    // if(errorMessage){
+    //     return;
+    // }
 
     return (
         <div>
@@ -87,14 +88,12 @@ const Register = (props) => {
                             <Label for="username">Username </Label>
                             <br></br>
                             <Input type="text" id="userName" name="userName" onChange={stateHandler}/>
-                            <div className='errorMessage'>{message}</div>       
                             <FormFeedback></FormFeedback>
                             <FormText></FormText>
                         </FormGroup>
                         <FormGroup>
                             <Label for="email">Email </Label>
                             <br></br>
-                            <div className='errorMessage'>{message}</div>       
                             <Input type="text" id="email" name="email" onChange={stateHandler}/>
                             <FormFeedback></FormFeedback>
                             <FormText></FormText>
@@ -102,17 +101,17 @@ const Register = (props) => {
                         <FormGroup>
                             <Label for="password">Contraseña </Label>
                             <br></br>
-                            <div className='errorMessage'>{message}</div>       
                             <Input type="password" id="password" name="password" onChange={stateHandler}/>
                             <FormFeedback></FormFeedback>
                             <FormText></FormText>
                         </FormGroup>
                         <Button className="registerButton" onClick={() => sendData()}>Enviar</Button>
                     </Form>
+                    <div className='errorMessage'>{message}</div>       
                 </div>    
             </div>
         </div>
-    );
-};
+    )
+}
 
 export default connect()(Register);

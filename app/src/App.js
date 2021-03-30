@@ -6,12 +6,10 @@ import Payment from './containers/payment/payment';
 import Login from './containers/login/login';
 import HomeMovie from './containers/home-movie/home-movie';
 import HomeAdmin from './containers/home-admin/home-admin';
-
+import UserProfile from './containers/userProfile/userProfile';
 
 import './App.css';
 import './css/main.css';
-import HomeMovie from './containers/home-movie/home-movie';
-import UserProfile from './containers/userProfile/userProfile';
 
 
 
