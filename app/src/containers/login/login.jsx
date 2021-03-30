@@ -41,12 +41,12 @@ const Login = (props) => {
                 
                 const result = await axios.post('http://localhost:3000/user/login',dataLogin)
                 props.dispatch({type: LOGIN, payload: result.data});
-                return setTimeout(() => {history.push('/homeLogin')}, 100);
+                return setTimeout(() => {history.push('/home-movie')}, 100);
             }else {
     
                 const resultAdmin = await axios.post('http://localhost:3000/admin/login',dataLogin)
                 props.dispatch({type: ADMINLOGIN, payload: resultAdmin.data});
-                return setTimeout(() => {history.push('/homeAdmin')}, 100);
+                return setTimeout(() => {history.push('/home-admin')}, 100);
             };
 
         } catch (error) {
