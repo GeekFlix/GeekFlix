@@ -110,6 +110,10 @@
     .loginBody .btnStyle:hover {
       background-color: #6db193;
       transition: 0.7s; }
+  .loginBody .errorMessage {
+    color: #f4e5c2;
+    font-family: 'Inter', sans-serif;
+    font-size: 32px; }
 
 .paymentContainer {
   display: flex;
@@ -191,6 +195,12 @@
     .paymentContainer Button:hover {
       background-color: #6db193;
       transition: 0.7s; }
+  .paymentContainer .errorMessage {
+    width: 5em;
+    height: 1em;
+    color: #f4e5c2;
+    font-family: 'Inter', sans-serif;
+    font-size: 32px; }
 
 .nav {
   width: 480px;
