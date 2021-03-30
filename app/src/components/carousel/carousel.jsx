@@ -7,9 +7,14 @@ const Carousel = (props) => {
 
     console.log('PROPSSSSS!!',props.movie);
 
-    const section11 = props.movie.filter(objectMovie => objectMovie.genres.includes('Comedy'));
+    const thriller = props.movie.filter(objectMovie => objectMovie.genres.includes('Thriller'));
+    const comedy = props.movie.filter(objectMovie => objectMovie.genres.includes('Comedy'));
+    const animation = props.movie.filter(objectMovie => objectMovie.genres.includes('Animation'));
+    const sport = props.movie.filter(objectMovie => objectMovie.genres.includes('Sport'));
+    const biography = props.movie.filter(objectMovie => objectMovie.genres.includes('Biography'));
 
-    console.log(section11,'MAL VAMOS!');
+
+    console.log(animation,'MAL VAMOS!');
     
     if(props?.result){
         return (
@@ -24,7 +29,7 @@ const Carousel = (props) => {
                 <div className="wrapper">
                     <section id="section1">
                         <a href="#section3">{'<'}</a>
-                            {props.movie.map(movie => 
+                            {sport.map(movie => 
                                 <div className="item" key={movie.id}>
                                     
                                     <img src={movie.posterUrl}/>
@@ -34,6 +39,20 @@ const Carousel = (props) => {
                         <a href="#section2">{'>'}</a>
                     </section> 
                 </div>
+                <div className="wrapper">
+                    <section id="section1">
+                        <a href="#section3">{'<'}</a>
+                            {biography.map(movie => 
+                                <div className="item" key={movie.id}>
+                                    
+                                    <img src={movie.posterUrl}/>
+                                </div>
+                            )}
+                            
+                        <a href="#section2">{'>'}</a>
+                    </section> 
+                </div>
+           
                 
                 {/* <div className="wrapper">
                     <section id="section1">
