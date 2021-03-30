@@ -1,6 +1,7 @@
-
-import React from 'react'
+import React, { useState } from 'react'
 import { useHistory } from 'react-router';
+// import checkError from '../../tools/error.handlers'
+
 
 
 import { Form, FormGroup, Label, Input, FormFeedback, FormText, Button } from 'reactstrap';
@@ -15,8 +16,22 @@ const Register = () => {
         return setTimeout(() => {
         history.push('/payment')
         }, 1000);
-    }
+    };
+
+   
+    const [message,setMessage] = useState('');
+
+    //Error management
+
+    // setMessage('');
+
+    // let errorMessage = checkError("el estado que utilices");
     
+    // setMessage(errorMessage);
+
+    // if(errorMessage){
+    //     return;
+    // }
 
     return (
         <div>
@@ -53,6 +68,7 @@ const Register = () => {
                         </FormGroup>
                         <Button className="registerButton" onClick={next}>Enviar</Button>
                     </Form>
+                    <div className='errorMessage'>{message}</div>       
                 </div>    
             </div>
         </div>

@@ -4,11 +4,12 @@ import Home from './containers/home/home';
 import Register from './containers/Register/Register';
 import Payment from './containers/payment/payment';
 import Login from './containers/login/login';
+import HomeMovie from './containers/home-movie/home-movie';
+import HomeAdmin from './containers/home-admin/home-admin';
 
 
 import './App.css';
 import './css/main.css';
-import HomeMovie from './containers/home-movie/home-movie';
 
 
 
@@ -24,6 +25,7 @@ function App() {
           <Route path='/payment' exact component={Payment}/>
           <Route path='/login' exact component={Login}/>
           <Route path='/home-movie' exact component={HomeMovie}/>
+          <Route path='/home-admin' exact component={HomeAdmin}/>
         </Switch>
       </BrowserRouter>
 
