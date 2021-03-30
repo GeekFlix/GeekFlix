@@ -10,7 +10,8 @@ const store = createStoreWithMiddleware(
   rootReducer,
   load( { 
     preloadedState: {
-      user:{}
+      user:{},
+      movie:{}
     },
     state: ['dataUser'] 
   }), // Loading done here
