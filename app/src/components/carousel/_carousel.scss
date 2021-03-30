@@ -4,9 +4,6 @@ html{
     scroll-behavior:smooth;
 }
 
-    
-    
-
    .wrapper{
        display:grid;
        grid-template-columns: repeat(3, 100%);
@@ -28,6 +25,7 @@ html{
                    transform: scale(1.2)
                }
            }
+           
            a{
                position: absolute;
                color: $white;
