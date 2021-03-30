@@ -44,24 +44,20 @@ const HomeMovie = (props) => {
         return(
         <div>
             <div>
-                {film.movies?.result.map(movie=>{
+            </div>
+            {/* <Navbar/> */}
+            {/* <Carousel/> */}
+            <Carousel/>
+                {/* {film.movies?.result.map(movie=>{
                     return (
                         <div>
                             <div>
-                                Title : {movie.title}
-                            </div>
-                            <div>
-                                Actors : {movie.actors}
-                            </div>
-                            <div>
-                                <img src={movie.posterUrl} alt="Movie"/>
+                                <img src={movie.posterUrl} alt="pepe"/>
                             </div>
                         </div>
                     )
                 })}
-            </div>
-            {/* <Navbar/> */}
-            {/* <Carousel/> */}
+                */}
             <button onClick={()=>getData()}>Pulsa aqui</button>
             <h1>Estamos en el else</h1>
         </div>
