@@ -1,0 +1,58 @@
+.userContainer {
+
+    background-color: $black;
+    height: 100vh;
+    width: 100%;
+    
+    display: flex;
+    flex-direction: row;
+  
+    
+
+    .logoGeek {
+        height: $mp-x;
+        width: $mp-t;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: left;
+
+        margin: $mp-h;
+        margin-bottom: $mp-t;
+        
+        .userMenu {
+            width: $mp-t;
+            height: $mp-s;
+            margin-top: $mp-p;
+
+            display: flex;
+            flex-direction: column;
+
+        }
+    }
+
+    .dataUser {
+        height: $mp-z;
+        width: $mp-z-b;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        .picProfile {
+            height: $mp-t;
+            width: $mp-t;
+
+            border: solid $darkgreen $size-aa;
+
+            .imgAvatar {
+                height: $mp-t;
+                width: $mp-t;
+            }
+        }
+    }
+
+    
+
+}

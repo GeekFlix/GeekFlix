@@ -1,7 +1,7 @@
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
 
 import Home from './containers/home/home';
-import Register from './containers/Register/Register';
+import Register from './containers/register/register';
 import Payment from './containers/payment/payment';
 import Login from './containers/login/login';
 
@@ -9,6 +9,7 @@ import Login from './containers/login/login';
 import './App.css';
 import './css/main.css';
 import HomeMovie from './containers/home-movie/home-movie';
+import UserProfile from './containers/userProfile/userProfile';
 
 
 
@@ -24,6 +25,7 @@ function App() {
           <Route path='/payment' exact component={Payment}/>
           <Route path='/login' exact component={Login}/>
           <Route path='/home-movie' exact component={HomeMovie}/>
+          <Route path='/user-profile' exact component={UserProfile}/>
         </Switch>
       </BrowserRouter>
 
