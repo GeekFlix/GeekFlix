@@ -1,9 +1,5 @@
-<<<<<<< HEAD:app/src/containers/Register/Register.jsx
-import React, { useState } from 'react'
-=======
 
 import React, {useState} from 'react'
->>>>>>> 83c1f94230abd9868695967933f255d7c941c2e3:app/src/containers/Register/register.jsx
 import { useHistory } from 'react-router';
 // import checkError from '../../tools/error.handlers'
 
