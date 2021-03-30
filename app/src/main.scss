@@ -8,10 +8,10 @@
 @import './containers/login/login.scss';
 @import './containers/payment/payment.scss';
 @import './containers/home/home.scss';
-@import './components/btn/btn.scss';
-
+@import './containers/userProfile/userProfile';
 
 //Importación de componentes con scss
 @import './components/loginModal/loginModal.scss';
 @import './components/registerHeader/registerHeader';
 @import './components/carousel/carousel.scss';
+@import './components/btn/btn.scss';

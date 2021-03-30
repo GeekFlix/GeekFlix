@@ -1,17 +1,43 @@
 
-import React from 'react'
+import React, {useState} from 'react'
 import { useHistory } from 'react-router';
 
 
 import { Form, FormGroup, Label, Input, FormFeedback, FormText, Button } from 'reactstrap';
 
+import axios from 'axios';
+import { connect } from 'react-redux';
+import {REGISTER} from '../../redux/types/userTypes';
 
 
-const Register = () => {
+
+const Register = (props) => {
 
     const history = useHistory();
 
-    const next = () => {
+    //Hoooks
+    const [dataRegister, setRegister] = useState ({
+        userName: '', 
+        email: '', 
+        password: ''
+    })
+
+    //Handlers para el manejo del error y validación de los datos
+    
+
+    const sendData = async () => {
+        
+        console.log('Estamos dentrísimo !!')
+        
+        //Nos traemos por Axios los datos del backend
+        let result = await axios.post(`localhost:3000/user/`, dataRegister);
+
+        //Mandamos los datos de Register por Redux a store
+        props.dispatch({ type: REGISTER, payload: result })
+
+        setRegister(result.data);
+
+        //Salimos de la vista Register hacia Payment
         return setTimeout(() => {
         history.push('/payment')
         }, 1000);
@@ -51,7 +77,7 @@ const Register = () => {
                             <FormFeedback></FormFeedback>
                             <FormText></FormText>
                         </FormGroup>
-                        <Button className="registerButton" onClick={next}>Enviar</Button>
+                        <Button className="registerButton" onClick={() => sendData()}>Enviar</Button>
                     </Form>
                 </div>    
             </div>
@@ -59,4 +85,4 @@ const Register = () => {
     )
 }
 
-export default Register
+export default connect()(Register);
