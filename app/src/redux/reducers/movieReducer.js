@@ -9,7 +9,7 @@ const movieReducer = (state = initialState, action) => {
         case SHOW :
             return{
                 ...state,
-                movie: action.payload.movie
+                movie: action.payload.result
             }
         
         default:
