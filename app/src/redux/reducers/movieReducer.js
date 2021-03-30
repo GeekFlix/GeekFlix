@@ -1,7 +1,7 @@
 import {SHOW} from '../types/movieTypes.js';
 
 const initialState = {
-    movie: {}
+    movie: []
 };
 
 const movieReducer = (state = initialState, action) => {

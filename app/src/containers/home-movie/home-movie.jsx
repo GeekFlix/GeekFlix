@@ -34,46 +34,36 @@ const HomeMovie = (props) => {
     }
     
 
-    // if(!film.movies?.result){
-    //     return (
-    //         <div>
-    //             <h1>Estamos en el primero</h1>
-    //         </div>
-    //     )
-    // }else{
-    //     return(
-    //     <div>
-    //         <div>
-    //             {film.movies?.result.map(movie=>{
-    //                 return (
-    //                     <div>
-    //                         <div>
-    //                             Title : {movie.title}
-    //                         </div>
-    //                         <div>
-    //                             Genre : {movie.genres}
-    //                         </div>
-    //                         <div>
-    //                             <img src={movie.posterUrl} alt="Movie"/>
-    //                         </div>
-
-    //                     </div>
-    //                 )
-    //             })}
-    //         </div>
-    
-             
-    //         <button onClick={()=>getData()}>Pulsa aqui</button>
-    //         <h1>Estamos en el else</h1>
-    //     </div>
-    // )
-    // }
-    return(
+    if(!film.movies?.result){
+        return (
+            <div>
+                <h1>Estamos en el primero</h1>
+            </div>
+        )
+    }else{
+        return(
         <div>
+            <div>
+            </div>
+            {/* <Navbar/> */}
+            {/* <Carousel/> */}
             <Carousel/>
+                {/* {film.movies?.result.map(movie=>{
+                    return (
+                        <div>
+                            <div>
+                                <img src={movie.posterUrl} alt="pepe"/>
+                            </div>
+                        </div>
+                    )
+                })}
+                */}
+            <button onClick={()=>getData()}>Pulsa aqui</button>
+            <h1>Estamos en el else</h1>
         </div>
     )
-            {/* <Navbar/> */}
+    }
+    
     
     
  
