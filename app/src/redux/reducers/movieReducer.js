@@ -6,7 +6,7 @@ const initialState = {
 
 const movieReducer = (state = initialState, action) => {
     switch(action.type){
-        case SHOW :
+        case SHOW:
             return{
                 ...state,
                 movie: action.payload.result

@@ -1,9 +1,6 @@
-
 import React, {useState} from 'react'
 import { useHistory } from 'react-router';
-// import checkError from '../../tools/error.handlers'
-
-
+import checkError from '../../tools/error.handlers'
 
 import { Form, FormGroup, Label, Input, FormFeedback, FormText, Button } from 'reactstrap';
 
@@ -11,65 +8,66 @@ import axios from 'axios';
 import { connect } from 'react-redux';
 import {REGISTER} from '../../redux/types/userTypes';
 
-                     
+
 
 const Register = (props) => {
 
+    
     const history = useHistory();
-
+    
     //Hoooks
     const [dataRegister, setRegister] = useState ({
         userName: '', 
         email: '', 
         password: ''
     })
-
+    
+    const [message,setMessage] = useState('');
+    
     //Handlers para el manejo del error y validación de los datos
     const stateHandler = (event) => {
         setRegister({...dataRegister, 
             [event.target.name]: event.target.type === 'number' ? +event.target.value : event.target.value});
-
+            
     };
     
 
     const sendData = async () => {
-        
-        console.log('Estamos dentrísimo !!')
-        console.log(dataRegister, 'esto es dataRegister')
-        //Nos traemos por Axios los datos del backend
-        let result = await axios.post('http://localhost:3000/user/', dataRegister);
-        
+       try {
+           
+            //Nos traemos por Axios los datos del backend
+            let result = await axios.post('http://localhost:3000/user/', dataRegister);
+            
+            //Mandamos los datos de Register por Redux a store
+            props.dispatch({ type: REGISTER, payload: result })
+            
+            setRegister(result.data);
+            
+            console.log(result.data, 'esto es result.data')
+            
+            //Salimos de la vista Register hacia Payment
+            return setTimeout(() => {
+            history.push('/payment')
+            }, 1000);
+       } catch (error) {
+            setMessage('Something was wrong!!!')
+       } 
 
-        //Mandamos los datos de Register por Redux a store
-        props.dispatch({ type: REGISTER, payload: result })
+        //Error management
+    
+        setMessage('');
+    
+        let errorMessage = checkError("el estado que utilices");
         
-
-        setRegister(result.data);
-
-        
-        console.log(result.data, 'esto es result.data')
-        
-
-        //Salimos de la vista Register hacia Payment
-        return setTimeout(() => {
-        history.push('/payment')
-        }, 1000);
+        setMessage(errorMessage);
+    
+        if(errorMessage){
+            return;
+        }
     };
 
    
-    const [message,setMessage] = useState('');
 
-    //Error management
-
-    // setMessage('');
-
-    // let errorMessage = checkError("el estado que utilices");
-    
-    // setMessage(errorMessage);
-
-    // if(errorMessage){
-    //     return;
-    // }
 
     return (
         <div>

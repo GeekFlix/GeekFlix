@@ -74,11 +74,11 @@ const Login = (props) => {
 
   return (
     <div className="loginBody">
-      <div className="imgGeek"><Link to='/'><img src={logo}/></Link></div>
+      <div className="imgGeek"><Link to='/'><img src={logo} alt="logo"/></Link></div>
       <div className="formContainer">
         <div className="contentLogin">
           <div className="titleLoginUp">Ponte cómodo...</div>
-          <div className="imgLogin"><img src={popcorn} className="img"></img></div>
+          <div className="imgLogin"><img src={popcorn} alt="logo" className="img"></img></div>
         </div>
         <div className="inputs">
           <div>

@@ -31,7 +31,7 @@ const checkError = (dataState) => {
                     };
                     // eslint-disable-next-line
                     if(! /^4[0-9]{12}(?:[0-9]{3})?$/.test(dataState[field])){
-                        return 'sdsdfsdfsd';
+                        return 'escribir solo números';
                     };
 
                 break;    

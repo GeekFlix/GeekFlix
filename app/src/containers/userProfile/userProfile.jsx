@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import {useHistory} from 'react-router-dom';
+// import {useHistory} from 'react-router-dom';
 import logo from '../../assets/img/geekflix-green.png';
 import avatar1 from '../../assets/img/avatar1.png';
 
@@ -10,7 +10,7 @@ import {connect} from 'react-redux';
 
 const UserProfile = (props) => {
 
-    const history = useHistory();
+    // const history = useHistory();
 
     //Estado de dataUser
     const [dataUser, setUser] = useState ({
@@ -39,7 +39,7 @@ const UserProfile = (props) => {
             }
 
             let result = await axios.put(`http://localhost:3001/patients/${id}`, result.data, { headers: { authorization: token } });
-
+                console.log("Laurinha revisinha",result.data)
             alert('Guardado con éxito!!!')
         } catch (error) {
             console.log(error);
@@ -50,14 +50,14 @@ const UserProfile = (props) => {
         <div>
             <div className="userContainer">
                 <div className="logoGeek">
-                    <img src={logo}></img>
+                    <img src={logo} alt=""></img>
                     <div className="userMenu">
                         <Button>Mis datos</Button>
                         <Button>Mis películas</Button>
                     </div>
                 </div>
                 <div className="dataUser">
-                    <div className="picProfile"><img src={avatar1} className="imgAvatar"></img></div>
+                    <div className="picProfile"><img src={avatar1} alt="" className="imgAvatar"></img></div>
                     <div className="cardData">
                         <Form>
                             <FormGroup className="registerFormGroup">
