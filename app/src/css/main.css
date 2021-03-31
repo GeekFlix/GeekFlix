@@ -413,28 +413,45 @@
         height: 224px;
         width: 224px; }
 
-.btnSomething {
-  background-color: #295f4e; }
-  .btnSomething:hover {
-    background-color: #6db193; }
-
-.modal {
-  width: 15em;
-  height: 30em;
+.containerAdmin {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 50em;
   background-color: #323232; }
-
-.header .modal-header {
-  height: 5em;
-  font-size: 2em;
-  background-color: #323232; }
-
-.body {
-  width: 15em;
-  height: 30em;
-  background-color: #323232; }
-
-.footer {
-  background-color: #323232; }
+  .containerAdmin .headerAdmin {
+    width: 100%;
+    height: 4em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; }
+  .containerAdmin .btnStyle {
+    margin-left: 2em;
+    margin-right: 2em;
+    width: 6em;
+    height: 3em; }
+  .containerAdmin .nameStyle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 2em;
+    color: #f4e5c2; }
+  .containerAdmin .listStyle {
+    width: 20em;
+    height: 20em;
+    margin-top: 2em;
+    color: #f4e5c2;
+    margin-right: 8em; }
+  .containerAdmin .userData {
+    text-align: center;
+    width: 25em;
+    height: 5em;
+    color: #f4e5c2; }
+  .containerAdmin .showData {
+    margin: .5em; }
+  .containerAdmin .id {
+    cursor: url(papelera-icono.png), auto !important; }
 
 html {
   scroll-behavior: smooth; }
