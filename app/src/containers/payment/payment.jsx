@@ -6,7 +6,7 @@ import { Button } from 'reactstrap';
 import checkError from '../../tools/error.handlers'
 
 import {connect} from 'react-redux';
-import {UPDATE} from '../../redux/types/userTypes';
+import {SAVE} from '../../redux/types/paymentTypes';
 
 
 
@@ -40,7 +40,7 @@ const Payment = (props) => {
         try {
 
             const data = await axios.post('http://localhost:3000/payment/', payment)
-            props.dispatch({type: UPDATE, payload: data.data});
+            props.dispatch({type: SAVE, payload: data.data});
             console.log(data);
             
             return setTimeout(() => {

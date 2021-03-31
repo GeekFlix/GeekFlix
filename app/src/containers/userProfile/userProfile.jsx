@@ -1,13 +1,13 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState} from 'react'
 // import {useHistory} from 'react-router-dom';
 import logo from '../../assets/img/geekflix-green.png';
 import avatar1 from '../../assets/img/avatar1.png';
 
-import { Form, FormGroup, Label, Input, FormFeedback, FormText, Button } from 'reactstrap';
+import { Form, FormGroup, Label, Input, Button } from 'reactstrap';
 
 import axios from 'axios';
 import {connect} from 'react-redux';
-// import {UPDATE} from '../../redux/types/userTypes';
+
 
 const UserProfile = (props) => {
 
@@ -16,7 +16,11 @@ const UserProfile = (props) => {
     //Estado de dataUser
     const [dataUser, setUser] = useState ({
         userName: '', 
-        email: '', 
+        email: ''
+    })
+
+    //Estado de dataPayment
+    const [dataPayment, setPayment] = useState ({
         visa: '',
         month: '',
         year: '',
@@ -24,31 +28,41 @@ const UserProfile = (props) => {
         cardName: ''
     })
 
-
     //Handlers
-    const handleState = (event) => {
+    const handleStateUser = (event) => {
         setUser({...dataUser, [event.target.name]: event.target.type === "number" ? + event.target.value : event.target.value})
     };
 
-    //Nos traemos los datos por Redux para meter en placeholder
-    useEffect(() => {
-       
-    }, [])
+    const handleStatePayment = (event) => {
+        setPayment({...dataPayment, [event.target.name]: event.target.type === "number" ? + event.target.value : event.target.value})
+    }
+
+    console.log(props, 'esto son las putas props neno')
 
     //Función para cambiar los datos
     const updateUser = async () => {
+        console.log('estamos dentro de update')
         try {
 
             let id = props.user?.id;
             let token = props.user?.token;
 
-            if (!token) {
-                return;
-            }
+            // if (!token) {
+            //     return;
+            // }
 
-            let result = await axios.put(`http://localhost:3000/user/${id}` || `http://localhost:3000/payment/${id}`, dataUser, { headers: { authorization: token } });
-                console.log("Laurinha revisinha",result.data)
+            if (setUser){
+                console.log('estamos dentro de if props.user')
+                let result = await axios.put(`http://localhost:3000/user/${id}`, dataUser, { headers: { authorization: token } });
+                setUser(result.data)
+            } else if (props.payment?.result){
+                console.log('estamos dentro de if props.payment')
+                let result = await axios.put (`http://localhost:3000/payment/${id}`, dataPayment, { headers: { authorization: token } });
+                setPayment(result.data)
+            } 
+
             alert('Guardado con éxito!!!')
+
         } catch (error) {
             console.log(error);
         }
@@ -71,39 +85,33 @@ const UserProfile = (props) => {
                             <FormGroup className="registerFormGroup">
                                 <Label for="userName">Username </Label>
                                 <br></br>
-                                <Input type="text" id="userName" name="userName" placeholder={props.user.userName} onChange={handleState}/>
-                                <FormFeedback></FormFeedback>
-                                <FormText></FormText>
+                                <Input type="text" id="user" name="userName" placeholder={props.user.userName} onChange={handleStateUser}/>
                             </FormGroup>
                             <FormGroup>
                                 <Label for="email">Email </Label>
                                 <br></br>
-                                <Input type="text" id="email" name="email" placeholder={props.user.email} onChange={handleState}/>
-                                <FormFeedback></FormFeedback>
-                                <FormText></FormText>
+                                <Input type="text" id="user" name="email" placeholder={props.user.email} onChange={handleStateUser}/>
                             </FormGroup>
                             <FormGroup>
                                 <Label for="visa">VISA/Mastercard Número </Label>
                                 <br></br>
-                                <Input type="text"  name="visaInput" placeholder={props.payment.visa} onChange={handleState}/>
+                                <Input type="text" id="payment" name="visa" placeholder={props.payment.result.visa} onChange={handleStatePayment}/>
                             </FormGroup>
                             <FormGroup>
                                 <Label for="date">Fecha de Vencimiento(MM/AAAA)</Label>
                                 <br></br>
-                                <Input type="date" id="month" name="month" placeholder={props.payment.month} onChange={handleState}/>
-                                <Input type="date" id="year" name="year" placeholder={props.payment.year} onChange={handleState}/>                              
+                                <Input type="date" id="payment" name="month" placeholder={props.payment.result.month} onChange={handleStatePayment}/>
+                                <Input type="date" id="payment" name="year" placeholder={props.payment.result.year} onChange={handleStatePayment}/>                              
                             </FormGroup>
                             <FormGroup>
                                 <Label for="cvv">CVV </Label>
                                 <br></br>
-                                <Input type="number" id="cvv" name="cvv" placeholder={props.payment.cvv} onChange={handleState}/>
+                                <Input type="number" id="payment" name="cvv" placeholder={props.payment.result.cvv} onChange={handleStatePayment}/>
                             </FormGroup>
                             <FormGroup>
                                 <Label for="cardName">Nombre de la Tarjeta </Label>
                                 <br></br>
-                                <Input type="text" id="cardName" name="cardName" placeholder={props.payment.cardName} onChange={handleState}/>
-                                <FormFeedback></FormFeedback>
-                                <FormText></FormText>
+                                <Input type="text" id="payment" name="cardName" placeholder={props.payment.result.cardName} onChange={handleStatePayment}/>
                             </FormGroup>
                             <Button className="updateButton" onClick={() => updateUser()}>Enviar</Button>
                         </Form>
@@ -118,7 +126,7 @@ const mapStateToProps = (state) => {
     return {
         user: state.userReducer.user, 
         token: state.userReducer.token, 
-        payment: state.userReducer.payment
+        payment: state.paymentReducer.payment
     }
 }
 
