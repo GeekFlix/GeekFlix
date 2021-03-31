@@ -5,11 +5,12 @@ import axios from 'axios'
 import { Button } from 'reactstrap';
 import checkError from '../../tools/error.handlers'
 
+import {connect} from 'react-redux';
+import {UPDATE} from '../../redux/types/userTypes';
 
-// import { Link } from 'react-router-dom';
 
 
-const Payment = () => {
+const Payment = (props) => {
 
     const history = useHistory();
 
@@ -39,6 +40,7 @@ const Payment = () => {
         try {
 
             const data = await axios.post('http://localhost:3000/payment/', payment)
+            props.dispatch({type: UPDATE, payload: data.data});
             console.log(data);
             
             return setTimeout(() => {
@@ -148,4 +150,4 @@ const Payment = () => {
     )
 }
 
-export default Payment
+export default connect()(Payment)
