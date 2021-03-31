@@ -23,6 +23,6 @@ const  adminReducer = (state = initialState, action) => {
     default:
       return state;
   }
-}
+};
 
 export default adminReducer;

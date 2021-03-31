@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import {connect} from 'react-redux'
+// eslint-disable-next-line
 import Carousel from '../../components/carousel/carousel';
 //import Navbar from '../../components/navbar/navbar';
 import axios from 'axios';
@@ -15,7 +16,7 @@ const HomeMovie = (props) => {
     useEffect(()=>{
 
         getData();
-
+        // eslint-disable-next-line
     },[])
 
     const getData = async () =>{

@@ -7,6 +7,7 @@ import { Link, useHistory } from 'react-router-dom';
 import { Button } from 'reactstrap';
 
 import Input from '../../components/input/input';
+import checkError from '../../tools/error.handlers'
 
 import logo from '../../assets/img/geekflix-green.png';
 import popcorn from '../../assets/img/popcorn.jpg';
@@ -23,9 +24,12 @@ const Login = (props) => {
         userType: 'Client'
     }); 
 
+    const [message,setMessage] = useState('');
+
     const handleOnKeyDown = (event) => {
         if(event.keyCode === 13) sendLogin()
     };
+
 
     const handleState = (event) => {
         setLogin({...dataLogin, [event.target.name]: event.target.type === "number" ? + event.target.value : event.target.value})
@@ -50,18 +54,31 @@ const Login = (props) => {
             };
 
         } catch (error) {
-            alert('No estas registrado??')
+            setMessage('Email or password not found');
         };
+
+        //Error management
+
+        setMessage('');
+
+        let errorMessage = checkError(dataLogin);
+        
+        setMessage(errorMessage);
+
+        if(errorMessage){
+            return;
+        };
+
+
     };
 
   return (
     <div className="loginBody">
-      <div className="imgGeek"><img src={logo}/></div>
-      {/* <div className="emptyContainer"></div> */}
+      <div className="imgGeek"><Link to='/'><img src={logo} alt="logo"/></Link></div>
       <div className="formContainer">
         <div className="contentLogin">
           <div className="titleLoginUp">Ponte cómodo...</div>
-          <div className="imgLogin"><img src={popcorn} className="img"></img></div>
+          <div className="imgLogin"><img src={popcorn} alt="logo" className="img"></img></div>
         </div>
         <div className="inputs">
           <div>
@@ -77,11 +94,12 @@ const Login = (props) => {
             <option value="Admin">Admin</option>
         </select>
           <div className="buttonStyle">
-            <Button onClick={()=> sendLogin()} className="btnStyle">Enviar</Button>
-            <Link className="" to='/Register'><p>Regístrate</p></Link> 
+            <Button onKeyDown={handleOnKeyDown} onClick={()=> sendLogin()} className="btnStyle">Enviar</Button>
           </div>
+            <Link className="" to='/Register'><p>Si aún ni eres usuario, Regístrate!!!</p></Link> 
+            <div className='errorMessage'>{message}</div>       
           <div className="titleLoginDown"><p>El mejor contenido en Streaming, para ti</p></div>
-        </div>         
+        </div>  
       </div>
     </div>
   );

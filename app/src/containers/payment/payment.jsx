@@ -3,8 +3,10 @@ import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom';
 import axios from 'axios'
 import { Button } from 'reactstrap';
+import checkError from '../../tools/error.handlers'
 
-import { Link } from 'react-router-dom';
+
+// import { Link } from 'react-router-dom';
 
 
 const Payment = () => {
@@ -17,7 +19,10 @@ const Payment = () => {
         year: '',
         cvv: '',
         cardName: ''
-    })
+    });
+
+    const [message,setMessage] = useState('');
+
 
     const stateHandler = (event) => {
         setPayment({...payment, 
@@ -30,16 +35,32 @@ const Payment = () => {
     }
 
     const sendData = async () => {
-        console.log('YEEEAh!');
+
+        try {
+
+            const data = await axios.post('http://localhost:3000/payment/', payment)
+            console.log(data);
+            
+            return setTimeout(() => {
+                history.push('/login')
+            }, 1000);
+        } catch (error) {
+            setMessage('Something run wrong!!!');
+        };
         
-        const data = await axios.post('http://localhost:3000/payment/', payment)
-        console.log(data);
-
-        return setTimeout(() => {
-            history.push('/login')
-        }, 1000);
-
-    }
+        // Error management
+        
+        setMessage('');
+        
+        let errorMessage = checkError(payment);
+        
+        console.log(errorMessage)
+        setMessage(errorMessage);
+        
+        if(errorMessage){
+            return;
+        };
+    };
 
     return (
         <div className="paymentContainer">
@@ -119,6 +140,7 @@ const Payment = () => {
                 </div>
                 <input type="text" className="nameInput" maxLength="30" name="cardName" onChange={stateHandler} onKeyDown={handleOnKeyDown}/>
             </div>
+            <div className='errorMessage'>{message}</div>       
             <div className="payBtn">
                 <Button onClick={()=> sendData()}>Enviar</Button>            
             </div>
