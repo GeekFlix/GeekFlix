@@ -28,36 +28,41 @@ const UserProfile = (props) => {
         cardName: ''
     })
 
+
     //Handlers
     const handleStateUser = (event) => {
-        setUser({...dataUser, [event.target.name]: event.target.type === "number" ? + event.target.value : event.target.value})
+        setUser({...dataUser, [event.target.name]: event.target.type === "number" ? + event.target.value : event.target.value});
+        
     };
 
     const handleStatePayment = (event) => {
         setPayment({...dataPayment, [event.target.name]: event.target.type === "number" ? + event.target.value : event.target.value})
+      
     }
 
-    console.log(props, 'esto son las putas props neno')
 
     //Función para cambiar los datos
     const updateUser = async () => {
         console.log('estamos dentro de update')
         try {
 
-            let id = props.user?.id;
+            let idUser = props.user?._id;
+            let idPayment = props.payment.result?._id;
             let token = props.user?.token;
 
             // if (!token) {
             //     return;
             // }
 
-            if (setUser){
+            if (dataUser.userName !== ''){
                 console.log('estamos dentro de if props.user')
-                let result = await axios.put(`http://localhost:3000/user/${id}`, dataUser, { headers: { authorization: token } });
+                let result = await axios.put(`http://localhost:3000/user/${idUser}`, dataUser, { headers: { authorization: token } });
                 setUser(result.data)
-            } else if (props.payment?.result){
+                console.log(result.data, 'esto es result.dtat')
+            } else {
+
                 console.log('estamos dentro de if props.payment')
-                let result = await axios.put (`http://localhost:3000/payment/${id}`, dataPayment, { headers: { authorization: token } });
+                let result = await axios.put (`http://localhost:3000/payment/${idPayment}`, dataPayment, { headers: { authorization: token } });
                 setPayment(result.data)
             } 
 
