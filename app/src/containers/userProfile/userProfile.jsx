@@ -38,7 +38,7 @@ const UserProfile = (props) => {
                 return;
             }
 
-            let result = await axios.put(`http://localhost:3001/patients/${id}`, result.data, { headers: { authorization: token } });
+            let result = await axios.put(`http://localhost:3001/patients/${id}`, dataUser, { headers: { authorization: token } });
                 console.log("Laurinha revisinha",result.data)
             alert('Guardado con éxito!!!')
         } catch (error) {
