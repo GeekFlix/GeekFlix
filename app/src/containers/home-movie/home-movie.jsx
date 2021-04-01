@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import {connect} from 'react-redux'
+import {connect} from 'react-redux';
 // eslint-disable-next-line
 import Carousel from '../../components/carousel/carousel';
 //import Navbar from '../../components/navbar/navbar';
@@ -18,7 +18,7 @@ const HomeMovie = (props) => {
 
         getData();
         // eslint-disable-next-line
-    },[])
+    },[]);
 
     const getData = async () =>{
         const filmCollection = await axios.get('http://localhost:3000/movie/');
@@ -27,7 +27,7 @@ const HomeMovie = (props) => {
         setFilm({
             ...film, movies: filmCollection.data
         });
-    }
+    };
     
     if(!film.movies?.result){
         return (
@@ -58,15 +58,15 @@ const HomeMovie = (props) => {
             {/* <Navbar/> */}
             {/* <Carousel/> */}
         </div>
-    )
-    }
-}
+        )
+    };
+};
 
-const mapStateToProps = state=>{
+const mapStateToProps = state => {
     return{
         movie: state.movieReducer.movie,
         search: state.movieReducer.query
     }
 }
 
-export default connect (mapStateToProps)(HomeMovie)
+export default connect (mapStateToProps)(HomeMovie);
