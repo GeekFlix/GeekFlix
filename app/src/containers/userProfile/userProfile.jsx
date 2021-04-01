@@ -3,30 +3,34 @@ import React, {useState} from 'react'
 import logo from '../../assets/img/geekflix-green.png';
 import avatar1 from '../../assets/img/avatar1.png';
 
+import {useHistory} from 'react-router-dom';
 import { Form, FormGroup, Label, Input, Button } from 'reactstrap';
 
 import axios from 'axios';
 import {connect} from 'react-redux';
+import {UPDATE} from '../../redux/types/userTypes';
+import {SAVE} from '../../redux/types/paymentTypes';
 
 
 const UserProfile = (props) => {
 
-    // const history = useHistory();
+    const history = useHistory();
 
     //Estado de dataUser
     const [dataUser, setUser] = useState ({
-        userName: '', 
-        email: ''
+        userName: props.user.userName, 
+        email: props.user.email
     })
 
     //Estado de dataPayment
     const [dataPayment, setPayment] = useState ({
-        visa: '',
-        month: '',
-        year: '',
-        cvv: '',
-        cardName: ''
+        visa: props.payment.result.visa,
+        month: props.payment.result.month,
+        year: props.payment.result.year,
+        cvv: props.payment.result.cvv,
+        cardName: props.payment.result.cardName
     })
+
 
 
     //Handlers
@@ -40,7 +44,8 @@ const UserProfile = (props) => {
       
     }
 
-
+    console.log(dataUser, 'datauser')
+    console.log(dataPayment)
     //Función para cambiar los datos
     const updateUser = async () => {
         console.log('estamos dentro de update')
@@ -50,23 +55,27 @@ const UserProfile = (props) => {
             let idPayment = props.payment.result?._id;
             let token = props.user?.token;
 
-            // if (!token) {
-            //     return;
-            // }
-
             if (dataUser.userName !== ''){
-                console.log('estamos dentro de if props.user')
-                let result = await axios.put(`http://localhost:3000/user/${idUser}`, dataUser, { headers: { authorization: token } });
-                setUser(result.data)
-                console.log(result.data, 'esto es result.dtat')
-            } else {
 
                 console.log('estamos dentro de if props.payment')
-                let result = await axios.put (`http://localhost:3000/payment/${idPayment}`, dataPayment, { headers: { authorization: token } });
-                setPayment(result.data)
+                let resultPayment = await axios.put (`http://localhost:3000/payment/${idPayment}`, dataPayment, { headers: { authorization: token } });
+                setPayment(resultPayment.data)
+
+                props.dispatch({type: SAVE, payload: resultPayment.data});
+
+                console.log('estamos dentro de if props.user')
+                let resultUser = await axios.put(`http://localhost:3000/user/${idUser}`, dataUser, { headers: { authorization: token } });
+                setUser(resultUser.data)
+
+                props.dispatch({type: UPDATE, payload: resultUser.data});
+
+
+                console.log(resultUser.data, 'esto es result.dtatUSER')
+                console.log(resultPayment.data, 'esto es result.dtat')
             } 
 
             alert('Guardado con éxito!!!')
+            history.push('/login');
 
         } catch (error) {
             console.log(error);
@@ -90,33 +99,76 @@ const UserProfile = (props) => {
                             <FormGroup className="registerFormGroup">
                                 <Label for="userName">Username </Label>
                                 <br></br>
-                                <Input type="text" id="user" name="userName" placeholder={props.user.userName} onChange={handleStateUser}/>
+                                <Input type="text" id="user" name="userName" defaultValue={props.user.userName} onChange={handleStateUser}/>
                             </FormGroup>
                             <FormGroup>
                                 <Label for="email">Email </Label>
                                 <br></br>
-                                <Input type="text" id="user" name="email" placeholder={props.user.email} onChange={handleStateUser}/>
+                                <Input type="text" id="user" name="email" defaultValue={props.user.email} onChange={handleStateUser}/>
                             </FormGroup>
                             <FormGroup>
                                 <Label for="visa">VISA/Mastercard Número </Label>
                                 <br></br>
-                                <Input type="text" id="payment" name="visa" placeholder={props.payment.result.visa} onChange={handleStatePayment}/>
+                                <Input type="text" id="payment" name="visa" defaultValue={props.payment.result.visa} onChange={handleStatePayment}/>
                             </FormGroup>
                             <FormGroup>
-                                <Label for="date">Fecha de Vencimiento(MM/AAAA)</Label>
-                                <br></br>
-                                <Input type="date" id="payment" name="month" placeholder={props.payment.result.month} onChange={handleStatePayment}/>
-                                <Input type="date" id="payment" name="year" placeholder={props.payment.result.year} onChange={handleStatePayment}/>                              
+                            <div className="date-field">
+                                <div className="dateText">
+                                    Fecha de vencimiento (MM/AAAA)
+                                </div>
+                                <div className="months">
+                                    <select name="month" defaultValue={props.payment.result.month} onChange={handleStatePayment}>
+                                        <option value="DEFAULT" disabled>- Select One -</option>
+                                        <option value="january">01</option>
+                                        <option value="february">02</option>
+                                        <option value="march">03</option>
+                                        <option value="april">04</option>
+                                        <option value="may">05</option>
+                                        <option value="june">06</option>
+                                        <option value="july">07</option>
+                                        <option value="august">08</option>
+                                        <option value="september">09</option>
+                                        <option value="october">10</option>
+                                        <option value="november">11</option>
+                                        <option value="december">12</option>
+                                    </select>
+                                </div>
+                                <div className="years">
+                                    <select name="year" defaultValue={props.payment.result.year} onChange={handleStatePayment}>
+                                        <option value="DEFAULT" disabled>- Select One -</option>
+                                        <option value="2021">2021</option>
+                                        <option value="2022">2022</option>
+                                        <option value="2023">2023</option>
+                                        <option value="2024">2024</option>
+                                        <option value="2025">2025</option>
+                                        <option value="2026">2026</option>
+                                        <option value="2027">2027</option>
+                                        <option value="2028">2028</option>
+                                        <option value="2029">2029</option>
+                                        <option value="2030">2030</option>
+                                        <option value="2031">2031</option>
+                                        <option value="2032">2032</option>
+                                        <option value="2033">2033</option>
+                                        <option value="2034">2034</option>
+                                        <option value="2035">2035</option>
+                                        <option value="2036">2036</option>
+                                        <option value="2037">2037</option>
+                                        <option value="2038">2038</option>
+                                        <option value="2039">2039</option>
+                                        <option value="2040">2040</option>
+                                    </select>
+                                </div>
+                            </div>                            
                             </FormGroup>
                             <FormGroup>
                                 <Label for="cvv">CVV </Label>
                                 <br></br>
-                                <Input type="number" id="payment" name="cvv" placeholder={props.payment.result.cvv} onChange={handleStatePayment}/>
+                                <Input type="number" id="payment" name="cvv" defaultValue={props.payment.result.cvv} onChange={handleStatePayment}/>
                             </FormGroup>
                             <FormGroup>
                                 <Label for="cardName">Nombre de la Tarjeta </Label>
                                 <br></br>
-                                <Input type="text" id="payment" name="cardName" placeholder={props.payment.result.cardName} onChange={handleStatePayment}/>
+                                <Input type="text" id="payment" name="cardName" defaultValue={props.payment.result.cardName} onChange={handleStatePayment}/>
                             </FormGroup>
                             <Button className="updateButton" onClick={() => updateUser()}>Enviar</Button>
                         </Form>
