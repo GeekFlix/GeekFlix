@@ -16,7 +16,7 @@ const HomeAdmin = (props) => {
 
     const logOut =  () => {
 
-        props.dispatch({ type: ADMINLOGOUT, payload : {}});
+        props.dispatch({type: ADMINLOGOUT, payload : {}});
     
         setTimeout(()=> {
             history.push('/');
@@ -38,13 +38,12 @@ const HomeAdmin = (props) => {
         const selectUser = window.confirm('You are about to delete this user, are you sure?');
 
         if(selectUser === true){
-            let result = await axios.delete(`http://localhost:3000/user/${user._id}`)
+             await axios.delete(`http://localhost:3000/user/${user._id}`)
             showUsers()
         };
     };
 
-    if(!props.admin.useName) {
-
+    if(props.admin?.email) {
         return(
             <div className="containerAdmin">
                 <div className="headerAdmin">
@@ -74,8 +73,8 @@ const HomeAdmin = (props) => {
                                     users.listUsers.map(user => {
 
                                         return(
-                                            <div onClick={() => deleteUser(user)} className="userData" key={user.userName}>
-                                                <div className="showData id">ID del usuario: {user._id}</div>
+                                            <div className="userData" key={user.userName}>
+                                                <div onClick={() => deleteUser(user)}  className="showData id">ID del usuario: {user._id}</div>
                                                 <div className="showData">Nombre de usuario: {user.userName}</div>
                                                 <div className="showData">Email: {user.email}</div><br></br>
                                             </div>
@@ -91,7 +90,7 @@ const HomeAdmin = (props) => {
     }else {
         return (
             <div>
-                No eres el Admin mejor te piras
+                No eres el Admin mejor te piras...Plata o Plomo!!!
             </div>
         )
     }
@@ -101,39 +100,8 @@ const HomeAdmin = (props) => {
 const mapStateToProps = state => {
     return {
       admin : state.adminReducer.admin,
-      user : state.userReducer.user
     }
   };
   
   export default connect(mapStateToProps)(HomeAdmin)
-
-
-  //     if(props.admin.userName) {
-//         console.log(users.listUsers.result)
-//         return (
-//             <div className="containerAdmin">
-//                 <div className="headerAdmin">
-//                     <div>
-//                         <Button className="btnStyle" onClick={()=> logOut()} className="btnStyle">Salir</Button>
-//                     </div>
-//                     <div className="nameStyle">
-//                         {props.admin.userName}
-//                     </div>
-//                     <div>
-//                         <Button className="btnStyle" onClick={()=> showUsers()} className="btnStyle">Mostrar usuarios</Button>
-//                     </div>
-//                 </div>
-//                 <div>
-//                 </div>
-//             </div>
-//         )
-        
-//     }else {
-//         return (
-//             <div>
-//                 No eres el Admin mejor te piras
-//             </div>
-//         )
-//     }
-
 
