@@ -413,28 +413,17 @@
         height: 224px;
         width: 224px; }
 
-.btnSomething {
-  background-color: #295f4e; }
-  .btnSomething:hover {
-    background-color: #6db193; }
-
-.modal {
-  width: 15em;
-  height: 30em;
-  background-color: #323232; }
-
-.header .modal-header {
-  height: 5em;
-  font-size: 2em;
-  background-color: #323232; }
-
-.body {
-  width: 15em;
-  height: 30em;
-  background-color: #323232; }
-
-.footer {
-  background-color: #323232; }
+.homeMovie {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #323232;
+  height: 100vh;
+  width: 100%; }
+  .homeMovie .searchResult {
+    display: grid;
+    width: 100em;
+    grid-template-columns: repeat(3, auto); }
 
 html {
   scroll-behavior: smooth; }
@@ -491,3 +480,14 @@ html {
   .btnClick:hover {
     background-color: #6db193;
     transition: 0.7s; }
+
+.searchContainer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 8vh;
+  margin-right: 2em; }
+  .searchContainer .searchBox {
+    display: flex;
+    width: 20em;
+    border-radius: 0.5em; }
