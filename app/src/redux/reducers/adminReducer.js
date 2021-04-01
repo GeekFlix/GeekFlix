@@ -17,7 +17,7 @@ const  adminReducer = (state = initialState, action) => {
     case ADMINLOGOUT:
       return {
           ...state,
-          admin: initialState,
+          admin: initialState
       }
           
     default:

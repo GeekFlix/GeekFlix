@@ -30,6 +30,7 @@ const Payment = (props) => {
             [event.target.name]: event.target.type === 'number' ? +event.target.value : event.target.value});
 
     };
+    
 
     const handleOnKeyDown = ( event ) => {
         if(event.keyCode === 13) sendData()

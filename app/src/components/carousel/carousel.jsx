@@ -1,10 +1,24 @@
-import React from 'react';
-import {connect} from 'react-redux'
+import React, {useState} from 'react';
+import {connect} from 'react-redux';
+import { RENTALS } from '../../redux/types/userTypes';
+
 
 
 
 const Carousel = (props) => {
 
+    const [rental, setRental] = useState({
+        rentalMovies: []
+    });
+
+    props.dispatch({type: RENTALS, payload: rental})
+
+    const handleState = (event) => {
+        setRental({...rental, rentalMovies: event})
+    };
+    console.log(rental)
+
+  
     console.log('PROPSSSSS!!',props.movie);
 
     const thriller = props.movie.filter(objectMovie => objectMovie.genres.includes('Thriller'));
@@ -12,7 +26,6 @@ const Carousel = (props) => {
     const animation = props.movie.filter(objectMovie => objectMovie.genres.includes('Animation'));
     const sport = props.movie.filter(objectMovie => objectMovie.genres.includes('Sport'));
     const biography = props.movie.filter(objectMovie => objectMovie.genres.includes('Biography'));
-
 
     console.log(animation,'MAL VAMOS!');
     
@@ -31,7 +44,6 @@ const Carousel = (props) => {
                         <a href="#section3">{'<'}</a>
                             {sport.map(movie => 
                                 <div className="item" key={movie.id}>
-                                    
                                     <img src={movie.posterUrl}/>
                                 </div>
                             )}
@@ -87,9 +99,10 @@ const Carousel = (props) => {
 
 const mapStateToProps = state=>{
     return{
-        movie: state.movieReducer.movie
-    }
+        movie: state.movieReducer.movie,
+        user: state.userReducer.user
+    };
 
-}
+};
 
 export default connect (mapStateToProps)(Carousel)

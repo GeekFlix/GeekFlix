@@ -1,4 +1,5 @@
-import { LOGIN, LOGOUT, REGISTER, UPDATE } from '../types/userTypes'
+import { LOGIN, LOGOUT, REGISTER, UPDATE, RENTALS } from '../types/userTypes'
+
 
 const initialState = {
   user: {},
@@ -18,7 +19,12 @@ const userReducer = (state = initialState, action) => {
         ...state,
         user: initialState,
       }
-    case REGISTER: 
+      case REGISTER: 
+      return {
+        ...state, 
+        user: action.payload
+      }
+      case RENTALS: 
       return {
         ...state, 
         user: action.payload 

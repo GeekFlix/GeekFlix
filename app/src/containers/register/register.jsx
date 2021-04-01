@@ -33,6 +33,7 @@ const Register = (props) => {
     
 
     const sendData = async () => {
+        
        try {
            
             //Nos traemos por Axios los datos del backend

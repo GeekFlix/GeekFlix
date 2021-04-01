@@ -1,7 +1,8 @@
-import {SHOW} from '../types/movieTypes.js';
+import { SHOW, SEARCH } from '../types/movieTypes.js';
 
 const initialState = {
-    movie: []
+    movie: [],
+    query: ''
 };
 
 const movieReducer = (state = initialState, action) => {
@@ -11,6 +12,11 @@ const movieReducer = (state = initialState, action) => {
                 ...state,
                 movie: action.payload.result
             }
+        case SEARCH : 
+            return {
+                ...state,
+                query : action.payload
+            }    
         
         default:
             return state

@@ -1,4 +1,4 @@
-import { SAVE } from '../types/paymentTypes';
+import { SAVE, UPDATECARD } from '../types/paymentTypes';
 
 const initialState = {
   payment: {},
@@ -14,12 +14,11 @@ const paymentReducer = (state = initialState, action) => {
         payment: action.payload
         
       }
-    // case UPDATECARD:
-    //   return {
-    //     ...state, 
-    //     payment: action.payload 
-    //   }
-            
+    case UPDATECARD:
+      return {
+        ...state, 
+        payment: action.payload 
+      }       
     default:
       return state;
   }
