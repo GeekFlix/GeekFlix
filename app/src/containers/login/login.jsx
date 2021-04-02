@@ -6,7 +6,7 @@ import { ADMINLOGIN } from "../../redux/types/adminTypes";
 import { Link, useHistory } from 'react-router-dom';
 import { Button } from 'reactstrap';
 
-import Input from '../../components/input/input';
+//import {Input} from '../../components/input/input';
 import checkError from '../../tools/error.handlers'
 
 import logo from '../../assets/img/geekflix-green.png';
@@ -83,11 +83,11 @@ const Login = (props) => {
         <div className="inputs">
           <div>
             <p>Email</p>
-            <Input type="email" className="email" maxLength="50" name="email" onChange={handleState} onKeyDown={handleOnKeyDown}/>
+            <input type="email" className="email" maxLength="50" name="email" onChange={handleState} onKeyDown={handleOnKeyDown}/>
           </div>
           <div>
             <p>Password</p>
-            <Input type="password" className="password" maxLength="50" name="password" onChange={handleState} onKeyDown={handleOnKeyDown}/>
+            <input type="password" className="password" maxLength="50" name="password" onChange={handleState} onKeyDown={handleOnKeyDown}/>
           </div>
         <select className="select" name="userType" defaultValue={'DEFAULT'} onChange={handleState}>
             <option value="Client">Client</option>
