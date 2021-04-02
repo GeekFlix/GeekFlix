@@ -14,8 +14,8 @@ const UserProfile = (props) => {
 
     //Estado de dataUser
     const [dataUser, setUser] = useState ({
-        userName: props.user.result.userName, 
-        email: props.user.result.email
+        userName: props.user.userName, 
+        email: props.user.email
     })
 
     //Estado de dataPayment
@@ -26,6 +26,21 @@ const UserProfile = (props) => {
         cvv: props.payment.result.cvv,
         cardName: props.payment.result.cardName
     })
+
+    //useEffect para montar el componente
+    // useEffect(() => {
+    //    props.user.userName = props.user.result.userName;
+    //    props.user.email = props.user.result.email;
+    // }, [dataUser])
+
+    // useEffect(() => {
+    //     setUser({
+    //         userName: props.user.result.userName,
+    //         email: props.user.result.email
+    //     });
+    //  },)
+
+    
 
     //Handlers
     const handleStateUser = (event) => {
@@ -38,12 +53,13 @@ const UserProfile = (props) => {
       
     }
 
+    console.log(props, 'estas son las putas props ')
     //Función para cambiar los datos
     const updateUser = async () => {
         console.log('estamos dentro de update')
         try {
 
-            let idUser = props.user.result?._id;
+            let idUser = props.user._id;
             let idPayment = props.payment.result?._id;
             let token = props.user?.token;
 
@@ -53,17 +69,27 @@ const UserProfile = (props) => {
                 props.dispatch({type: SAVE, payload: resultPayment.data});
 
                 let resultUser = await axios.put(`http://localhost:3000/user/${idUser}`, dataUser, { headers: { authorization: token } });
-                setUser(resultUser.data)
+                setUser({...dataUser, userName: resultUser.data.userName, email: resultUser.data.email})
 
                 props.dispatch({type: UPDATE, payload: resultUser.data});
 
+            alert('Guardado con éxito!!!')   
 
-            alert('Guardado con éxito!!!')
+
+            // if(props.user.result){
+            //     props.user = props.user.result;
+            // }
+            // const prueba = props.user.result;
+            // console.log(prueba, 'prueba')
+            // props.user = prueba;
+            // console.log(prueba, 'prueba igualada')
+            // return prueba ;
 
 
         } catch (error) {
             console.log(error);
         }
+        
     }
 
     return (
@@ -83,12 +109,12 @@ const UserProfile = (props) => {
                             <FormGroup className="registerFormGroup">
                                 <Label for="userName">Username </Label>
                                 <br></br>
-                                <Input type="text" id="user" name="userName" defaultValue={props.user.result.userName} onChange={handleStateUser}/>
+                                <Input type="text" id="user" name="userName" defaultValue={props.user.userName} onChange={handleStateUser}/>
                             </FormGroup>
                             <FormGroup>
                                 <Label for="email">Email </Label>
                                 <br></br>
-                                <Input type="text" id="user" name="email" defaultValue={props.user.result.email} onChange={handleStateUser}/>
+                                <Input type="text" id="user" name="email" defaultValue={props.user.email} onChange={handleStateUser}/>
                             </FormGroup>
                             <FormGroup>
                                 <Label for="visa">VISA/Mastercard Número </Label>

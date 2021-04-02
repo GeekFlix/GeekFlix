@@ -504,20 +504,6 @@
         transform-origin: center;
         transition: 250ms all; }
 
-.btnClick {
-  width: 9em;
-  height: 2em;
-  background-color: #295f4e;
-  transition: 0.7s;
-  border-radius: 0.2em;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #f4e5c2; }
-  .btnClick:hover {
-    background-color: #6db193;
-    transition: 0.7s; }
-
 .searchContainer {
   display: flex;
   justify-content: flex-end;

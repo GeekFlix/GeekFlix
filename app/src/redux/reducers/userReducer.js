@@ -1,9 +1,10 @@
-import { LOGIN, LOGOUT, REGISTER, UPDATE, RENTALS } from '../types/userTypes'
+import { LOGIN, LOGOUT, REGISTER, UPDATE } from '../types/userTypes'
 
 
 const initialState = {
   user: {},
-  token: ''
+  token: '', 
+  // rental: []
 };
 
 const userReducer = (state = initialState, action) => {
@@ -24,18 +25,17 @@ const userReducer = (state = initialState, action) => {
         ...state, 
         user: action.payload
       }
-    case RENTALS: 
-      return {
-        ...state, 
-        user: action.payload 
-      }
+    // case RENTALS: 
+    //   return {
+    //     ...state, 
+    //     user: action.payload 
+    //   }
     case UPDATE:
       return {
         ...state, 
         user: action.payload, 
         token: action.payload.token
       }
-            
     default:
       return state;
   }

@@ -23,10 +23,10 @@ const Carousel = (props) => {
     const handleState = (event) => {
         setRental({...rental, rentalMovies: event})
     };
-    console.log(rental)
+  
 
   
-    console.log('PROPSSSSS!!',props.movie);
+
 
     const thriller = props.movie.filter(objectMovie => objectMovie.genres.includes('Thriller'));
     const comedy = props.movie.filter(objectMovie => objectMovie.genres.includes('Comedy'));
@@ -35,7 +35,7 @@ const Carousel = (props) => {
     const biography = props.movie.filter(objectMovie => objectMovie.genres.includes('Biography'));
     const drama = props.movie.filter(objectMovie=> objectMovie.genres.includes('Drama'));
     const adventure = props.movie.filter(objectMovie=> objectMovie.genres.includes('Adventure'));
-    console.log(comedy, 'si quieres unas risas');
+
     
     SwiperCore.use([Navigation, Pagination, EffectFade, Scrollbar, A11y, Zoom]);
     

@@ -82,7 +82,7 @@ const HomeMovie = (props) => {
                     </div>
                 </div>
                 {/* <Navbar/> */}
-                {/* <Carousel/> */}
+                <Carousel/>
             </div>
         )
     }
