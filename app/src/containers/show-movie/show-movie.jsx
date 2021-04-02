@@ -23,7 +23,7 @@ const ShowMovie = (props) => {
                 <div className="headerShowMovie">
                     Tu película seleccionada es .....   
                 </div>
-                <Button onClick={() => rentalMovie()}>Alquilar</Button>
+                <button onClick={() => rentalMovie()}>Alquilar</button>
             </div>
     
         </div>
