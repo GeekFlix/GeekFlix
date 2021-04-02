@@ -47,6 +47,14 @@ const HomeMovie = (props) => {
             ...film, movies: filmCollection.data
         });
     }
+
+    const redirect = () => {
+        return setTimeout(() => {
+          history.push('/user-profile')
+        }, 1000);
+
+    }
+
     
     if(!film.movies?.result){
         return (
@@ -62,6 +70,7 @@ const HomeMovie = (props) => {
 
                     </div>
                     <Button className="btnStyle" onClick={()=> logOut()} className="btnStyle">Salir</Button>
+                    <Button className="btnStyle" onClick={()=> redirect()} className="btnStyle">Profile</Button>
                     <div className="textHomeSearch">
                         BUSQUEDAS ANTERIORES:
                     </div>

@@ -467,7 +467,6 @@
     color: #f4e5c2; }
   .containerAdmin .showData {
     margin: .5em; }
-<<<<<<< HEAD
 
 .showMoviesContainer {
   width: 100%;
@@ -479,11 +478,6 @@
     align-items: center;
     height: 2em;
     color: #f4e5c2; }
-
-html {
-  scroll-behavior: smooth; }
-=======
->>>>>>> 89adbb3d8489193f5082efed47b1a5ae9ea333a3
 
 .mainCarousel {
   width: 100%;
