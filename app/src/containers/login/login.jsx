@@ -6,9 +6,10 @@ import { ADMINLOGIN } from "../../redux/types/adminTypes";
 import { Link, useHistory } from 'react-router-dom';
 import { Button } from 'reactstrap';
 
-//import {Input} from '../../components/input/input';
-import checkError from '../../tools/error.handlers'
 
+//import Input from '../../components/input/input';
+
+import checkError from '../../tools/error.handlers'
 import logo from '../../assets/img/geekflix-green.png';
 import popcorn from '../../assets/img/popcorn.jpg';
 
@@ -34,7 +35,6 @@ const Login = (props) => {
     const handleState = (event) => {
         setLogin({...dataLogin, [event.target.name]: event.target.type === "number" ? + event.target.value : event.target.value})
     };
-    console.log(dataLogin)
 
 
     const sendLogin = async () => {

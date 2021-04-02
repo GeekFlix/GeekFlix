@@ -57,14 +57,20 @@ const HomeMovie = (props) => {
     }else{
         return(
             <div className="homeMovie">
-                    <SearchEngine/>
+                    <div className="searchHeader">
+                        <SearchEngine/>
+
+                    </div>
                     <Button className="btnStyle" onClick={()=> logOut()} className="btnStyle">Salir</Button>
+                    <div className="textHomeSearch">
+                        BUSQUEDAS ANTERIORES:
+                    </div>
                 <div>
                     <div className="searchResult">
                         {
                             props.search.map(searchMovie => {
                                 return (
-                                    <div onClick={()=> showMovie(searchMovie)} key={searchMovie.id}>
+                                    <div onClick={()=> showMovie(searchMovie)} key={searchMovie._id}>
                                         <img src={searchMovie.posterUrl} alt="picture"/> 
                                         <div className="titleMovie">
                                             Titulo : {searchMovie.title}
