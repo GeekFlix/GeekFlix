@@ -1,32 +1,45 @@
-import React, {useState, useEffect} from 'react'
-import logo from '../../assets/img/geekflix-green.png';
-import avatar1 from '../../assets/img/avatar1.png';
+import React, {useState, useEffect} from 'react';
+import { useHistory } from 'react-router-dom';
+
+import axios from 'axios';
 
 import { Form, FormGroup, Label, Input, Button } from 'reactstrap';
 
-import axios from 'axios';
 import {connect} from 'react-redux';
 import {UPDATE} from '../../redux/types/userTypes';
-import {SAVE} from '../../redux/types/paymentTypes';
+import {SAVE, UPDATECARD} from '../../redux/types/paymentTypes';
+
+import logo from '../../assets/img/geekflix-green.png';
+import avatar1 from '../../assets/img/avatar1.png';
+
+
 
 
 const UserProfile = (props) => {
-
+    const history = useHistory();
     //Estado de dataUser
     const [dataUser, setUser] = useState ({
+<<<<<<< HEAD
         userName: props.user.userName, 
         email: props.user.email
+=======
+        userName: props.user.userName || props.user?.result.userName, 
+        email: props.user.email || props.user?.result.userName,
+        _id: props.user._id
+
+>>>>>>> 3859498d9bcdbf5519547a9c0263bd01a9544c09
     })
 
     //Estado de dataPayment
     const [dataPayment, setPayment] = useState ({
-        visa: props.payment.result.visa,
-        month: props.payment.result.month,
-        year: props.payment.result.year,
-        cvv: props.payment.result.cvv,
-        cardName: props.payment.result.cardName
+        visa: props.payment.visa,
+        month: props.payment.month,
+        year: props.payment.year,
+        cvv: props.payment.cvv,
+        cardName: props.payment.cardName
     })
 
+<<<<<<< HEAD
     //useEffect para montar el componente
     // useEffect(() => {
     //    props.user.userName = props.user.result.userName;
@@ -41,6 +54,11 @@ const UserProfile = (props) => {
     //  },)
 
     
+=======
+    // useEffect(() => {
+    //     updateUser()
+    // }, [])
+>>>>>>> 3859498d9bcdbf5519547a9c0263bd01a9544c09
 
     //Handlers
     const handleStateUser = (event) => {
@@ -52,23 +70,31 @@ const UserProfile = (props) => {
         setPayment({...dataPayment, [event.target.name]: event.target.type === "number" ? + event.target.value : event.target.value})
       
     }
+<<<<<<< HEAD
 
     console.log(props, 'estas son las putas props ')
+=======
+    console.log(props,'PROOOPS PROFILE');
+>>>>>>> 3859498d9bcdbf5519547a9c0263bd01a9544c09
     //Función para cambiar los datos
     const updateUser = async () => {
-        console.log('estamos dentro de update')
         try {
+<<<<<<< HEAD
 
+=======
+            
+>>>>>>> 3859498d9bcdbf5519547a9c0263bd01a9544c09
             let idUser = props.user._id;
             let idPayment = props.payment.result?._id;
             let token = props.user?.token;
+            
+            const updateData = window.confirm('Guardado con éxito');
 
-                let resultPayment = await axios.put (`http://localhost:3000/payment/${idPayment}`, dataPayment);
-                setPayment(resultPayment.data)
-
-                props.dispatch({type: SAVE, payload: resultPayment.data});
-
+            if(updateData === true ){
+                
+                
                 let resultUser = await axios.put(`http://localhost:3000/user/${idUser}`, dataUser, { headers: { authorization: token } });
+<<<<<<< HEAD
                 setUser({...dataUser, userName: resultUser.data.userName, email: resultUser.data.email})
 
                 props.dispatch({type: UPDATE, payload: resultUser.data});
@@ -84,22 +110,42 @@ const UserProfile = (props) => {
             // props.user = prueba;
             // console.log(prueba, 'prueba igualada')
             // return prueba ;
+=======
+                console.log(resultUser);
+                setUser({...dataUser, userName: resultUser.data.userName, email: resultUser.data.email })
+                
+                props.dispatch({type: UPDATE, payload: dataUser});
+>>>>>>> 3859498d9bcdbf5519547a9c0263bd01a9544c09
 
+                console.log('update payment');
+                let resultPayment = await axios.put (`http://localhost:3000/payment/${idPayment}`, dataPayment);
+                setPayment(resultPayment.data)
 
+                props.dispatch({type: UPDATECARD, payload: resultPayment.data});
+            }
         } catch (error) {
             console.log(error);
         }
         
     }
 
+    const redirect = () => {
+        return setTimeout(() => {
+          history.push('/home-movie')
+        }, 1000);
+
+    }
+
     return (
         <div>
+            <pre>{JSON.stringify(dataUser, null,2)}</pre>
+
             <div className="userContainer">
                 <div className="logoGeek">
                     <img src={logo} alt=""></img>
                     <div className="userMenu">
                         <Button>Mis datos</Button>
-                        <Button>Mis películas</Button>
+                        <Button onClick={()=> redirect()}>Mis películas</Button>
                     </div>
                 </div>
                 <div className="dataUser">
@@ -109,12 +155,20 @@ const UserProfile = (props) => {
                             <FormGroup className="registerFormGroup">
                                 <Label for="userName">Username </Label>
                                 <br></br>
+<<<<<<< HEAD
                                 <Input type="text" id="user" name="userName" defaultValue={props.user.userName} onChange={handleStateUser}/>
+=======
+                                <Input type="text" id="user" name="userName" defaultValue={dataUser.userName} onChange={handleStateUser}/>
+>>>>>>> 3859498d9bcdbf5519547a9c0263bd01a9544c09
                             </FormGroup>
                             <FormGroup>
                                 <Label for="email">Email </Label>
                                 <br></br>
+<<<<<<< HEAD
                                 <Input type="text" id="user" name="email" defaultValue={props.user.email} onChange={handleStateUser}/>
+=======
+                                <Input type="text" id="user" name="email" defaultValue={dataUser.email} onChange={handleStateUser}/>
+>>>>>>> 3859498d9bcdbf5519547a9c0263bd01a9544c09
                             </FormGroup>
                             <FormGroup>
                                 <Label for="visa">VISA/Mastercard Número </Label>
