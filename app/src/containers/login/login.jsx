@@ -34,7 +34,6 @@ const Login = (props) => {
     const handleState = (event) => {
         setLogin({...dataLogin, [event.target.name]: event.target.type === "number" ? + event.target.value : event.target.value})
     };
-    console.log(dataLogin)
 
 
     const sendLogin = async () => {
