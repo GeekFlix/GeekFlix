@@ -2,7 +2,14 @@ import React, {useState} from 'react';
 import {connect} from 'react-redux';
 import { RENTALS } from '../../redux/types/userTypes';
 
+import { Swiper, SwiperSlide }  from 'swiper/react';
+import SwiperCore, { A11y, EffectFade, Navigation, Pagination, Scrollbar, Zoom } from 'swiper/core';
 
+import 'swiper/swiper.scss';
+import 'swiper/components/navigation/navigation.scss';
+import 'swiper/components/pagination/pagination.scss';
+import 'swiper/components/scrollbar/scrollbar.scss';
+import 'swiper/components/zoom/zoom.scss';
 
 
 const Carousel = (props) => {
@@ -26,73 +33,85 @@ const Carousel = (props) => {
     const animation = props.movie.filter(objectMovie => objectMovie.genres.includes('Animation'));
     const sport = props.movie.filter(objectMovie => objectMovie.genres.includes('Sport'));
     const biography = props.movie.filter(objectMovie => objectMovie.genres.includes('Biography'));
-
-    console.log(animation,'MAL VAMOS!');
+    const drama = props.movie.filter(objectMovie=> objectMovie.genres.includes('Drama'));
+    const adventure = props.movie.filter(objectMovie=> objectMovie.genres.includes('Adventure'));
+    console.log(comedy, 'si quieres unas risas');
+    
+    SwiperCore.use([Navigation, Pagination, EffectFade, Scrollbar, A11y, Zoom]);
     
     if(props?.result){
         return (
             <div>
+                
                 <h1>Estamos en el primero</h1>
+            
             </div>
         )
     }else{
-        return ( 
-            <div className="carouselContainer">
-            
-                <div className="wrapper">
-                    <section id="section1">
-                        <a href="#section3">{'<'}</a>
-                            {sport.map(movie => 
-                                <div className="item" key={movie.id}>
-                                    <img src={movie.posterUrl}/>
-                                </div>
+        return (
+            <div className="mainCarousel">
+                <div className="titleCarouselAdventure">Películas de Aventuras</div>                
+                <div className="carouselAdventure">                     
+                    <Swiper
+                        spaceBetween={0}
+                        slidesPerView={7}
+                        navigation
+                        pagination={{ clickable: true }}
+                        scrollbar={{ draggable: true }}
+                        onSwiper={(swiper) => console.log(swiper)}
+                        onSlideChange={() => console.log('slide change')}
+                    >
+                            {adventure.map(picture => 
+                                <SwiperSlide>
+                                    <div className="swiper-slide">               
+                                        <img src={picture.posterUrl}/>
+                                    </div>  
+                                </SwiperSlide>
                             )}
-                            
-                        <a href="#section2">{'>'}</a>
-                    </section> 
+                    </Swiper>
                 </div>
-                <div className="wrapper">
-                    <section id="section1">
-                        <a href="#section3">{'<'}</a>
-                            {biography.map(movie => 
-                                <div className="item" key={movie.id}>
-                                    
-                                    <img src={movie.posterUrl}/>
-                                </div>
+                <div className="titleCarouselComedy">Películas de Comedia</div>  
+                <div className="carouselComedy">                     
+                    <Swiper
+                        spaceBetween={0}
+                        slidesPerView={7}
+                        navigation
+                        pagination={{ clickable: true }}
+                        scrollbar={{ draggable: true }}
+                        onSwiper={(swiper) => console.log(swiper)}
+                        onSlideChange={() => console.log('slide change')}
+                    >
+                            {comedy.map(picture => 
+                                <SwiperSlide>
+                                    <div className="swiper-slide">               
+                                        <img src={picture.posterUrl}/>
+                                    </div>  
+                                </SwiperSlide>
                             )}
-                            
-                        <a href="#section2">{'>'}</a>
-                    </section> 
+                    </Swiper>
                 </div>
-           
-                
-                {/* <div className="wrapper">
-                    <section id="section1">
-                        <a href="#section3">{'<'}</a>
-                        <div className="item"><img src={props.movie} alt="MoviePEPE"/></div>
-                        <div className="item"><img src="" alt=""/></div>
-                        <div className="item"><img src="" alt=""/></div>
-                        <div className="item"><img src="" alt=""/></div>
-                        <a href="#section2">{'>'}</a>
-                    </section>
-                    <section id="section2">
-                        <a href="#section1">{'<'}</a>
-                        <div className="item"><img src="https://http2.mlstatic.com/D_NQ_NP_938875-MLM28841571312_112018-W.jpg" alt="Movie"/></div>
-                        <div className="item"><img src="http://upload.wikimedia.org/wikipedia/an/5/55/Braveheart_imp.jpg" alt="Movie"/></div>
-                        <div className="item"><img src="https://i.blogs.es/4ed49c/poster-pesadillas-goosebumps-con-jack-black/450_1000.jpg" alt="Movie"/></div>
-                        <div className="item"><img src="https://yestorrent.net/wp-content/uploads/2020/04/lGv19gokQvgC7jgjWqapIachnxU-1.jpg" alt="Movie"/></div>
-                        <a href="#section3">{'>'}</a>
-                    </section>
-                    <section id="section3">
-                        <a href="#section2">{'<'}</a>
-                        <div className="item"><img src="https://ep00.epimg.net/elpais/imagenes/2020/02/06/album/1580999639_454991_1581004466_album_normal.jpg" alt="Movie"/></div>
-                        <div className="item"><img src="https://e00-elmundo.uecdn.es/television/programacion-tv/img/v2/programas/02/208642.png" alt="Movie"/></div>
-                        <div className="item"><img src="http://www.caratulasylogos.com/wp-content/uploads/titanic-1-320x240.jpg" alt="Movie"/></div>
-                        <div className="item"><img src="https://3.bp.blogspot.com/-wLLDklb-AHQ/V5Gt0FZebgI/AAAAAAAABLI/5NLMTLQesUQYXgpJ33Jo_UzaTh5KfIlsQCLcB/s1600/Poster.jpg" alt="Movie"/></div>
-                        <a href="#section1">{'>'}</a>
-                    </section>
-                </div> */}
-            </div>
+                <div className="titleCarouselDrama">Películas de Drama</div> 
+                <div className="carouselDrama">                     
+                    <Swiper
+                        spaceBetween={0}
+                        slidesPerView={7}
+                        navigation
+                        pagination={{ clickable: true }}
+                        scrollbar={{ draggable: true }}
+                        onSwiper={(swiper) => console.log(swiper)}
+                        onSlideChange={() => console.log('slide change')}
+                    >
+                            
+                            {drama.map(picture => 
+                                <SwiperSlide>
+                                    <div className="swiper-slide">               
+                                        <img src={picture.posterUrl}/>
+                                    </div>  
+                                </SwiperSlide>
+                            )}
+                    </Swiper>
+                </div>  
+            </div>   
         )
     }
 }
@@ -102,7 +121,6 @@ const mapStateToProps = state=>{
         movie: state.movieReducer.movie,
         user: state.userReducer.user
     };
-
 };
 
 export default connect (mapStateToProps)(Carousel)

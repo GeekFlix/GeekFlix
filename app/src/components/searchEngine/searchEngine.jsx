@@ -34,7 +34,7 @@ const SearchEngine = (props) => {
         <div className="searchContainer">
 
             <input className="searchBox" type="search" name="searchBox" placeholder="Buscar" onKeyUp={stateHandler} onKeyDown={handleOnKeyDown}/>
-            <button type="submit" className="">Buscar</button>
+            <button type="submit" className="" onClick={()=> searchEngine()}>Buscar</button>
 
         </div>
     )

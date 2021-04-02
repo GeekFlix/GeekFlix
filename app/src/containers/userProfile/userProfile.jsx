@@ -1,9 +1,7 @@
-import React, {useState} from 'react'
-// import {useHistory} from 'react-router-dom';
+import React, {useState, useEffect} from 'react'
 import logo from '../../assets/img/geekflix-green.png';
 import avatar1 from '../../assets/img/avatar1.png';
 
-import {useHistory} from 'react-router-dom';
 import { Form, FormGroup, Label, Input, Button } from 'reactstrap';
 
 import axios from 'axios';
@@ -14,12 +12,10 @@ import {SAVE} from '../../redux/types/paymentTypes';
 
 const UserProfile = (props) => {
 
-    const history = useHistory();
-
     //Estado de dataUser
     const [dataUser, setUser] = useState ({
-        userName: props.user.userName, 
-        email: props.user.email
+        userName: props.user.result.userName, 
+        email: props.user.result.email
     })
 
     //Estado de dataPayment
@@ -30,8 +26,6 @@ const UserProfile = (props) => {
         cvv: props.payment.result.cvv,
         cardName: props.payment.result.cardName
     })
-
-
 
     //Handlers
     const handleStateUser = (event) => {
@@ -44,38 +38,28 @@ const UserProfile = (props) => {
       
     }
 
-    console.log(dataUser, 'datauser')
-    console.log(dataPayment)
     //Función para cambiar los datos
     const updateUser = async () => {
         console.log('estamos dentro de update')
         try {
 
-            let idUser = props.user?._id;
+            let idUser = props.user.result?._id;
             let idPayment = props.payment.result?._id;
             let token = props.user?.token;
 
-            if (dataUser.userName !== ''){
-
-                console.log('estamos dentro de if props.payment')
-                let resultPayment = await axios.put (`http://localhost:3000/payment/${idPayment}`, dataPayment, { headers: { authorization: token } });
+                let resultPayment = await axios.put (`http://localhost:3000/payment/${idPayment}`, dataPayment);
                 setPayment(resultPayment.data)
 
                 props.dispatch({type: SAVE, payload: resultPayment.data});
 
-                console.log('estamos dentro de if props.user')
                 let resultUser = await axios.put(`http://localhost:3000/user/${idUser}`, dataUser, { headers: { authorization: token } });
                 setUser(resultUser.data)
 
                 props.dispatch({type: UPDATE, payload: resultUser.data});
 
 
-                console.log(resultUser.data, 'esto es result.dtatUSER')
-                console.log(resultPayment.data, 'esto es result.dtat')
-            } 
-
             alert('Guardado con éxito!!!')
-            history.push('/login');
+
 
         } catch (error) {
             console.log(error);
@@ -99,12 +83,12 @@ const UserProfile = (props) => {
                             <FormGroup className="registerFormGroup">
                                 <Label for="userName">Username </Label>
                                 <br></br>
-                                <Input type="text" id="user" name="userName" defaultValue={props.user.userName} onChange={handleStateUser}/>
+                                <Input type="text" id="user" name="userName" defaultValue={props.user.result.userName} onChange={handleStateUser}/>
                             </FormGroup>
                             <FormGroup>
                                 <Label for="email">Email </Label>
                                 <br></br>
-                                <Input type="text" id="user" name="email" defaultValue={props.user.email} onChange={handleStateUser}/>
+                                <Input type="text" id="user" name="email" defaultValue={props.user.result.email} onChange={handleStateUser}/>
                             </FormGroup>
                             <FormGroup>
                                 <Label for="visa">VISA/Mastercard Número </Label>

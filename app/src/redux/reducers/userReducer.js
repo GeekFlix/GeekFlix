@@ -19,12 +19,12 @@ const userReducer = (state = initialState, action) => {
         ...state,
         user: initialState,
       }
-      case REGISTER: 
+    case REGISTER: 
       return {
         ...state, 
         user: action.payload
       }
-      case RENTALS: 
+    case RENTALS: 
       return {
         ...state, 
         user: action.payload 
