@@ -2,17 +2,18 @@ import React from 'react';
 import {useHistory} from 'react-router-dom';
 
 
-const Btn = ({destiny, text}) => {
+const Btn = (props) => {
 
 let history = useHistory();
 
 const give = () =>{
-    history.push(`/${destiny}`);
+    history.push(`/${props.destiny}`);
 };
 
     return(
         <div onClick={() => give()}>
-            {text}
+            {props.text}
+
 
         </div>
     );

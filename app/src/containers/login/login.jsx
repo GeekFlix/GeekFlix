@@ -4,14 +4,16 @@ import { connect } from 'react-redux';
 import { LOGIN } from "../../redux/types/userTypes";
 import { ADMINLOGIN } from "../../redux/types/adminTypes";
 import { Link, useHistory } from 'react-router-dom';
-import { Button } from 'reactstrap';
+//import { Button } from 'reactstrap';
 
 
-//import Input from '../../components/input/input';
+
 
 import checkError from '../../tools/error.handlers'
 import logo from '../../assets/img/geekflix-green.png';
 import popcorn from '../../assets/img/popcorn.jpg';
+import Input from '../../components/input/input';
+// import Btn from '../../components/btn/btn';
 
 
 const Login = (props) => {
@@ -84,18 +86,18 @@ const Login = (props) => {
         <div className="inputs">
           <div>
             <p>Email</p>
-            <input type="email" className="email" maxLength="50" name="email" onChange={handleState} onKeyDown={handleOnKeyDown}/>
+            <Input type="email" className="email" maxLength="50" name="email" onChange={handleState} onKeyDown={handleOnKeyDown}/>
           </div>
           <div>
             <p>Password</p>
-            <input type="password" className="password" maxLength="50" name="password" onChange={handleState} onKeyDown={handleOnKeyDown}/>
+            <Input type="password" className="password" maxLength="50" name="password" onChange={handleState} onKeyDown={handleOnKeyDown}/>
           </div>
         <select className="select" name="userType" defaultValue={'DEFAULT'} onChange={handleState}>
             <option value="Client">Client</option>
             <option value="Admin">Admin</option>
         </select>
           <div className="buttonStyle">
-            <Button onKeyDown={handleOnKeyDown} onClick={()=> sendLogin()} className="btnStyle">Enviar</Button>
+            <button onKeyDown={handleOnKeyDown} onClick={()=> sendLogin()} className="btnStyle">Enviar</button>
           </div>
             <Link className="" to='/Register'><p>Si aún ni eres usuario, Regístrate!!!</p></Link> 
             <div className='errorMessage'>{message}</div>       

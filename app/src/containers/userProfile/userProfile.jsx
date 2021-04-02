@@ -3,15 +3,16 @@ import { useHistory } from 'react-router-dom';
 
 import axios from 'axios';
 
-import { Form, FormGroup, Label, Input, Button } from 'reactstrap';
+import { Form, FormGroup, Label, Input } from 'reactstrap';
 
 import {connect} from 'react-redux';
 import {UPDATE} from '../../redux/types/userTypes';
-import {SAVE, UPDATECARD} from '../../redux/types/paymentTypes';
+import {UPDATECARD} from '../../redux/types/paymentTypes';
+
+// import Btn from '../../components/btn/btn.jsx';
 
 import logo from '../../assets/img/geekflix-green.png';
 import avatar1 from '../../assets/img/avatar1.png';
-
 
 
 
@@ -93,8 +94,8 @@ const UserProfile = (props) => {
                 <div className="logoGeek">
                     <img src={logo} alt=""></img>
                     <div className="userMenu">
-                        <Button>Mis datos</Button>
-                        <Button onClick={()=> redirect()}>Mis películas</Button>
+                        <button className="btnMenu" >Mis datos</button>
+                        <button className="btnMenu" onClick={()=> redirect()}>Mis películas</button>
                     </div>
                 </div>
                 <div className="dataUser">
@@ -175,7 +176,7 @@ const UserProfile = (props) => {
                                 <br></br>
                                 <Input type="text" id="payment" name="cardName" defaultValue={props.payment.result.cardName} onChange={handleStatePayment}/>
                             </FormGroup>
-                            <Button className="updateButton" onClick={() => updateUser()}>Enviar</Button>
+                            <button className="updateButton" onClick={() => updateUser()}>Enviar</button>
                         </Form>
                     </div>
                 </div>

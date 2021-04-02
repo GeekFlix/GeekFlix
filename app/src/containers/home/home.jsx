@@ -19,7 +19,7 @@ const home = () => {
           <div className="containerLogo">
             <div className="logo"><img src={logo} alt=""/></div></div>
           <div className="loginContainer">
-            <Btn destiny="login" text="Iniciar sesión"/>
+            <Btn destiny="login" text="Iniciar sesión" className="buttonHome"/>
           </div>
         </div>
         <div className="textForRegister">

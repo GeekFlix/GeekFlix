@@ -28,6 +28,10 @@
             display: flex;
             flex-direction: column;
 
+            .btnMenu {
+                @include btnTwo
+            }
+
         }
     }
 
@@ -51,6 +55,10 @@
                 width: $mp-t;
             }
         }
+    }
+
+    .buttonUpdate {
+        @include btnOne
     }
 
     

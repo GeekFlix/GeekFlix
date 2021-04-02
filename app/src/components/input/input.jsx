@@ -1,67 +1,48 @@
-// import React, {createContext, Component} from 'react';
-// import {FormCtx} from './Form';
+// import React from 'react'; 
+// import {ErrorLegend, ValidationIcon, ErrorMessage, SuccessMessage} from '../elements/elements';
+// import { FaRegUserCircle, FaRegTimesCircle } from "react-icons/fa";
 
-// const FormCtx = createContext({
-//   fields: {}, 
-//   errors: {}
-// });
+// const Input = ({state, handleState, type, label, placeholder, name, ErrorLegend, expresionRegular, ValidationIcon, FaRegTimesCircle, FaRegUserCircle}) => {
+// 	const onChange = (e) => {
+// 		handleState({...state, field: e.target.value});
+// 	}
 
-// class Form extends Component {
-//   state = {
-//     fields: {}, 
-//     errors: {}
-//   };
+// 	const validation = () => {
+// 		if(expresionRegular){
+// 			if(expresionRegular.test(state.field)){
+// 				handleState({...state, valid: 'true'});
+// 			} else {
+// 				handleState({...state, valid: 'false'});
+// 			}
+// 		}
 
-//   setFields = (event, {id}) => {
-//     event.persist();
+// 		// if(funcion){
+// 		// 	funcion();
+// 		// }
+// 	}
 
-//     console.log('add/update field value')
-//   }
-
-//   render () {
-
-//     const {fields, errors} = this.state;
-
-//     const formCtx = {
-//       fields, 
-//       errors, 
-//       setFields: this.setFields
-//     }
-//     return (
-//       <form action="">
-//         <FormCtx.Provider value ={formCtx}>
-//           {this.props.children}
-//         </FormCtx.Provider>
-//       </form>
-
-//     )
-
-//   }
+// 	return (
+// 		<div>
+// 			<Label htmlFor={name} valid={state.valid}>{Label}</Label>
+// 			<InputGroup>
+// 				<Input 
+// 					type={type}
+// 					placeholder={placeholder} 
+// 					id={name}
+// 					value={state.field}
+// 					onChange={onChange}
+// 					onKeyUp={validation}
+// 					onBlur={validation}
+// 					valid={state.valid}
+// 				/>
+// 				<ValidationIcon 
+// 					icon={state.valid === 'true' ? FaRegUserCircle : FaRegTimesCircle}
+// 					valid={state.valid}
+// 				/>
+// 			</InputGroup>
+// 			<ErrorLegend valid={state.valid}>{ErrorLegend}</ErrorLegend>
+// 		</div>
+// 	);
 // }
-
-
-
-// export default Form;
-// export FormCtx
-
-
-
-
-
-
-
-// const Input = (props) => {
-//   return (
-//     <div>
-//       <p>{props.title}</p>
-//         <input className="input" type={props.type} 
-//         placeholder={props.placeholder} 
-//         maxLength={props.maxLength} 
-//         name={props.name}  
-//         onChange={props.onChange}
-//       />
-//     </div>
-//   )
-// }
-
-// export default Input
+ 
+// export default Input;
