@@ -1,17 +1,18 @@
-import { LOGIN, LOGOUT, REGISTER } from '../types/userTypes'
+import { LOGIN, LOGOUT, REGISTER, UPDATE, RENTALS } from '../types/userTypes'
+
 
 const initialState = {
   user: {},
   token: ''
 };
 
-const  userReducer = (state = initialState, action) => {
+const userReducer = (state = initialState, action) => {
   switch (action.type) {
     case LOGIN:
       return {
         ...state,
-        user: action.payload.client,
-        token: action.payload.token
+        user: action.payload.user,
+        token: action.payload.token 
       }
     case LOGOUT:
       return {
@@ -22,6 +23,17 @@ const  userReducer = (state = initialState, action) => {
       return {
         ...state, 
         user: action.payload
+      }
+    case RENTALS: 
+      return {
+        ...state, 
+        user: action.payload 
+      }
+    case UPDATE:
+      return {
+        ...state, 
+        user: action.payload, 
+        token: action.payload.token
       }
             
     default:

@@ -1,5 +1,7 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {connect} from 'react-redux';
+import { RENTALS } from '../../redux/types/userTypes';
+
 import { Swiper, SwiperSlide }  from 'swiper/react';
 import SwiperCore, { A11y, EffectFade, Navigation, Pagination, Scrollbar, Zoom } from 'swiper/core';
 
@@ -10,11 +12,21 @@ import 'swiper/components/scrollbar/scrollbar.scss';
 import 'swiper/components/zoom/zoom.scss';
 
 
-
-
 const Carousel = (props) => {
 
-    
+    const [rental, setRental] = useState({
+        rentalMovies: []
+    });
+
+    props.dispatch({type: RENTALS, payload: rental})
+
+    const handleState = (event) => {
+        setRental({...rental, rentalMovies: event})
+    };
+    console.log(rental)
+
+  
+    console.log('PROPSSSSS!!',props.movie);
 
     const thriller = props.movie.filter(objectMovie => objectMovie.genres.includes('Thriller'));
     const comedy = props.movie.filter(objectMovie => objectMovie.genres.includes('Comedy'));
@@ -25,16 +37,7 @@ const Carousel = (props) => {
     const adventure = props.movie.filter(objectMovie=> objectMovie.genres.includes('Adventure'));
     console.log(comedy, 'si quieres unas risas');
     
-    
-
-    
     SwiperCore.use([Navigation, Pagination, EffectFade, Scrollbar, A11y, Zoom]);
-    
-
-    
-
-   
-
     
     if(props?.result){
         return (
@@ -43,7 +46,6 @@ const Carousel = (props) => {
                 <h1>Estamos en el primero</h1>
             
             </div>
-            
         )
     }else{
         return (
@@ -59,17 +61,13 @@ const Carousel = (props) => {
                         onSwiper={(swiper) => console.log(swiper)}
                         onSlideChange={() => console.log('slide change')}
                     >
-                            
-                                {adventure.map(picture => 
-                                    <SwiperSlide>
-
-                                        <div className="swiper-slide">               
-
-                                            <img src={picture.posterUrl}/>
-                                        </div>  
-                                    </SwiperSlide>
-                                )}
-                             
+                            {adventure.map(picture => 
+                                <SwiperSlide>
+                                    <div className="swiper-slide">               
+                                        <img src={picture.posterUrl}/>
+                                    </div>  
+                                </SwiperSlide>
+                            )}
                     </Swiper>
                 </div>
                 <div className="titleCarouselComedy">Películas de Comedia</div>  
@@ -83,17 +81,13 @@ const Carousel = (props) => {
                         onSwiper={(swiper) => console.log(swiper)}
                         onSlideChange={() => console.log('slide change')}
                     >
-                            
-                                {comedy.map(picture => 
-                                    <SwiperSlide>
-
-                                        <div className="swiper-slide">               
-
-                                            <img src={picture.posterUrl}/>
-                                        </div>  
-                                    </SwiperSlide>
-                                )}
-                             
+                            {comedy.map(picture => 
+                                <SwiperSlide>
+                                    <div className="swiper-slide">               
+                                        <img src={picture.posterUrl}/>
+                                    </div>  
+                                </SwiperSlide>
+                            )}
                     </Swiper>
                 </div>
                 <div className="titleCarouselDrama">Películas de Drama</div> 
@@ -108,38 +102,15 @@ const Carousel = (props) => {
                         onSlideChange={() => console.log('slide change')}
                     >
                             
-                                {drama.map(picture => 
-                                    <SwiperSlide>
-
-                                        <div className="swiper-slide">               
-
-                                            <img src={picture.posterUrl}/>
-                                        </div>  
-                                    </SwiperSlide>
-                                )}
-                             
+                            {drama.map(picture => 
+                                <SwiperSlide>
+                                    <div className="swiper-slide">               
+                                        <img src={picture.posterUrl}/>
+                                    </div>  
+                                </SwiperSlide>
+                            )}
                     </Swiper>
                 </div>  
-                
-                <div class="swiper-container">
-                    <div class="swiper-wrapper">
-                        
-                        
-                        
-                        
-                        
-                        
-      
-                    </div>
-                    {/* <!-- Add Pagination --> */}
-                    <div class="swiper-pagination"></div>
-                    {/* <!-- Add Arrows --> */}
-                    <div class="swiper-button-next"></div>
-                    <div class="swiper-button-prev"></div>
-                </div>
-
-                
- 
             </div>   
         )
     }
@@ -147,9 +118,9 @@ const Carousel = (props) => {
 
 const mapStateToProps = state=>{
     return{
-        movie: state.movieReducer.movie
-    }
-
-}
+        movie: state.movieReducer.movie,
+        user: state.userReducer.user
+    };
+};
 
 export default connect (mapStateToProps)(Carousel)
