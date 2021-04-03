@@ -12,7 +12,7 @@ import { LOGOUT } from '../../redux/types/userTypes';
 import { SAVE } from '../../redux/types/saveMovieType';
 import { Button } from 'reactstrap';
 import logo from '../../assets/img/geekflix-green.png';
-import spinner from '../../assets/img/Spinner-5.gif'
+import spinner from '../../assets/img/Half-Moon-Loading.svg'
 
 
 const HomeMovie = (props) => {
