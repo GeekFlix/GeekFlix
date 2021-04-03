@@ -1,4 +1,5 @@
 import React,{ useState }from 'react';
+import { Button } from 'reactstrap';
 // import { RENTALS } from '../../redux/types/userTypes';
 import { Button } from 'reactstrap';
 
