@@ -84,6 +84,7 @@ span {
 .btnLogOut{
   margin-top: 1.5em;
   margin-left: 0.8em;
+  cursor: pointer;
 }
 .btnLogOut:hover{
   transform: scale(1.3);

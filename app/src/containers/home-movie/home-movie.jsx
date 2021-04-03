@@ -12,6 +12,7 @@ import { LOGOUT } from '../../redux/types/userTypes';
 import { SAVE } from '../../redux/types/saveMovieType';
 import { Button } from 'reactstrap';
 import logo from '../../assets/img/geekflix-green.png';
+import spinner from '../../assets/img/Spinner-5.gif'
 
 
 const HomeMovie = (props) => {
@@ -64,8 +65,8 @@ const HomeMovie = (props) => {
 
     if(!film.movies?.result){
         return (
-            <div>
-                <h1>Estamos en el primero</h1>
+            <div className="spinnerContainer">
+                <img src={spinner} alt="spinner"/>
             </div>
         )
     }else{
@@ -76,9 +77,9 @@ const HomeMovie = (props) => {
                     <div className="containsNavbar">
                         <Navbar/>
                     </div>
-                    <div className="containsLogo" >
+                    {/* <div className="containsLogo" >
                         <img src={logo} alt=""/>
-                    </div>
+                    </div> */}
                     <div className="searchHeader">
                         <SearchEngine/>
                     </div>

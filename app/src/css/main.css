@@ -413,6 +413,11 @@
         height: 224px;
         width: 224px; }
 
+.spinnerContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
 .homeMovie {
   display: flex;
   flex-direction: column;
