@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import { useHistory } from 'react-router';
 import checkError from '../../tools/error.handlers'
 
@@ -6,7 +6,7 @@ import { Form, FormGroup, Label, Input, FormFeedback, FormText, Button } from 'r
 
 import axios from 'axios';
 import { connect } from 'react-redux';
-import {REGISTER} from '../../redux/types/userTypes';
+import { REGISTER } from '../../redux/types/userTypes';
 
 
 

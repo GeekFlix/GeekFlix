@@ -506,19 +506,38 @@
   .containerAdmin .showData {
     margin: .5em; }
 
-.showMoviesContainer {
+.movieInfo {
   width: 100%;
   height: 100em;
   background-color: #323232; }
-  .showMoviesContainer .headerShowMovie {
+  .movieInfo .headerMovieInfo {
     display: flex;
     justify-content: center;
+    margin-right: 2em;
     align-items: center;
     height: 2em;
     color: #f4e5c2; }
-  .showMoviesContainer .movieContainer {
-    width: 20em;
-    height: 30em; }
+  .movieInfo .movieContainer {
+    display: flex;
+    margin-left: 2em;
+    margin-top: 2em;
+    width: 50em;
+    height: 30em;
+    color: #f4e5c2; }
+  .movieInfo .dataStyle {
+    width: 50em;
+    margin-left: 1em;
+    text-align: left; }
+  .movieInfo .genresDiv {
+    margin-top: 1em; }
+  .movieInfo .actorsDiv {
+    margin-top: 1em; }
+  .movieInfo .yearDiv {
+    margin-top: 1em; }
+  .movieInfo .plotDiv {
+    margin-top: 1em; }
+  .movieInfo .buttonPosition {
+    margin-top: 1em; }
 
 .mainCarousel {
   width: 100%;
