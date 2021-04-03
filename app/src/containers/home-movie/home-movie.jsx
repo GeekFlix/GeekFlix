@@ -77,14 +77,13 @@ const HomeMovie = (props) => {
                     <div className="containsNavbar">
                         <Navbar/>
                     </div>
-                    {/* <div className="containsLogo" >
+                    <div className="containsLogo" >
                         <img src={logo} alt=""/>
-                    </div> */}
+                    </div>
                     <div className="searchHeader">
                         <SearchEngine/>
                     </div>
                 </div>
-                <Button className="btnStyle" onClick={()=> logOut()} className="btnStyle">Salir</Button>
                 <div className="containsSearch">
 
                     
