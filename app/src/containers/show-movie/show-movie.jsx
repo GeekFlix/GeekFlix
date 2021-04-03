@@ -7,6 +7,7 @@ import { useHistory } from 'react-router-dom';
 
 
 
+
 const Rental = (props) => {
 
     const history = useHistory();
