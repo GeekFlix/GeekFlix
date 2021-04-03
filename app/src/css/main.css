@@ -420,15 +420,53 @@
   background-color: #323232;
   height: 100vh;
   width: 100%; }
-  .homeMovie .textHomeSearch {
-    color: #f4e5c2; }
-  .homeMovie .searchResult {
-    display: grid;
-    width: 100em;
-    grid-template-columns: repeat(3, auto);
+  .homeMovie .backgroundImage {
+    width: 100%;
+    height: 35em;
+    position: absolute;
+    z-index: 123; }
+  .homeMovie .headerHomeMovie {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 6em;
+    position: relative;
+    z-index: 500; }
+    .homeMovie .headerHomeMovie .containsNavbar {
+      margin-left: 2em;
+      margin-top: 1em;
+      align-items: center;
+      width: 30%;
+      justify-content: flex-start; }
+    .homeMovie .headerHomeMovie .containsLogo {
+      width: 40%; }
+    .homeMovie .headerHomeMovie .searchHeader {
+      align-items: center;
+      justify-content: flex-end;
+      width: 30%; }
+  .homeMovie .containsSearch {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     margin-top: 1em; }
-    .homeMovie .searchResult .titleMovie {
-      color: #f4e5c2; }
+    .homeMovie .containsSearch .textHomeSearch {
+      color: #f4e5c2;
+      position: relative;
+      z-index: 500; }
+    .homeMovie .containsSearch .searchResult {
+      display: grid;
+      position: relative;
+      z-index: 500;
+      grid-template-columns: repeat(3, auto);
+      margin-top: 1em;
+      margin-bottom: 2em; }
+      .homeMovie .containsSearch .searchResult .imageSearchHomeMovie {
+        margin-left: 2em;
+        height: 20em; }
+      .homeMovie .containsSearch .searchResult .titleMovie {
+        color: #f4e5c2; }
 
 .containerAdmin {
   display: flex;

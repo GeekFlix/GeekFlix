@@ -3,13 +3,14 @@ import React, { useEffect, useState } from 'react';
 import {connect} from 'react-redux'
 // eslint-disable-next-line
 import Carousel from '../../components/carousel/carousel';
-//import Navbar from '../../components/navbar/navbar';
+import Navbar from '../../components/navbar/navbar';
 import axios from 'axios';
 import {SHOW} from '../../redux/types/movieTypes.js';
 import SearchEngine from '../../components/searchEngine/searchEngine';
 import { useHistory } from 'react-router-dom';
 import {LOGOUT} from '../../redux/types/userTypes';
 import { Button } from 'reactstrap';
+import logo from '../../assets/img/geekflix-green.png';
 
 
 const HomeMovie = (props) => {
@@ -57,21 +58,30 @@ const HomeMovie = (props) => {
     }else{
         return(
             <div className="homeMovie">
+                <img className="backgroundImage" src="https://i.blogs.es/fd5f1b/avengers-5-lo-que-sabemos/1366_521.jpeg" alt=""/>
+                <div className="headerHomeMovie">
+                    <div className="containsNavbar">
+                        <Navbar/>
+                    </div>
+                    <div className="containsLogo" >
+                        <img src={logo} alt=""/>
+                    </div>
                     <div className="searchHeader">
                         <SearchEngine/>
-
                     </div>
-                    <Button className="btnStyle" onClick={()=> logOut()} className="btnStyle">Salir</Button>
+                </div>
+                <Button className="btnStyle" onClick={()=> logOut()} className="btnStyle">Salir</Button>
+                <div className="containsSearch">
+
                     <div className="textHomeSearch">
                         BUSQUEDAS ANTERIORES:
                     </div>
-                <div>
                     <div className="searchResult">
                         {
                             props.search.map(searchMovie => {
                                 return (
                                     <div onClick={()=> showMovie(searchMovie)} key={searchMovie._id}>
-                                        <img src={searchMovie.posterUrl} alt="picture"/> 
+                                        <img className="imageSearchHomeMovie"src={searchMovie.posterUrl} alt="picture"/> 
                                         <div className="titleMovie">
                                             Titulo : {searchMovie.title}
                                         </div>
@@ -80,9 +90,12 @@ const HomeMovie = (props) => {
                             })
                         }
                     </div>
+                    
+                    
                 </div>
-                {/* <Navbar/> */}
-                {/* <Carousel/> */}
+                
+                <Carousel/>
+                
             </div>
         )
     }
