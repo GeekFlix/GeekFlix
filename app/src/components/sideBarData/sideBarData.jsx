@@ -1,7 +1,7 @@
  import React from 'react';
  import * as FaIcons from 'react-icons/fa';
  import * as AiIcons from 'react-icons/ai';
- import * as IoIcons from 'react-icons/io'
+ 
  
  
  
@@ -22,16 +22,6 @@
      path: '/rental',
      icon: <FaIcons.FaCartPlus />,
      cName: 'nav-text'
-   },
-   {
-    path: '/support',
-    icon: <IoIcons.IoMdHelpCircle />,
-    cName: 'nav-text'
-   },
-  //  {
-  //    path: '/',
-  //    icon: <FaIcons.FaPowerOff />,
-  //    cName: 'nav-text'
-  //  }
+   }
    
  ];
