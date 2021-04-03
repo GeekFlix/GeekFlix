@@ -56,10 +56,10 @@ const HomeMovie = (props) => {
 
     
     const saveMovie = (searchMovie) => {
-        console.log(searchMovie)
-        props.dispatch({type: SAVE, payload: searchMovie});
+        const save = props.dispatch({type: SAVE, payload: searchMovie});
 
         setTimeout(() => {history.push('/show-movie')}, 100);
+        console.log(save)
     };
 
     if(!film.movies?.result){
@@ -120,6 +120,7 @@ const mapStateToProps = state=>{
     return{
         movie: state.movieReducer.movie,
         search: state.movieReducer.query,
+        saveMovie: state.saveMovieReducer.saveMovie
     };
 };
 
