@@ -81,10 +81,18 @@
 span {
   margin-left: 16px;
 }
-.btnLogOut{
+.btnHelp{
   margin-top: 1.5em;
   margin-left: 0.8em;
-  cursor: pointer;
+  
+}
+.btnHelp:hover{
+  transform: scale(1.4);
+  transition: 250ms all;
+}
+.btnLogOut{
+  margin-top: 3em;
+  margin-left: 0.8em;
 }
 .btnLogOut:hover{
   transform: scale(1.3);

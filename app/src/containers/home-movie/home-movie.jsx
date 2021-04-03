@@ -12,7 +12,7 @@ import { LOGOUT } from '../../redux/types/userTypes';
 import { SAVE } from '../../redux/types/saveMovieType';
 import { Button } from 'reactstrap';
 import logo from '../../assets/img/geekflix-green.png';
-import spinner from '../../assets/img/Spinner-5.gif'
+import spinner from '../../assets/img/Half-Moon-Loading.svg'
 
 
 const HomeMovie = (props) => {
@@ -72,19 +72,18 @@ const HomeMovie = (props) => {
     }else{
         return(
             <div className="homeMovie">
-                <img className="backgroundImage" src="https://i.blogs.es/fd5f1b/avengers-5-lo-que-sabemos/1366_521.jpeg" alt=""/>
+                {/* <img className="backgroundImage" src="https://i.blogs.es/fd5f1b/avengers-5-lo-que-sabemos/1366_521.jpeg" alt=""/> */}
                 <div className="headerHomeMovie">
                     <div className="containsNavbar">
                         <Navbar/>
                     </div>
-                    {/* <div className="containsLogo" >
+                    <div className="containsLogo" >
                         <img src={logo} alt=""/>
-                    </div> */}
+                    </div>
                     <div className="searchHeader">
                         <SearchEngine/>
                     </div>
                 </div>
-                    <Button className="btnStyle" onClick={()=> logOut()} className="btnStyle">Salir</Button>
                 <div className="containsSearch">
 
                     
@@ -97,10 +96,8 @@ const HomeMovie = (props) => {
                             props.search.map(searchMovie => {
                                 return (
                                     <div onClick={()=> saveMovie(searchMovie)} key={searchMovie._id}>
-                                        <img src={searchMovie.posterUrl} alt="picture"/> 
-                                        <div className="titleMovie">
-                                            Titulo : {searchMovie.title}
-                                        </div>
+                                        <img className="imageSearchHomeMovie" src={searchMovie.posterUrl} alt="picture"/> 
+                                        <div className="titleMovie">{searchMovie.title}</div>
                                     </div>
                                 )
                             })

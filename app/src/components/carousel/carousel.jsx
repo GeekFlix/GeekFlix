@@ -35,7 +35,7 @@ const Carousel = (props) => {
     const biography = props.movie.filter(objectMovie => objectMovie.genres.includes('Biography'));
     const drama = props.movie.filter(objectMovie=> objectMovie.genres.includes('Drama'));
     const adventure = props.movie.filter(objectMovie=> objectMovie.genres.includes('Adventure'));
-    console.log(comedy, 'si quieres unas risas');
+    console.log(drama, 'si quieres unas risas');
     
     SwiperCore.use([Navigation, Pagination, EffectFade, Scrollbar, A11y, Zoom]);
     
@@ -50,7 +50,7 @@ const Carousel = (props) => {
     }else{
         return (
             <div className="mainCarousel">
-                <div className="titleCarouselAdventure">Películas de Aventuras</div>                
+                <div className="titleCarousel">Películas de Aventuras</div>                
                 <div className="carouselAdventure">                     
                     <Swiper
                         spaceBetween={0}
@@ -70,7 +70,7 @@ const Carousel = (props) => {
                             )}
                     </Swiper>
                 </div>
-                <div className="titleCarouselComedy">Películas de Comedia</div>  
+                <div className="titleCarousel">Películas de Comedia</div>  
                 <div className="carouselComedy">                     
                     <Swiper
                         spaceBetween={0}
@@ -90,7 +90,7 @@ const Carousel = (props) => {
                             )}
                     </Swiper>
                 </div>
-                <div className="titleCarouselDrama">Películas de Drama</div> 
+                <div className="titleCarousel">Películas de Drama</div> 
                 <div className="carouselDrama">                     
                     <Swiper
                         spaceBetween={0}
