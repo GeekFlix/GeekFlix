@@ -71,7 +71,7 @@ const HomeMovie = (props) => {
     }else{
         return(
             <div className="homeMovie">
-                <img className="backgroundImage" src="https://i.blogs.es/fd5f1b/avengers-5-lo-que-sabemos/1366_521.jpeg" alt=""/>
+                {/* <img className="backgroundImage" src="https://i.blogs.es/fd5f1b/avengers-5-lo-que-sabemos/1366_521.jpeg" alt=""/> */}
                 <div className="headerHomeMovie">
                     <div className="containsNavbar">
                         <Navbar/>
@@ -96,10 +96,8 @@ const HomeMovie = (props) => {
                             props.search.map(searchMovie => {
                                 return (
                                     <div onClick={()=> saveMovie(searchMovie)} key={searchMovie._id}>
-                                        <img src={searchMovie.posterUrl} alt="picture"/> 
-                                        <div className="titleMovie">
-                                            Titulo : {searchMovie.title}
-                                        </div>
+                                        <img className="imageSearchHomeMovie" src={searchMovie.posterUrl} alt="picture"/> 
+                                        <div className="titleMovie">{searchMovie.title}</div>
                                     </div>
                                 )
                             })
