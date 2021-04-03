@@ -3,7 +3,7 @@ import { LOGIN, LOGOUT, REGISTER, UPDATE } from '../types/userTypes'
 
 const initialState = {
   user: {},
-  token: ''
+  token: '',
 };
 
 const userReducer = (state = initialState, action) => {
@@ -17,18 +17,13 @@ const userReducer = (state = initialState, action) => {
     case LOGOUT:
       return {
         ...state,
-        user: initialState,
+        user: initialState
       }
     case REGISTER: 
       return {
         ...state, 
         user: action.payload
       }
-    // case RENTALS: 
-    //   return {
-    //     ...state, 
-    //     user: action.payload 
-    //   }
     case UPDATE:
       return {
         ...state, 
@@ -38,7 +33,7 @@ const userReducer = (state = initialState, action) => {
             
     default:
       return state;
-  }
+  };
 };
 
 export default userReducer;

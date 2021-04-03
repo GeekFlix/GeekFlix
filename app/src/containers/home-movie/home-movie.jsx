@@ -1,14 +1,15 @@
 
 import React, { useEffect, useState } from 'react';
-import {connect} from 'react-redux'
+import { connect } from 'react-redux'
 // eslint-disable-next-line
 import Carousel from '../../components/carousel/carousel';
 import Navbar from '../../components/navbar/navbar';
 import axios from 'axios';
-import {SHOW} from '../../redux/types/movieTypes.js';
+import { SHOW } from '../../redux/types/movieTypes.js';
 import SearchEngine from '../../components/searchEngine/searchEngine';
 import { useHistory } from 'react-router-dom';
-import {LOGOUT} from '../../redux/types/userTypes';
+import { LOGOUT } from '../../redux/types/userTypes';
+import { SAVE } from '../../redux/types/saveMovieType';
 import { Button } from 'reactstrap';
 import logo from '../../assets/img/geekflix-green.png';
 
@@ -30,16 +31,13 @@ const HomeMovie = (props) => {
         },300);
     };
 
-    const showMovie = () => {
-        setTimeout(() => {history.push('/show-movie')}, 100);
-    };
-
+    
     useEffect(()=>{
-
+        
         getData();
         // eslint-disable-next-line
     },[])
-
+    
     const getData = async () =>{
         const filmCollection = await axios.get('http://localhost:3000/movie/');
         props.dispatch({type: SHOW, payload: filmCollection.data})
@@ -57,6 +55,13 @@ const HomeMovie = (props) => {
     }
 
     
+    const saveMovie = (searchMovie) => {
+        console.log(searchMovie)
+        props.dispatch({type: SAVE, payload: searchMovie});
+
+        setTimeout(() => {history.push('/show-movie')}, 100);
+    };
+
     if(!film.movies?.result){
         return (
             <div>
@@ -90,8 +95,8 @@ const HomeMovie = (props) => {
                         {
                             props.search.map(searchMovie => {
                                 return (
-                                    <div onClick={()=> showMovie(searchMovie)} key={searchMovie._id}>
-                                        <img className="imageSearchHomeMovie"src={searchMovie.posterUrl} alt="picture"/> 
+                                    <div onClick={()=> saveMovie(searchMovie)} key={searchMovie._id}>
+                                        <img src={searchMovie.posterUrl} alt="picture"/> 
                                         <div className="titleMovie">
                                             Titulo : {searchMovie.title}
                                         </div>
@@ -115,7 +120,6 @@ const mapStateToProps = state=>{
     return{
         movie: state.movieReducer.movie,
         search: state.movieReducer.query,
-        user: state.userReducer.user
     };
 };
 

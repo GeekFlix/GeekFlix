@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {connect} from 'react-redux';
 // import { RENTALS } from '../../redux/types/userTypes';
 
-import { Swiper, SwiperSlide }  from 'swiper/react';
+import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { A11y, EffectFade, Navigation, Pagination, Scrollbar, Zoom } from 'swiper/core';
 
 import 'swiper/swiper.scss';
