@@ -6,8 +6,6 @@ import { Button } from 'reactstrap';
 import { useHistory } from 'react-router-dom';
 
 
-
-
 const Rental = (props) => {
 
     const history = useHistory();
