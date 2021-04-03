@@ -88,6 +88,6 @@ span {
 .btnLogOut:hover{
   transform: scale(1.3);
   transition: 250ms all;
-  background-color: red;
+  
   
 }

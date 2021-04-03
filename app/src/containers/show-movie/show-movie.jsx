@@ -1,5 +1,6 @@
 import React,{ useState }from 'react';
-import { RENTALS } from '../../redux/types/userTypes';
+// import { RENTALS } from '../../redux/types/userTypes';
+import { Button } from 'reactstrap';
 
 
 const ShowMovie = (props) => {
@@ -11,13 +12,20 @@ const ShowMovie = (props) => {
 
     const rentalMovie = () => {
 
-        props.dispatch({type: RENTALS, payload: rental})
-        setRental({...rental, rentalMovies: rentalMovie})
+        alert('Vas a alquilar esta serie/película')
+        console.log("PUUUUM alquilado")
+        // props.dispatch({type: RENTALS, payload: rental})
+        // setRental({...rental, rentalMovies: rentalMovie})
     };
 
     return (
-        <div className="showMoviesContainer">
-            
+        <div >
+            <div className="showMoviesContainer">
+                <div className="headerShowMovie">
+                    Tu película seleccionada es .....   
+                </div>
+                <Button onClick={() => rentalMovie()}>Alquilar</Button>
+            </div>
     
         </div>
     );

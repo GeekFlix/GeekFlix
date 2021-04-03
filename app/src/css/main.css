@@ -506,6 +506,17 @@
   .containerAdmin .showData {
     margin: .5em; }
 
+.showMoviesContainer {
+  width: 100%;
+  height: 100em;
+  background-color: #323232; }
+  .showMoviesContainer .headerShowMovie {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 2em;
+    color: #f4e5c2; }
+
 .mainCarousel {
   width: 100%;
   height: 100vh;

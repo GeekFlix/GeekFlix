@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {connect} from 'react-redux';
-import { RENTALS } from '../../redux/types/userTypes';
+// import { RENTALS } from '../../redux/types/userTypes';
 
 import { Swiper, SwiperSlide }  from 'swiper/react';
 import SwiperCore, { A11y, EffectFade, Navigation, Pagination, Scrollbar, Zoom } from 'swiper/core';
@@ -18,7 +18,7 @@ const Carousel = (props) => {
         rentalMovies: []
     });
 
-    props.dispatch({type: RENTALS, payload: rental})
+    // props.dispatch({type: RENTALS, payload: rental})
 
     const handleState = (event) => {
         setRental({...rental, rentalMovies: event})
