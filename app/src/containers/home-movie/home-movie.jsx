@@ -53,7 +53,7 @@ const HomeMovie = (props) => {
           history.push('/user-profile')
         }, 1000);
 
-    }
+    };
 
     
     const saveMovie = (searchMovie) => {
@@ -84,7 +84,7 @@ const HomeMovie = (props) => {
                         <SearchEngine/>
                     </div>
                 </div>
-                <Button className="btnStyle" onClick={()=> logOut()} className="btnStyle">Salir</Button>
+                    <Button className="btnStyle" onClick={()=> logOut()} className="btnStyle">Salir</Button>
                 <div className="containsSearch">
 
                     
@@ -106,16 +106,12 @@ const HomeMovie = (props) => {
                             })
                         }
                     </div>
-                    
-                    
                 </div>
-                
                 <Carousel/>
-                
             </div>
         )
-    }
-}
+    };
+};
 
 const mapStateToProps = state=>{
     return{
