@@ -7,128 +7,133 @@
     height: 70em;
     background-color: #323232;
     
-    .visa {
-        display: flex;
-        justify-content: center;
+    .nav {
+        width: $mp-x;
+        height: $mp-p;
+    
+        display:flex;
+        flex-direction: row;
+        justify-content: space-between;
         align-items: center;
-        flex-direction: column;
-
-        .visaText {
-            color: $white;
-
+    
+        .go {
+            cursor: pointer;
+            color: $darkgreen;
+            font-size: larger;
         }
-
-        .visaInput {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-top: 0.5em;
+    
+        .toPayment {
+            color: $green;
         }
-    }
-
-    .date {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        margin-top: 1em;
+    
         
-        .dateText {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: $white;
-        }
-        .date-field {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            width: 18em;
-
-            margin-top: 0.5em;
-        }
     }
 
-    .cvv {
+    .paymentForm {
         display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-top: 1em;
         flex-direction: column;
-
-        .cvvText {
-            color: $white;
-        }
-
-        .cvvInput {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-top: 0.5em;
-
-        }
     }
+    // .visa {
+    //     display: flex;
+    //     justify-content: center;
+    //     align-items: center;
+    //     flex-direction: column;
 
-    .cardName{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-top: 1em;
-        flex-direction: column;
+    //     .visaText {
+    //         color: $white;
+
+    //     }
+
+    //     .visaInput {
+    //         display: flex;
+    //         justify-content: center;
+    //         align-items: center;
+    //         margin-top: 0.5em;
+    //     }
+    // }
+
+    // .date {
+    //     display: flex;
+    //     justify-content: center;
+    //     align-items: center;
+    //     flex-direction: column;
+    //     margin-top: 1em;
         
-        .nameText {
-            color: $white;
-        }
+    //     .dateText {
+    //         display: flex;
+    //         justify-content: center;
+    //         align-items: center;
+    //         color: $white;
+    //     }
+    //     .date-field {
+    //         display: flex;
+    //         flex-direction: row;
+    //         justify-content: space-between;
+    //         width: 18em;
 
-        .nameInput {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-top: 0.5em;
+    //         margin-top: 0.5em;
+    //     }
+    // }
 
-        }
-    }
+    // .cvv {
+    //     display: flex;
+    //     justify-content: center;
+    //     align-items: center;
+    //     margin-top: 1em;
+    //     flex-direction: column;
 
-    .payBtn {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-top: 1em;
-    }
+    //     .cvvText {
+    //         color: $white;
+    //     }
 
-    Button {
-        @include btnSesion
-    }
+    //     .cvvInput {
+    //         display: flex;
+    //         justify-content: center;
+    //         align-items: center;
+    //         margin-top: 0.5em;
 
-    .errorMessage {
-        width: 5em;
-        height: 1em;
-        color: $white;
-        font-family: 'Inter', sans-serif;
-        font-size: $mp-k;
-    }
+    //     }
+    // }
+
+    // .cardName{
+    //     display: flex;
+    //     justify-content: center;
+    //     align-items: center;
+    //     margin-top: 1em;
+    //     flex-direction: column;
+        
+    //     .nameText {
+    //         color: $white;
+    //     }
+
+    //     .nameInput {
+    //         display: flex;
+    //         justify-content: center;
+    //         align-items: center;
+    //         margin-top: 0.5em;
+
+    //     }
+    // }
+
+    // .payBtn {
+    //     display: flex;
+    //     justify-content: center;
+    //     align-items: center;
+    //     margin-top: 1em;
+    // }
+
+    // Button {
+    //     @include btnSesion
+    // }
+
+    // .errorMessage {
+    //     width: 5em;
+    //     height: 1em;
+    //     color: $white;
+    //     font-family: 'Inter', sans-serif;
+    //     font-size: $mp-k;
+    // }
 
 }
 
   
-.nav {
-    width: $mp-x;
-    height: $mp-p;
-
-    display:flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-
-    .go {
-        cursor: pointer;
-        color: $darkgreen;
-        font-size: larger;
-    }
-
-    .toPayment {
-        color: $green;
-    }
-
-    
-}
