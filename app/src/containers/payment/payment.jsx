@@ -89,7 +89,7 @@ const Payment = (props) => {
                     onKeyDown={handleOnKeyDown}
                     errorLegend='El usuario debe introducir un email'
                     regExp={regExp.visa}
-                    placeholder="93764484"
+                    placeholder="Número de tarjeta"
                 />
                 <Input 
                     state={dataCvv}
@@ -101,7 +101,7 @@ const Payment = (props) => {
                     onKeyDown={handleOnKeyDown}
                     errorLegend='El usuario debe introducir un email'
                     regExp={regExp.cvv}
-                    placeholder="email@email.com"
+                    placeholder="CVV"
                 />
                 <select name="month" defaultValue={"DEFAULT"} onChange={handleExpiration} onKeyDown={handleOnKeyDown}>
                     <option value="DEFAULT" disabled>- Select One -</option>
@@ -151,7 +151,7 @@ const Payment = (props) => {
                     onKeyDown={handleOnKeyDown}
                     errorLegend='El usuario debe introducir un email'
                     regExp={regExp.cardName}
-                    placeholder="email@email.com"
+                    placeholder="Nombre del titular"
                 />
                 {formValid === false && <ErrorMessage>
                     <p>

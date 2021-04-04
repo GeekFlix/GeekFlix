@@ -400,7 +400,8 @@
         justify-content: center;
         color: #f4e5c2;
         margin-left: 2em;
-        margin-top: 1em; }
+        margin-top: 0.5em;
+        margin-bottom: 2em; }
 
 .containerAdmin {
   display: flex;

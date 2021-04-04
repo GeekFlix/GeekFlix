@@ -111,7 +111,7 @@ const Login = (props) => {
             onKeyDown={handleOnKeyDown}
             errorLegend='El usuario debe introducir un email'
             regExp={regExp.password}
-            placeholder="email@email.com"
+            placeholder="password"
           />
 
           <select className="select" name="userType" defaultValue={'DEFAULT'} onChange={()=>handleUser()}>
