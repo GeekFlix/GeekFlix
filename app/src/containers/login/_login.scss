@@ -21,36 +21,36 @@
     
   }
 
-  .formContainer {
+  // .formContainer {
 
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    //align-items: center;
+  //   display: flex;
+  //   flex-direction: row;
+  //   justify-content: space-around;
+  //   //align-items: center;
 
-    .inputs {
-      // width: 30em;
-      height: 25em;
-      color: $white;
+  //   .inputs {
+  //     // width: 30em;
+  //     height: 25em;
+  //     color: $white;
 
-      display:flex;
-      flex-direction: column;
-      align-items: center;
+  //     display:flex;
+  //     flex-direction: column;
+  //     align-items: center;
 
-      .titleLoginDown {
+  //     .titleLoginDown {
        
-        width: $mp-w;
-        height: $mp-x;
+  //       width: $mp-w;
+  //       height: $mp-x;
 
-        p {
-          color: $green;
-          font-family: 'Inter', sans-serif;
-          font-size: $mp-k;
-        }
+  //       p {
+  //         color: $green;
+  //         font-family: 'Inter', sans-serif;
+  //         font-size: $mp-k;
+  //       }
         
-      }
+  //     }
    
-    }
+  //   }
 
     .contentLogin {
       width: $mp-x;

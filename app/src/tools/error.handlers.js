@@ -110,28 +110,7 @@ const checkError = (e) => {
 	}
 }
 
-const validationField = (regExp, input, field) => {
-	if(regExp.test(input.value)){
-		document.getElementById(`grupo__${field}`).classList.remove('formulario__grupo-incorrecto');
-		document.getElementById(`grupo__${field}`).classList.add('formulario__grupo-correcto');
-		document.querySelector(`#grupo__${field} i`).classList.add('fa-check-circle');
-		document.querySelector(`#grupo__${field} i`).classList.remove('fa-times-circle');
-		document.querySelector(`#grupo__${field} .formulario__input-error`).classList.remove('formulario__input-error-activo');
-		fields[field] = true;
-	} else {
-		document.getElementById(`grupo__${field}`).classList.add('formulario__grupo-incorrecto');
-		document.getElementById(`grupo__${field}`).classList.remove('formulario__grupo-correcto');
-		document.querySelector(`#grupo__${field} i`).classList.add('fa-times-circle');
-		document.querySelector(`#grupo__${field} i`).classList.remove('fa-check-circle');
-		document.querySelector(`#grupo__${field} .formulario__input-error`).classList.add('formulario__input-error-activo');
-		fields[field] = false;
-	}
-} 
 
-inputs.forEach((input) => {
-	input.addEventListener('keyup', validarFormulario);
-	input.addEventListener('blur', validarFormulario);
-});
 
 
 */
