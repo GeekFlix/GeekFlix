@@ -1,4 +1,3 @@
-import React from 'react';
 
 import styled, {css} from 'styled-components';
 import { FaRegUserCircle, FaRegTimesCircle } from "react-icons/fa";
@@ -8,23 +7,21 @@ const colors = {
 	errorColor: "#900040",
 	successColor: "#1ed12d", 
 	backgroundColor: "#323232", 
-	fontColor: "#f4e5c2"
+	fontColor: "#f4e5c2",
+	darkGreen: "#295f4e"
 }
 
 const Form = styled.form`
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	gap: 20px;
-	@media (max-width: 800px){
-		grid-template-columns: 1fr;
-	}
+	display: flex;
+	flex-direction: column;
 `;
 
 const Label = styled.label`
 	display: block;
+	justify-content: center;
 	font-weight: 700;
 	padding: 10px;
-	min-height: 40px;
+	min-height: 20px;
 	cursor: pointer;
 	${props => props.valid === 'false' && css`
 		color: ${colors.errorColor};
@@ -104,13 +101,14 @@ const BtnForm = styled.button`
 	height: 45px;
 	line-height: 45px;
 	width: 30%;
-	background: #000;
+	background: ${colors.darkGreen};
 	color: #fff;
 	font-weight: bold;
 	border: none;
 	border-radius: 3px;
 	cursor: pointer;
 	transition: .1s ease all;
+	margin-top: 1em;
 	&:hover {
 		box-shadow: 3px 0px 30px rgba(163,163,163, 1);
 	}

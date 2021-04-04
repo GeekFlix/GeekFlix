@@ -124,7 +124,7 @@ const Register = (props) => {
                         </p>
                     </ErrorMessage>}
                     <BtnContainer>
-                        <BtnForm type="submit" onClick={() => sendData()}></BtnForm>
+                        <BtnForm type="submit" onClick={() => sendData()}>Enviar</BtnForm>
                         {formValid === true && <SuccessMessage>Formulario completado exitosamente</SuccessMessage>}
                     </BtnContainer>
                     </Form>

@@ -43,8 +43,8 @@ const HomeAdmin = (props) => {
         setRentals({
             ...rentals, listRentals: collectionRentals.data.result
         });
-        
     };
+    console.log(rentals.listRentals)
 
     const deleteUser = async (user) => {
 
@@ -79,10 +79,10 @@ const HomeAdmin = (props) => {
                         {props.admin.userName}
                     </div>
                     <div>
-                        <Button className="btnStyle" onClick={()=> showUsers()}>Mostrar usuarios</Button>
+                        <button className="btnStyle" onClick={()=> showUsers()}>Mostrar usuarios</button>
                     </div>
                     <div>
-                        <Button className="btnStyle" onClick={()=> showRental()}>Mostrar alquileres</Button>
+                        <button className="btnStyle" onClick={()=> showRental()}>Mostrar alquileres</button>
                     </div>
                 </div>
                 <div className="listContainer">

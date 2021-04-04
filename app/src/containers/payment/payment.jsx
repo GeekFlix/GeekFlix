@@ -10,7 +10,7 @@ import { BtnContainer, BtnForm, ErrorMessage, SuccessMessage, ValidationIcon, Fo
 import { FaRegTimesCircle, FaRegUserCircle } from 'react-icons/fa';
 
 import {connect} from 'react-redux';
-import {SAVE} from '../../redux/types/paymentTypes';
+import { STORED } from '../../redux/types/paymentTypes';
 
 
 
@@ -57,9 +57,8 @@ const Payment = (props) => {
             }
 
             const data = await axios.post('http://localhost:3000/payment/', body)
-            props.dispatch({type: SAVE, payload: data.data});
-            console.log(data);
-            
+            props.dispatch({type: STORED, payload: data.data});
+      
             return setTimeout(() => {
                 history.push('/login')
             }, 1000);

@@ -18,10 +18,7 @@
     }
 
     .btnStyle {
-        margin-left: 2em;
-        margin-right: 2em;
-        width: 6em;
-        height:3em;
+        @include btnOne
     }
 
     .nameStyle {

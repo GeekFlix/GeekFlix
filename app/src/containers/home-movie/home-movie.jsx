@@ -44,7 +44,7 @@ const HomeMovie = (props) => {
     };
 
     const saveMovie = (searchMovie, movie) => {
-        const save = props.dispatch({type: SAVE, payload: searchMovie, movie});
+        props.dispatch({type: SAVE, payload: searchMovie, movie});
 
         setTimeout(() => {history.push('/show-movie')}, 100);
     };
