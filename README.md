@@ -1,6 +1,6 @@
 <p align="center">
-  <a href="img/geekflix-green.png" rel="noopener">
- <img src="img/captLogo.png" alt="Project logo"></a>
+  <a href="" rel="noopener">
+ <img src="img/geekflix-green.png" alt="Project logo"></a>
 </p>
 <h3 align="center">GeekFlix</h3>
 
@@ -99,7 +99,7 @@ There are any views in the app, starting with a home view without log in or regi
 
 (Issue de Home sin Login/Registro o Login)
 
-You can log in or register a new account through CRUD's POST method. Once access is obtained, you will be able to access all the content of the web, with a home view in which all the movies are presented with their most important information (GET method). From here you can rent the movies that you like the most!
+You can log in or register a new account through CRUD's POST method. Once access is obtained, you will be able to access all the content of the web, with a home view in which all the movies are presented with their most important information (GET method). From here you can you can find any movie through our search bar and rent it !
 
 (Issue de Home con Login, Navbar y acceso a otras vistas (información de la película y alquiler))
 

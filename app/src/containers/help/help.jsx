@@ -3,9 +3,6 @@ import Navbar from '../../components/navbar/navbar';
 import logo from '../../assets/img/geekflix-green.png';
 
 
-
-
-
 const Help = () => {
 
     return(
@@ -21,9 +18,10 @@ const Help = () => {
             </div>
             <div className="textHelp">
 
-                <div className="textTitleHelp">¿Necesitas ayuda?</div>
-                <div className="textExplainHelp">¡Ahora, ponerse en contacto con Geekflix es más fácil que nunca si lo haces desde la aplicación de Geekflix, entrando en cualquiera de los perfiles de nuestros desarrolladores le podrán ayudar en sus dudas y consultas de GeeFlix. <br/><br/>
-                Clickea en las fotos!!</div>
+                <div className="textTitleHelp"><p>¿Necesitas ayuda?</p></div>
+                <div className="textExplainHelp"><p>¡Ahora, ponerse en contacto con Geekflix es más fácil que nunca si lo haces desde la aplicación de Geekflix, entrando en cualquiera de los perfiles de nuestros desarrolladores le podrán ayudar en sus dudas y consultas de GeeFlix.</p> <br/><br/>
+                <p>Clickea en las fotos!!</p></div>
+                
             </div>
             <div className="helpPhotoDeveloper">
                 <a href='https://github.com/LauraPorto' target="_blank"><img className='photoDevelopers'src='https://avatars.githubusercontent.com/u/77154578?v=4' alt='la_meiga'/></a>
