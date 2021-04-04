@@ -62,7 +62,7 @@ const Login = (props) => {
                 console.log(result.data, 'esto es RESULT');
                 props.dispatch({type: LOGIN, payload: result.data});
                 return setTimeout(() => {history.push('/home-movie')}, 100);
-
+                
             }else {
     
                 const resultAdmin = await axios.post('http://localhost:3000/admin/login',body)
@@ -126,7 +126,7 @@ const Login = (props) => {
             </p>
           </ErrorMessage>}
           <BtnContainer>
-            <BtnForm type="submit" onClick={() => sendLogin()}></BtnForm>
+            <BtnForm type="submit" onClick={() => sendLogin()}>Enviar</BtnForm>
             {formValid === true && <SuccessMessage>Formulario completado exitosamente</SuccessMessage>}
           </BtnContainer>
         </Form>

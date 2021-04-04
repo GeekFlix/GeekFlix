@@ -3,7 +3,9 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { RENT } from '../../redux/types/saveMovieType';
 import { Button } from 'reactstrap';
-import { useHistory } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
+
+import logo from '../../assets/img/geekflix-green.png';
 
 
 const Rental = (props) => {
@@ -26,14 +28,18 @@ const Rental = (props) => {
         props.dispatch({type: RENT, payload: result})
         console.log(result)
         return setTimeout(() => {history.push('/user-profile')}, 100);
-
     };
    
+    const getBack = () => {
+        return setTimeout(() => {history.push('/home-movie')}, 100);
+    }
 
     return (
         <div >
             <div className="movieInfo">
                 <div className="headerMovieInfo">
+                    <button className="backButton" onClick={() => getBack()}>Ir atrás</button>
+                    <div className="imgGeek"><Link className="logo" to='/'><img src={logo} alt="logo"/></Link></div>
                 </div>
                 <div className="movieContainer">
                     <div className="pictureDiv">

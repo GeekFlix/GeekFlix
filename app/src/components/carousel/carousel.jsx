@@ -31,7 +31,7 @@ const Carousel = (props) => {
     
 
     const saveMovie = (picture) => {
-        console.log("presionando")
+
         const save = props.dispatch({type: SAVE, payload: picture});
 
         setTimeout(() => {history.push('/show-movie')}, 100);

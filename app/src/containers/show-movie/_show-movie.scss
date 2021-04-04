@@ -5,12 +5,20 @@
    
     .headerMovieInfo {
         display: flex;
-        justify-content: center;
+        justify-content: space-evenly;
         margin-right: 2em;
         align-items: center;
-        height: 2em;
-        color: $white;
+        height: 5em;
+
+        .logo {
+            cursor: pointer;
+        }
+
+        .backButton {
+            @include btnOne
+        }
     }
+    
 
     .movieContainer {
         display: flex;
