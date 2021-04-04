@@ -69,19 +69,5 @@ const checkError = (dataState) => {
 export default checkError;
 
 
-// const validateFields = (dataState) => {
-//     let resultCheck = {};
 
-//     for (let field in dataState) {
-
-//         resultCheck[field] = validateFields(field, dataState[field])
-//     }
-    
-//     return resultCheck;
-
-// }
-// export default {
-//     checkError, 
-//     validateFields
-// };
 

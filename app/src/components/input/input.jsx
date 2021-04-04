@@ -1,51 +1,54 @@
-import React from 'react'; 
-import {Input, InputGroup, ErrorLegend, ValidationIcon, Label, FormComponent} from './elements';
+
+import React from 'react';
+import {Input, Label, InputGroup, ErrorLegend, ValidationIcon} from './elements';
 import { FaRegUserCircle, FaRegTimesCircle } from "react-icons/fa";
 
-const InputComponent = ({dataState, type, label, placeholder, name, errorLegend, expresionRegular, changeState}) => {
-	const onChange = (e) => {
-		changeState({...dataState, field: e.target.value});
-	}
+const InputComponent = ({state, changeState, type, label, placeholder, name, errorLegend, expresionRegular, funcion}) => {
+	// const onChange = (e) => {
+	// 	changeState({...state, field: e.target.value});
+	// }
 
-	const validation = () => {
-		if(expresionRegular){
-			if(expresionRegular.test(dataState.field)){
-				changeState({...dataState, valid: 'true'});
-			} else {
-				changeState({...dataState, valid: 'false'});
-			}
-		}
+	// const validation = () => {
+	// 	if(expresionRegular){
+	// 		if(expresionRegular.test(state.field)){
+	// 			changeState({...state, valid: 'true'});
+	// 		} else {
+	// 			changeState({...state, valid: 'false'});
+	// 		}
+	// 	}
 
-		// if(funcion){
-		// 	funcion();
-		// }
-	}
+	// 	if(funcion){
+	// 		funcion();
+	// 	}
+	// }
 
 	return (
 		<div>
-			<Label htmlFor={name} valid={dataState.valid}>{label}</Label>
+			{/* <Label htmlFor={name} valid={state.valid}>{label}</Label> */}
 			<InputGroup>
 				<Input 
 					type={type}
 					placeholder={placeholder} 
 					id={name}
-					value={dataState.field}
-					onChange={onChange}
-					onKeyUp={validation}
-					onBlur={validation}
-					valid={dataState.valid}
+					// value={state.field}
+					// onChange={onChange}
+					// onKeyUp={validation}
+					// onBlur={validation}
+					// valid={state.valid}
 				/>
-				<ValidationIcon 
-					icon={dataState.valid === 'true' ? FaRegUserCircle : FaRegTimesCircle}
-					valid={dataState.valid}
+				{/* <ValidationIcon 
+					icon={state.valid === 'true' ? FaRegUserCircle : FaRegTimesCircle}
+					valid={state.valid}
 				/>
-			</InputGroup>
-			<ErrorLegend valid={dataState.valid}>{errorLegend}</ErrorLegend>
+			
+			<ErrorLegend valid={state.valid}>{errorLegend}</ErrorLegend> */}
+            </InputGroup>
 		</div>
 	);
 }
  
 export default InputComponent;
+
 
 
 
@@ -59,11 +62,6 @@ El if de la validación sería para repetir la contraseña, porque no haría fal
 
 expresionREgular = checkError?
 checkError(field.state)
-
-PENDIENTE:
-- funciones y extracción de props con sass --> si no metemos estilo a pelo en jsx
-- comprar expresiones regulares con archivo tools
-- comparar app.js con los lugares donde meteremos el formulario
 
 
 EN LOGIN, para que compruebe campo por campo del formulario (botón de enviar)

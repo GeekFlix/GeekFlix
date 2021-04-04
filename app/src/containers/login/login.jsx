@@ -99,7 +99,7 @@ const Login = (props) => {
         <div className="inputs">
           <div>
             <p>Email</p>
-            <input type="email" className="email" maxLength="50" name="email" onChange={handleState} onKeyDown={handleOnKeyDown}/>
+            <Input type="email" className="email" maxLength="50" name="email" onChange={handleState} onKeyDown={handleOnKeyDown}/>
           </div>
           <div>
             <p>Password</p>
