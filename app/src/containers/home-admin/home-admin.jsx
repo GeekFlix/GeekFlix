@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
 import { connect } from 'react-redux';
 import { Button } from 'reactstrap';
@@ -17,14 +17,6 @@ const HomeAdmin = (props) => {
     const [rentals, setRentals] = useState({
         listRentals : []
     });
-
-    const [userRental, setUserRental] = useState({
-        listUserRental: []
-    });
-
-    // useEffect(() => {
-    //     showRental()
-    // }, [])
 
     const logOut =  () => {
 
@@ -51,58 +43,9 @@ const HomeAdmin = (props) => {
         setRentals({
             ...rentals, listRentals: collectionRentals.data.result
         });
-        console.log(collectionRentals)
-        // const saveUserId = collectionRentals.data.result[0].ownerId
-        // const saveUserId = collectionRentals.data.result[0].ownerId
         
-        // setUserId({
-        //     ...userId, listUserId: saveUserId
-        // });
-        // const saveUserId = collectionRentals.data.result.map(rent => rent.ownerId )
-        
-        // console.log(saveUserId)
-        
-        // mapOwnerId()
-        // getUserByRental(saveUserId)
     };
 
-    // const mapOwnerId = () => {
-
-    //     console.log("que tiene rentals???",rentals.listRentals)
-    //     const pepe = rentals.listRentals.map(rent => rent.ownerId )
-    //     console.log(pepe)
-
-    // }
-
-        
-    // const mapOwnerId = () => {
-    //      rentals.listRentals?.result.map(rent => {
-    //          return (
-    //              <div className="pepi" onClick={()=> getUserByRental(rent)}>
-    //                 ID: {rent.ownerId}
-    //                  <Button>IEEEEEEEEEE</Button>
-    //              </div>
-    //          )
-    //      })
-    // //     console.log("que tiene rentals???",rentals.listRentals)
-    // //     console.log(pepe)
-    // //     getUserByRental(pepe)
-    // };
-  
-    
-    // const getUserByRental = async (userId) => {
-
-    //     const ownerId = userId.ownerId
-
-    //     const collectionUserByRental = await axios.get(`http://localhost:3000/user/${ownerId}`)
-    //     console.log(collectionUserByRental)
-    //     setUserRental({
-    //         ...userRental, listUserRental: collectionUserByRental.data.result
-    //     });
-    //     console.log(collectionUserByRental)
-    // };
-
-   
     const deleteUser = async (user) => {
 
         const selectUser = window.confirm('You are about to delete this user, are you sure?');
@@ -130,99 +73,79 @@ const HomeAdmin = (props) => {
             <div className="containerAdmin">
                 <div className="headerAdmin">
                 <div>
-                        <Button className="btnStyle" onClick={()=> logOut()} className="btnStyle">Salir</Button>
+                        <Button className="btnStyle" onClick={()=> logOut()}>Salir</Button>
                     </div>
                     <div className="nameStyle">
                         {props.admin.userName}
                     </div>
                     <div>
-                        <Button className="btnStyle" onClick={()=> showUsers()} className="btnStyle">Mostrar usuarios</Button>
+                        <Button className="btnStyle" onClick={()=> showUsers()}>Mostrar usuarios</Button>
                     </div>
                     <div>
-                        <Button className="btnStyle" onClick={()=> showRental()} className="btnStyle">Mostrar alquileres</Button>
+                        <Button className="btnStyle" onClick={()=> showRental()}>Mostrar alquileres</Button>
                     </div>
                 </div>
-                <div className="usersContainer">
-                    {
-                        !users.listUsers
-                        ?
-                        <>
-                            <div>
-                                "Get Out fucking nigga"
-                            </div>
-                        </>
-                        :
-                        <>
-                            <div>
-                                {
-                                    users.listUsers.map(user => {
-
-                                        return(
-                                            <div className="userData" key={user._id}>
-                                                 <div onClick={() => deleteUser(user)}  className="showData id">ID del usuario: {user._id}</div>
-                                                <div className="showData">Nombre de usuario: {user.userName}</div>
-                                                <div className="showData">Email: {user.email}</div><br></br>
-                                            </div>
-                                        )
-                                    })
-                                }
-                            </div>
-                        </>
-                    }
+                <div className="listContainer">
+                    <div className="usersContainer">
+                        Lista de Usuarios
+                        {
+                            !users.listUsers
+                            ?
+                            <>
+                                <div>
+                                    "Get Out fucking nigga"
+                                </div>
+                            </>
+                            :
+                            <>
+                                <div>
+                                    {
+                                        users.listUsers.map(user => {
+                                            return(
+                                                <div className="userData" key={user._id}>
+                                                    <div onClick={() => deleteUser(user)}  className="showData id">ID del usuario: {user._id}</div>
+                                                    <div>Nombre de usuario: {user.userName}</div>
+                                                    <div>Email: {user.email}</div><br></br>
+                                                </div>
+                                            )
+                                        })
+                                    }
+                                </div>
+                            </>
+                        }
+                    </div>
+                    <div className="rentalsContainer">
+                        Lista de Alquileres
+                        {
+                            !rentals.listRentals
+                            ?
+                            <>
+                                <div>
+                                    "No rentals yet"
+                                </div>
+                            </>
+                            :
+                            <>
+                                <div>
+                                    {
+                                        rentals.listRentals.map(rent => {
+                                            
+                                            return(
+                                                <div onClick={() => deleteRental(rent)} className="rentData" key={rent._id}>
+                                                    <div>Usuario: {rent.userName}</div>
+                                                    <div>Película: {rent.title}</div>
+                                                    <div>Fecha del alquiler: {rent.dateInit}</div>
+                                                    <div>Fecha de finalización: {rent.dateEnd}</div>
+                                                    <div>Precio: {rent.price}</div>
+                                                </div>
+                                            )
+                                        })
+                                    }
+                                </div>
+                            </>
+                        }
+                    </div>
                 </div>
-                <div className="rentalsContainer">
-                    {
-                        !rentals.listRentals
-                        ?
-                        <>
-                            <div>
-                                "No rentals yet"
-                            </div>
-                        </>
-                        :
-                        <>
-                            <div>
-                                {
-                                    rentals.listRentals.map(rent => {
-                                        
-                                        return(
-                                            <div onClick={() => deleteRental()} className="userData" key={rent._id}>
-                                                <div className="showData id">usuario: {rent.userName}</div>
-                                                <div className="showData id">usuario: {rent.title}</div>
-                                            </div>
-                                        )
-                                    })
-                                }
-                            </div>
-                        </>
-                    }
-                </div>
-                <div className="rentalsContainer">
-                    {/* {
-                        !userRental.listUserRental
-                        ?
-                        <>
-                            <div>
-                                "No user rental yet"
-                            </div>
-                        </>
-                        :
-                        <>
-                            <div>
-                                {
-                                    userRental.listUserRental.map(renderUser => {
-                                        
-                                        return(
-                                            <div className="userData" key={renderUser}>
-                                                <div className="showData id">Nombre de usuario que alquiler: {renderUser.userName}</div>
-                                            </div>
-                                        )
-                                    })
-                                }
-                            </div>
-                        </>
-                    } */}
-                </div>        
             </div>
         );
     }else {
@@ -241,5 +164,5 @@ const mapStateToProps = state => {
     }
 };
   
-  export default connect(mapStateToProps)(HomeAdmin)
+export default connect(mapStateToProps)(HomeAdmin)
 
