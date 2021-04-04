@@ -381,7 +381,8 @@
     justify-content: center;
     margin-top: 1em; }
     .homeMovie .containsSearch .textHomeSearch {
-      color: #f4e5c2; }
+      color: #f4e5c2;
+      margin-left: 1em; }
     .homeMovie .containsSearch .searchResult {
       display: grid;
       grid-template-columns: repeat(3, auto);
