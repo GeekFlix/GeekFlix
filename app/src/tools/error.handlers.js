@@ -69,5 +69,70 @@ const checkError = (dataState) => {
 export default checkError;
 
 
+/*
+const inputs = document.querySelectorAll('#formulario input');
 
+const regExp = {
+    email: /^(("[\w-\s]+")|([\w-]+(?:\.[\w-]+)*)|("[\w-\s]+")([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)/
+    password: /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/
+    visa: /^4[0-9]{12}(?:[0-9]{3})?$/
+    cvv: /^[0-9]+$/
+    cardName: /^[a-zA-ZÀ-ÿ\u00f1\u00d1]+(\s*[a-zA-ZÀ-ÿ\u00f1\u00d1]*)*[a-zA-ZÀ-ÿ\u00f1\u00d1]+$/
+
+}
+
+
+const field = {
+	email: false,
+    password: false,
+    visa: false,
+    cvv: false, 
+    cardName: false
+}
+
+const checkError = (e) => {
+	switch (e.target.name) {
+		case "email":
+			validationField(regExp.email, e.target, 'email');
+		break;
+		case "password":
+			validationField(regExp.password, e.target, 'password');
+		break;
+		case "visa":
+			validationField(regExp.visa, e.target, 'visa');
+		break;
+		case "cvv":
+			validationField(regExp.cvv, e.target, 'cvv');
+		break;
+		case "cardName":
+			validationField(regExp.correo, e.target, 'carName');
+		break;
+	}
+}
+
+const validationField = (regExp, input, field) => {
+	if(regExp.test(input.value)){
+		document.getElementById(`grupo__${field}`).classList.remove('formulario__grupo-incorrecto');
+		document.getElementById(`grupo__${field}`).classList.add('formulario__grupo-correcto');
+		document.querySelector(`#grupo__${field} i`).classList.add('fa-check-circle');
+		document.querySelector(`#grupo__${field} i`).classList.remove('fa-times-circle');
+		document.querySelector(`#grupo__${field} .formulario__input-error`).classList.remove('formulario__input-error-activo');
+		fields[field] = true;
+	} else {
+		document.getElementById(`grupo__${field}`).classList.add('formulario__grupo-incorrecto');
+		document.getElementById(`grupo__${field}`).classList.remove('formulario__grupo-correcto');
+		document.querySelector(`#grupo__${field} i`).classList.add('fa-times-circle');
+		document.querySelector(`#grupo__${field} i`).classList.remove('fa-check-circle');
+		document.querySelector(`#grupo__${field} .formulario__input-error`).classList.add('formulario__input-error-activo');
+		fields[field] = false;
+	}
+} 
+
+inputs.forEach((input) => {
+	input.addEventListener('keyup', validarFormulario);
+	input.addEventListener('blur', validarFormulario);
+});
+
+
+*/
 

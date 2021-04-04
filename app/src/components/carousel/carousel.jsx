@@ -35,11 +35,6 @@ const Carousel = (props) => {
     const biography = props.movie.filter(objectMovie => objectMovie.genres.includes('Biography'));
     const drama = props.movie.filter(objectMovie=> objectMovie.genres.includes('Drama'));
     const adventure = props.movie.filter(objectMovie=> objectMovie.genres.includes('Adventure'));
-<<<<<<< HEAD
-
-=======
-    console.log(drama, 'si quieres unas risas');
->>>>>>> ff59490d95939c3d1c3e1ff67ed6767a95257c09
     
     SwiperCore.use([Navigation, Pagination, EffectFade, Scrollbar, A11y, Zoom]);
     

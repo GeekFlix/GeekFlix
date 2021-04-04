@@ -60,10 +60,7 @@ const Rental = (props) => {
                         </div>
                     </div>
                 </div>
-<<<<<<< HEAD
                 <button onClick={() => rentalMovie()}>Alquilar</button>
-=======
->>>>>>> ff59490d95939c3d1c3e1ff67ed6767a95257c09
             </div>
         </div>
     );

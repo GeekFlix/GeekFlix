@@ -104,10 +104,7 @@ const HomeMovie = (props) => {
                         }
                     </div>
                 </div>
-<<<<<<< HEAD
                 {/* <Navbar/> */}
-=======
->>>>>>> ff59490d95939c3d1c3e1ff67ed6767a95257c09
                 <Carousel/>
             </div>
         )
