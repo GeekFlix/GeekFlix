@@ -29,6 +29,16 @@ const Login = (props) => {
 
     const [message,setMessage] = useState('');
 
+    /*
+    const [email, handleEmail] = useState({field: '', valid: null})
+    const [password, handlePassword] = useState({field: '', valid: null})
+    const [formValid, changeValid] = useState({field: '', valid: 'false'})
+
+      Se pasa el estado al elemento input de nuestra vista para que lo procese. Además entra en las propiedades que tiene el componente, donde figuran --> state={email} changeState={handleEmail}
+        **email en el ejemplo del elemento input, state={state} en el componente
+
+    */
+
     const handleOnKeyDown = (event) => {
         if(event.keyCode === 13) sendLogin()
     };
@@ -38,6 +48,9 @@ const Login = (props) => {
         setLogin({...dataLogin, [event.target.name]: event.target.type === "number" ? + event.target.value : event.target.value})
     };
 
+    /*
+    
+    */
 
     const sendLogin = async () => {
 
@@ -86,7 +99,7 @@ const Login = (props) => {
         <div className="inputs">
           <div>
             <p>Email</p>
-            <Input type="email" className="email" maxLength="50" name="email" onChange={handleState} onKeyDown={handleOnKeyDown}/>
+            <input type="email" className="email" maxLength="50" name="email" onChange={handleState} onKeyDown={handleOnKeyDown}/>
           </div>
           <div>
             <p>Password</p>
@@ -109,5 +122,6 @@ const Login = (props) => {
 }
 
 export default connect()(Login);
+
 
 

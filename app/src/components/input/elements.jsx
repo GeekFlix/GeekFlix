@@ -1,45 +1,23 @@
 // import React from 'react';
-// import { FaRegUserCircle, FaRegTimesCircle } from "react-icons/fa";
+// // import { FaRegUserCircle, FaRegTimesCircle } from "react-icons/fa";
 
-// const componentInput = () => {
-//     const ErrorLegend = () => {
-        
-//     }
 
-//     const ValidationIcon = () => {
-       
-//     }
-
-//     const ErrorMessage = () => {
-      
-//     }
-
-//     const SuccessMessage = () => {
-        
-//     }
-
-    // const Label = () => {
-
-    // }
-
-    // const FormComponent = () => {
-
-    // }
-
-    // const BtnContainer = () => {
-
-    // }
-
-//     return (
+// const FormSchema = () => {
+//     const ValidationIcon = () => {}
+//     const ErrorLegend = () => {}
+//     const ErrorMessage = () => {}
+//     const SuccessMessage = () => {}
+//     const Label = () => {}
+//     const FormComponent = () => {}
+//     const BtnContainer = () => {}
+//     const Input = () => {}
+//     const InputGroup = () => {}
+//     return(
 //         <div>
-
+       
 //         </div>
 //     )
-
 // }
-
-
-
 
 
 // export {
@@ -50,7 +28,7 @@
 //     Label, 
 //     FormComponent, 
 //     BtnContainer, 
-//     Input    
-    
-
+//     Input,   
+//     InputGroup 
 // }
+
