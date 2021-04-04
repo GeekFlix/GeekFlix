@@ -9,7 +9,7 @@
  import { IconContext } from 'react-icons';
  import { LOGOUT } from '../../redux/types/userTypes';
  import { useHistory } from 'react-router-dom';
- import * as IoIcons from 'react-icons/io';
+ 
 
 
 
@@ -58,11 +58,6 @@
                   </div>
                 );
               })}
-              <div className="btnHelp">
-                <a href="https://github.com/GeekFlix/GeekFlix/" target="_blank">
-                  <IoIcons.IoMdHelpCircle/>
-                </a>
-              </div>
               <div className="btnLogOut" onClick={()=> logOut()}>
                   <FaIcons.FaPowerOff />
               </div>

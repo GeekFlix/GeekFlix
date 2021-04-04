@@ -61,7 +61,7 @@ const HomeMovie = (props) => {
     }else{
         return(
             <div className="homeMovie">
-                {/* <img className="backgroundImage" src="https://i.blogs.es/fd5f1b/avengers-5-lo-que-sabemos/1366_521.jpeg" alt=""/> */}
+                
                 <div className="headerHomeMovie">
                     <div className="containsNavbar">
                         <Navbar/>
@@ -76,7 +76,7 @@ const HomeMovie = (props) => {
                 <div className="containsSearch">
 
                     
-                    <Button className="btnStyle" onClick={()=> redirect()} className="btnStyle">Profile</Button>
+                    
                     <div className="textHomeSearch">
                         BUSQUEDAS ANTERIORES:
                     </div>
