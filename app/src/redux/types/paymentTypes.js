@@ -1,2 +1,2 @@
-export const SAVE = 'save';
+export const STORED = 'stored';
 export const UPDATECARD = 'updatecard';
