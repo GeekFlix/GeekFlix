@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { LOGIN } from "../../redux/types/userTypes";
 import { ADMINLOGIN } from "../../redux/types/adminTypes";
 import { Link, useHistory } from 'react-router-dom';
-//import { Button } from 'reactstrap';
+
 
 
 

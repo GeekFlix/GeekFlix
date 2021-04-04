@@ -4,9 +4,11 @@ import styled, {css} from 'styled-components';
 import { FaRegUserCircle, FaRegTimesCircle } from "react-icons/fa";
 
 const colors = {
-	borderColor: "#0075FF",
-	errorColor: "#bb2929",
-	successColor: "#1ed12d"
+	borderColor: "#050505e1",
+	errorColor: "#900040",
+	successColor: "#1ed12d", 
+	backgroundColor: "#323232", 
+	fontColor: "#f4e5c2"
 }
 
 const Form = styled.form`
@@ -25,7 +27,7 @@ const Label = styled.label`
 	min-height: 40px;
 	cursor: pointer;
 	${props => props.valid === 'false' && css`
-		color: ${colors.error};
+		color: ${colors.errorColor};
 	`}
 `;
 
@@ -36,15 +38,15 @@ const InputGroup = styled.div`
 
 const Input = styled.input`
 	width: 100%;
-	background: #fff;
+	background: ${colors.backgroundColor};
 	border-radius: 3px;
 	height: 45px;
 	line-height: 45px;
 	padding: 0 40px 0 10px;
 	transition: .3s ease all;
-	border: 3px solid transparent;
+	border: 3px solid ${colors.borderColor};
 	&:focus {
-		border: 3px solid ${colors.borde};
+		border: 3px solid ${colors.borderColor};
 		outline: none;
 		box-shadow: 3px 0px 30px rgba(163,163,163, 0.4);
 	}
@@ -52,14 +54,14 @@ const Input = styled.input`
 		border: 3px solid transparent;
 	`}
 	${props => props.valid === 'false' && css`
-		border: 3px solid ${colors.error} !important;
+		border: 3px solid ${colors.errorColor} !important;
 	`}
 `;
 
 const ErrorLegend = styled.p`
 	font-size: 12px;
 	margin-bottom: 0;
-	color: ${colors.error};
+	color: ${colors.errorColor};
 	display: none;
 	${props => props.valid === 'true' && css`
 		display: none;
@@ -78,11 +80,11 @@ const ValidationIcon = styled(FaRegTimesCircle, FaRegUserCircle)`
 	opacity: 0;
 	${props => props.valid === 'false' && css`
 		opacity: 1;
-		color: ${colors.error};
+		color: ${colors.errorColor};
 	`}
 	${props => props.valid === 'true' && css`
 		opacity: 1;
-		color: ${colors.exito};
+		color: ${colors.successColor};
 	`}
 `;
 
@@ -116,7 +118,7 @@ const BtnForm = styled.button`
 
 const SuccessMessage = styled.p`
 	font-size: 14px;
-	color: ${colors.exito};
+	color: ${colors.successColor};
 `;
 
 const ErrorMessage = styled.div`
