@@ -17,19 +17,12 @@ const Carousel = (props) => {
 
     const history = useHistory();
 
-<<<<<<< HEAD
     // props.dispatch({type: RENTALS, payload: rental})
 
     const handleState = (event) => {
         setRental({...rental, rentalMovies: event})
     };
   
-
-  
-
-=======
-    console.log('PROPSSSSS!!',props.movie);
->>>>>>> 11566772b15552a0c6b8d43b8f505d6e525ffe2e
 
     const thriller = props.movie.filter(objectMovie => objectMovie.genres.includes('Thriller'));
     const comedy = props.movie.filter(objectMovie => objectMovie.genres.includes('Comedy'));
