@@ -1,4 +1,4 @@
-import { SAVE, UPDATECARD } from '../types/paymentTypes';
+import {  STORED, UPDATECARD } from '../types/paymentTypes';
 
 const initialState = {
   payment: {},
@@ -7,7 +7,7 @@ const initialState = {
 
 const paymentReducer = (state = initialState, action) => {
   switch (action.type) {
-    case SAVE:
+    case STORED:
     console.log(action, 'esto es action tiu')
       return {
         ...state, 
