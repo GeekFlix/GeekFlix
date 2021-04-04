@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux'
 // eslint-disable-next-line
@@ -8,7 +7,6 @@ import axios from 'axios';
 import { SHOW } from '../../redux/types/movieTypes.js';
 import SearchEngine from '../../components/searchEngine/searchEngine';
 import { useHistory } from 'react-router-dom';
-import { LOGOUT } from '../../redux/types/userTypes';
 import { SAVE } from '../../redux/types/saveMovieType';
 import { Button } from 'reactstrap';
 import logo from '../../assets/img/geekflix-green.png';
@@ -23,16 +21,6 @@ const HomeMovie = (props) => {
 
     const history = useHistory();
 
-    const logOut =  () => {
-
-        props.dispatch({type: LOGOUT, payload : {}});
-    
-        setTimeout(()=> {
-            history.push('/');
-        },300);
-    };
-
-    
     useEffect(()=>{
         
         getData();
@@ -56,8 +44,9 @@ const HomeMovie = (props) => {
     };
 
     
-    const saveMovie = (searchMovie) => {
-        const save = props.dispatch({type: SAVE, payload: searchMovie});
+    const saveMovie = (searchMovie, movie) => {
+        console.log("presionando")
+        const save = props.dispatch({type: SAVE, payload: searchMovie, movie});
 
         setTimeout(() => {history.push('/show-movie')}, 100);
         console.log(save)

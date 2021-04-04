@@ -22,9 +22,9 @@ const HomeAdmin = (props) => {
         listUserRental: []
     });
 
-    useEffect(() => {
-        showRental()
-    }, [])
+    // useEffect(() => {
+    //     showRental()
+    // }, [])
 
     const logOut =  () => {
 
@@ -58,21 +58,21 @@ const HomeAdmin = (props) => {
         // setUserId({
         //     ...userId, listUserId: saveUserId
         // });
-        const saveUserId = collectionRentals.data.result.map(rent => rent.ownerId )
+        // const saveUserId = collectionRentals.data.result.map(rent => rent.ownerId )
         
-        console.log(saveUserId)
+        // console.log(saveUserId)
         
-        mapOwnerId()
+        // mapOwnerId()
         // getUserByRental(saveUserId)
     };
 
-    const mapOwnerId = () => {
+    // const mapOwnerId = () => {
 
-        console.log("que tiene rentals???",rentals.listRentals)
-        const pepe = rentals.listRentals.map(rent => rent.ownerId )
-        console.log(pepe)
+    //     console.log("que tiene rentals???",rentals.listRentals)
+    //     const pepe = rentals.listRentals.map(rent => rent.ownerId )
+    //     console.log(pepe)
 
-    }
+    // }
 
 
 
@@ -182,7 +182,7 @@ const HomeAdmin = (props) => {
                         </>
                     }
                 </div>
-                {/* <div className="rentalsContainer">
+                <div className="rentalsContainer">
                     {
                         !userRental.listUserRental
                         ?
@@ -199,7 +199,7 @@ const HomeAdmin = (props) => {
 
                                         return(
                                             <div className="userData" key={renderUser}>
-                                                <div onClick={() => deleteRental(renderUser)}  className="showData id">Nombre de usuario que alquiler: {renderUser.userName}</div>
+                                                <div onClick={() => getUserByRental(renderUser)}  className="showData id">Nombre de usuario que alquiler: {renderUser.userName}</div>
                                             </div>
                                         )
                                     })
@@ -207,16 +207,16 @@ const HomeAdmin = (props) => {
                             </div>
                         </>
                     }
-                </div>         */}
+                </div>        
             </div>
-        )
+        );
     }else {
         return (
             <div>
                 No eres el Admin mejor te piras...Plata o Plomo!!!
             </div>
         )
-    }
+    };
     
 };
 
