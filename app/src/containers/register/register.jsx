@@ -2,11 +2,10 @@ import React, { useState } from 'react'
 import { useHistory } from 'react-router';
 
 //Importaciones para componente y elementos de formulario y validación de errores
-import {fields, regExp} from '../../tools/error.handlers';
+import {regExp} from '../../tools/error.handlers';
 import Input from '../../components/input/input';
 import { BtnContainer, BtnForm, ErrorMessage, SuccessMessage, ValidationIcon, Form } from '../../components/input/elements';
-import { FaRegTimesCircle } from 'react-icons/fa';
-
+import { FaRegTimesCircle, FaRegUserCircle } from 'react-icons/fa';
 
 
 import axios from 'axios';
@@ -27,20 +26,6 @@ const Register = (props) => {
     const [formValid, handleValid] = useState({field: '', valid: 'false'})
 
 
-    // const [dataRegister, setRegister] = useState ({
-    //     userName: '', 
-    //     email: '', 
-    //     password: ''
-    // })
-    
-    // const [message,setMessage] = useState('');
-    
-    //Handlers para el manejo del error y validación de los datos
-    // const stateHandler = (event) => {
-    //     setRegister({...dataRegister, 
-    //         [event.target.name]: event.target.type === 'number' ? +event.target.value : event.target.value});
-            
-    // };
     const handleOnKeyDown = (event) => {
         if(event.keyCode === 13) sendData()
     };
@@ -59,7 +44,7 @@ const Register = (props) => {
         }else {
           handleValid(false);
         }
-      }
+    };
 
     const sendData = async () => {
         
@@ -69,15 +54,12 @@ const Register = (props) => {
                 email: dataEmail.field,
                 password: dataPassword.field
             }
+
             //Nos traemos por Axios los datos del backend
             let result = await axios.post('http://localhost:3000/user/', body);
             
             //Mandamos los datos de Register por Redux a store
             props.dispatch({ type: REGISTER, payload: result.data })
-            
-            // setRegister(result.data);
-            
-            console.log(result.data, 'esto es result.data')
             
             //Salimos de la vista Register hacia Payment
             return setTimeout(() => {
@@ -92,7 +74,6 @@ const Register = (props) => {
     return (
         <div>         
             <div className="stepCollection">
-              {/* <pre>{JSON.stringify(body, null,2)}</pre>     */}
                 <div className="steps">
                     <ul className="nav">
                         <div className="go toRegister">Crear cuenta</div>
@@ -147,31 +128,6 @@ const Register = (props) => {
                         {formValid === true && <SuccessMessage>Formulario completado exitosamente</SuccessMessage>}
                     </BtnContainer>
                     </Form>
-                    {/* <Form>
-                        <FormGroup className="registerFormGroup">
-                            <Label for="username">Username </Label>
-                            <br></br>
-                            <Input type="text" id="userName" name="userName" onChange={stateHandler}/>
-                            <FormFeedback></FormFeedback>
-                            <FormText></FormText>
-                        </FormGroup>
-                        <FormGroup>
-                            <Label for="email">Email </Label>
-                            <br></br>
-                            <Input type="text" id="email" name="email" onChange={stateHandler}/>
-                            <FormFeedback></FormFeedback>
-                            <FormText></FormText>
-                        </FormGroup>
-                        <FormGroup>
-                            <Label for="password">Contraseña </Label>
-                            <br></br>
-                            <Input type="password" id="password" name="password" onChange={stateHandler}/>
-                            <FormFeedback></FormFeedback>
-                            <FormText></FormText>
-                        </FormGroup>
-                        <Button className="registerButton" onClick={() => sendData()}>Enviar</Button>
-                    </Form>
-                    <div className='errorMessage'>{message}</div>        */}
                 </div>    
             </div>
         </div>

@@ -11,10 +11,9 @@ import popcorn from '../../assets/img/popcorn.jpg';
 
 //Importaciones para componente y elementos de formulario y validación de errores
 import { BtnContainer, BtnForm, ErrorMessage, SuccessMessage, ValidationIcon, Form } from '../../components/input/elements';
-import { FaRegTimesCircle } from 'react-icons/fa';
-import {fields, regExp} from '../../tools/error.handlers';
+import { FaRegTimesCircle, FaRegUserCircle } from 'react-icons/fa';
+import {regExp} from '../../tools/error.handlers';
 import Input from '../../components/input/input';
-
 
 
 
@@ -28,12 +27,6 @@ const Login = (props) => {
     const [dataUser, handleUser] = useState({userType: 'Client'})
     const [formValid, handleValid] = useState({field: '', valid: 'false'})
 
-
-    // const regExp = {
-    //   email: /^(("[\w-\s]+")|([\w-]+(?:\.[\w-]+)*)|("[\w-\s]+")([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)/,
-    //   password: /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/
-    // }
-    
 
     const handleOnKeyDown = (event) => {
         if(event.keyCode === 13) sendLogin()
@@ -89,9 +82,6 @@ const Login = (props) => {
   return (
     
     <div className="loginBody">
-      {/* <pre color="white">{JSON.stringify(dataEmail, null,2)}</pre>
-      <pre color="white">{JSON.stringify(dataPassword, null,2)}</pre>
-      <pre color="white">{JSON.stringify(dataUser, null,2)}</pre> */}
       <div className="imgGeek"><Link to='/'><img src={logo} alt="logo"/></Link></div>
       <div className="formContainer">
         <div className="contentLogin">
@@ -112,12 +102,6 @@ const Login = (props) => {
             placeholder="email@email.com"
             changeState={handleEmail}
           />
-          {formValid === false && <ErrorMessage>
-            <p>
-              <ValidationIcon icon={FaRegTimesCircle}></ValidationIcon>
-              <b>Error:</b>Por favor rellena el formulario 
-            </p>
-          </ErrorMessage>}
           <Input 
             state={dataPassword}
             type="password" 

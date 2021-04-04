@@ -37,14 +37,12 @@ const InputComponent = ({state, changeState, type, label, placeholder, name, err
 					onChange={onChange}
 					onKeyUp={validation}
 					onBlur={validation}
-					valid={state.valid}
-					
+					valid={state.valid}					
 				/>
 				<ValidationIcon 
 					icon={state.valid === 'true' ? FaRegUserCircle : FaRegTimesCircle}
 					valid={state.valid}
-				/>
-			
+				/>			
 			<ErrorLegend valid={state.valid}>{errorLegend}</ErrorLegend>
             </InputGroup>
 		</div>
