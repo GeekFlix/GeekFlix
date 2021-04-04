@@ -19,6 +19,7 @@ const SearchEngine = (props) => {
         const arraySearch = props.movie.filter(explore => 
             explore.title.toLowerCase().includes(search.searchBox.toLowerCase())
         )
+        console.log(arraySearch);
         props.dispatch({type: SEARCH, payload: arraySearch})
 
         setSearch({

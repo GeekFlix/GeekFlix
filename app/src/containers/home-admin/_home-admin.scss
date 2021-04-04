@@ -4,7 +4,7 @@
     flex-direction: column;
     align-items: center;
     width: 100%;
-    height: 50em;
+    height: 100em;
   
 
     background-color: $black;
@@ -32,23 +32,40 @@
         color: $white ;
     }
 
-    .listStyle {
-        width: 20em;
-        height: 20em;
-        margin-top: 2em;
-        color: $white ;
-        margin-right: 8em;
-    }
+    .listContainer {
 
-    .userData {
-        text-align: center;
-        width: 25em;
-        height: 5em;
+        display: flex;
+        flex-direction: row;
+        background-color: $black;
         color: $white ;
-    }
+        margin: 1em;
 
-    .showData {
-        margin: .5em;
+        .usersContainer {
+            margin-top: 1em;
+        }
+
+        .rentalsContainer {
+            margin-top: 1em;
+        }
+
+        .userData {
+            text-align: center;
+            width: 25em;
+            height: 5em;
+            color: $white ;
+            margin: 1em;
+            margin-right: 1em;
+        }
+
+        .rentData {
+            text-align: center;
+            width: 25em;
+            height: 5em;
+            margin: 1em;
+            color: $white ;
+            margin-left: 1em;
+        }
+    
     }
  
 }

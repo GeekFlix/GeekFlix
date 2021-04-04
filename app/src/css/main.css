@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*Colors*/
 /*Sizes*/
 /*Margin and Padding*/
@@ -402,7 +403,7 @@
   flex-direction: column;
   align-items: center;
   width: 100%;
-  height: 50em;
+  height: 100em;
   background-color: #323232; }
   .containerAdmin .headerAdmin {
     width: 100%;
@@ -421,19 +422,30 @@
     align-items: center;
     margin-right: 2em;
     color: #f4e5c2; }
-  .containerAdmin .listStyle {
-    width: 20em;
-    height: 20em;
-    margin-top: 2em;
+  .containerAdmin .listContainer {
+    display: flex;
+    flex-direction: row;
+    background-color: #323232;
     color: #f4e5c2;
-    margin-right: 8em; }
-  .containerAdmin .userData {
-    text-align: center;
-    width: 25em;
-    height: 5em;
-    color: #f4e5c2; }
-  .containerAdmin .showData {
-    margin: .5em; }
+    margin: 1em; }
+    .containerAdmin .listContainer .usersContainer {
+      margin-top: 1em; }
+    .containerAdmin .listContainer .rentalsContainer {
+      margin-top: 1em; }
+    .containerAdmin .listContainer .userData {
+      text-align: center;
+      width: 25em;
+      height: 5em;
+      color: #f4e5c2;
+      margin: 1em;
+      margin-right: 1em; }
+    .containerAdmin .listContainer .rentData {
+      text-align: center;
+      width: 25em;
+      height: 5em;
+      margin: 1em;
+      color: #f4e5c2;
+      margin-left: 1em; }
 
 .movieInfo {
   width: 100%;
@@ -467,6 +479,48 @@
     margin-top: 1em; }
   .movieInfo .buttonPosition {
     margin-top: 1em; }
+
+.containerHelp {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: #323232; }
+  .containerHelp .headerHelp {
+    background-color: #323232b7;
+    width: 100%;
+    display: flex; }
+    .containerHelp .headerHelp .containsHelpNavbar {
+      margin-left: 2em;
+      margin-top: 1em;
+      align-items: center;
+      width: 35%;
+      justify-content: flex-start; }
+    .containerHelp .headerHelp .containsHelpLogo {
+      display: flex;
+      justify-content: flex-start;
+      width: 60%; }
+  .containerHelp .textHelp {
+    width: 100%;
+    height: 25em;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 3ºem;
+    color: #f4e5c2; }
+    .containerHelp .textHelp .textTitleHelp {
+      height: 3em;
+      font-size: 40px; }
+    .containerHelp .textHelp .textExplainHelp {
+      height: 10em;
+      padding: 0% 20%;
+      font-size: 22px;
+      line-height: 200%; }
+  .containerHelp .helpPhotoDeveloper .photoDevelopers {
+    height: 8em;
+    width: 8em;
+    border-radius: 50%;
+    margin-left: 0.8em; }
 
 .mainCarousel {
   width: 100%;

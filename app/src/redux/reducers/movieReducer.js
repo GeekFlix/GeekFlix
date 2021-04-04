@@ -2,7 +2,7 @@ import { SHOW, SEARCH } from '../types/movieTypes.js';
 
 const initialState = {
     movie: [],
-    query: ''
+    query: []
 };
 
 const movieReducer = (state = initialState, action) => {

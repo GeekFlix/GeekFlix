@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import {connect} from 'react-redux';
-// import { RENTALS } from '../../redux/types/userTypes';
+import { SAVE } from '../../redux/types/saveMovieType';
+import { useHistory } from 'react-router-dom';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { A11y, EffectFade, Navigation, Pagination, Scrollbar, Zoom } from 'swiper/core';
@@ -14,10 +15,9 @@ import 'swiper/components/zoom/zoom.scss';
 
 const Carousel = (props) => {
 
-    const [rental, setRental] = useState({
-        rentalMovies: []
-    });
+    const history = useHistory();
 
+<<<<<<< HEAD
     // props.dispatch({type: RENTALS, payload: rental})
 
     const handleState = (event) => {
@@ -27,6 +27,9 @@ const Carousel = (props) => {
 
   
 
+=======
+    console.log('PROPSSSSS!!',props.movie);
+>>>>>>> 11566772b15552a0c6b8d43b8f505d6e525ffe2e
 
     const thriller = props.movie.filter(objectMovie => objectMovie.genres.includes('Thriller'));
     const comedy = props.movie.filter(objectMovie => objectMovie.genres.includes('Comedy'));
@@ -38,12 +41,20 @@ const Carousel = (props) => {
     
     SwiperCore.use([Navigation, Pagination, EffectFade, Scrollbar, A11y, Zoom]);
     
+
+    const saveMovie = (picture) => {
+        console.log("presionando")
+        const save = props.dispatch({type: SAVE, payload: picture});
+
+        setTimeout(() => {history.push('/show-movie')}, 100);
+        console.log(save)
+    };
+
+
     if(props?.result){
         return (
             <div>
-                
                 <h1>Estamos en el primero</h1>
-            
             </div>
         )
     }else{
@@ -62,11 +73,11 @@ const Carousel = (props) => {
                     >
                             {adventure.map(picture => 
                                 <SwiperSlide>
-                                    <div className="swiper-slide">               
+                                    <div onClick={()=> saveMovie(picture)} className="swiper-slide">               
                                         <img src={picture.posterUrl}/>
                                     </div>  
                                 </SwiperSlide>
-                            )}
+                            )};
                     </Swiper>
                 </div>
                 <div className="titleCarousel">Películas de Comedia</div>  
@@ -82,11 +93,11 @@ const Carousel = (props) => {
                     >
                             {comedy.map(picture => 
                                 <SwiperSlide>
-                                    <div className="swiper-slide">               
+                                    <div onClick={()=> saveMovie(picture)} className="swiper-slide">               
                                         <img src={picture.posterUrl}/>
                                     </div>  
                                 </SwiperSlide>
-                            )}
+                            )};
                     </Swiper>
                 </div>
                 <div className="titleCarousel">Películas de Drama</div> 
@@ -100,20 +111,19 @@ const Carousel = (props) => {
                         onSwiper={(swiper) => console.log(swiper)}
                         onSlideChange={() => console.log('slide change')}
                     >
-                            
                             {drama.map(picture => 
                                 <SwiperSlide>
-                                    <div className="swiper-slide">               
+                                    <div onClick={()=> saveMovie(picture)} className="swiper-slide">               
                                         <img src={picture.posterUrl}/>
                                     </div>  
                                 </SwiperSlide>
-                            )}
+                            )};
                     </Swiper>
                 </div>  
             </div>   
         )
-    }
-}
+    };
+};
 
 const mapStateToProps = state=>{
     return{
