@@ -11,6 +11,7 @@ import ShowMovie from  './containers/show-movie/show-movie';
 
 import './App.css';
 import './css/main.css';
+import Help from './containers/help/help';
 
 
 
@@ -30,6 +31,7 @@ function App() {
           <Route path='/home-admin' exact component={HomeAdmin}/>
           <Route path='/user-profile' exact component={UserProfile}/>
           <Route path='/show-movie' exact component={ShowMovie}/>
+          <Route path='/help' exact component={Help}/>
         </Switch>
       
       </BrowserRouter>

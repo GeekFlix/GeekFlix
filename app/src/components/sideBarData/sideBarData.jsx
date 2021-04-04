@@ -1,11 +1,8 @@
  import React from 'react';
  import * as FaIcons from 'react-icons/fa';
  import * as AiIcons from 'react-icons/ai';
- 
- 
- 
- 
- 
+ import * as IoIcons from 'react-icons/io';
+
  
  export const SideBarData = [
    {
@@ -22,6 +19,11 @@
      path: '/rental',
      icon: <FaIcons.FaCartPlus />,
      cName: 'nav-text'
-   }
+   },
+   {
+    path: '/help',
+    icon: <IoIcons.IoMdHelpCircle/>,
+    cName: 'nav-text'
+  }
    
  ];
