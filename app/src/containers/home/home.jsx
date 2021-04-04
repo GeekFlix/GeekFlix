@@ -2,14 +2,24 @@ import React from 'react';
 
 import collageMovies from '../../assets/img/collageMovies.jpg';
 
+import {useHistory} from 'react-router-dom';
 
 import logo from '../../assets/img/geekflix-green.png';
 import { Link } from 'react-router-dom';
-import Btn from '../../components/btn/btn';
 
 
 
-const home = () => {
+
+const Home = () => {
+
+  const history = useHistory();
+
+  const redirect = () => {
+    return setTimeout(() => {
+      history.push('/login')
+    }, 1000);
+
+}
 
   return (
     <div className="homeContainer">
@@ -19,7 +29,7 @@ const home = () => {
           <div className="containerLogo">
             <div className="logo"><img src={logo} alt=""/></div></div>
           <div className="loginContainer">
-            <Btn destiny="login" text="Iniciar sesión" className="buttonHome"/>
+            <button onClick={() => redirect()} text="Iniciar sesión" className="buttonHome">Inicia Sesión</button>
           </div>
         </div>
         <div className="textForRegister">
@@ -59,4 +69,4 @@ const home = () => {
   )
 }
 
-export default home
+export default Home

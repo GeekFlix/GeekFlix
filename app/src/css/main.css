@@ -24,29 +24,9 @@
       font-size: larger; }
     .stepCollection .nav .toRegister {
       color: #6db193; }
-  .stepCollection Form {
-    height: 224px;
-    width: 96px;
+  .stepCollection .registerForm {
     display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    color: #f4e5c2; }
-    .stepCollection Form Input {
-      margin-top: 10px; }
-    .stepCollection Form .registerButton {
-      width: 9em;
-      height: 2em;
-      background-color: #295f4e;
-      transition: 0.7s;
-      border-radius: 0.2em;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #f4e5c2; }
-      .stepCollection Form .registerButton:hover {
-        background-color: #6db193;
-        transition: 0.7s; }
+    flex-direction: column; }
 
 .loginBody {
   width: 100%;
@@ -66,19 +46,6 @@
     display: flex;
     flex-direction: row;
     justify-content: space-around; }
-    .loginBody .formContainer .inputs {
-      height: 25em;
-      color: #f4e5c2;
-      display: flex;
-      flex-direction: column;
-      align-items: center; }
-      .loginBody .formContainer .inputs .titleLoginDown {
-        width: 320px;
-        height: 480px; }
-        .loginBody .formContainer .inputs .titleLoginDown p {
-          color: #6db193;
-          font-family: 'Inter', sans-serif;
-          font-size: 32px; }
     .loginBody .formContainer .contentLogin {
       width: 480px;
       height: 320px;
@@ -96,25 +63,12 @@
           height: 320px;
           width: 23em;
           border-radius: 16px; }
-  .loginBody .btnStyle {
-    margin-top: 1em;
+  .loginBody .formLogin {
+    height: 25em;
     color: #f4e5c2;
-    text-transform: uppercase;
-    background: #323232;
-    padding: 20px;
-    border: 4px solid #6db193 !important;
-    border-radius: 6px;
-    display: inline-block;
-    transition: all 0.3s ease 0s; }
-    .loginBody .btnStyle:hover {
-      color: #f4e5c2 !important;
-      border-radius: 50px;
-      border-color: #295f4e !important;
-      transition: all 0.3s ease 0s; }
-  .loginBody .errorMessage {
-    color: #f4e5c2;
-    font-family: 'Inter', sans-serif;
-    font-size: 32px; }
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
 
 .paymentContainer {
   display: flex;
@@ -123,99 +77,22 @@
   width: 100%;
   height: 70em;
   background-color: #323232; }
-  .paymentContainer .visa {
+  .paymentContainer .nav {
+    width: 480px;
+    height: 96px;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center; }
+    .paymentContainer .nav .go {
+      cursor: pointer;
+      color: #295f4e;
+      font-size: larger; }
+    .paymentContainer .nav .toPayment {
+      color: #6db193; }
+  .paymentContainer .paymentForm {
+    display: flex;
     flex-direction: column; }
-    .paymentContainer .visa .visaText {
-      color: #f4e5c2; }
-    .paymentContainer .visa .visaInput {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin-top: 0.5em; }
-  .paymentContainer .date {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    margin-top: 1em; }
-    .paymentContainer .date .dateText {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: #f4e5c2; }
-    .paymentContainer .date .date-field {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      width: 18em;
-      margin-top: 0.5em; }
-  .paymentContainer .cvv {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 1em;
-    flex-direction: column; }
-    .paymentContainer .cvv .cvvText {
-      color: #f4e5c2; }
-    .paymentContainer .cvv .cvvInput {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin-top: 0.5em; }
-  .paymentContainer .cardName {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 1em;
-    flex-direction: column; }
-    .paymentContainer .cardName .nameText {
-      color: #f4e5c2; }
-    .paymentContainer .cardName .nameInput {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin-top: 0.5em; }
-  .paymentContainer .payBtn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 1em; }
-  .paymentContainer Button {
-    width: 9em;
-    height: 2em;
-    background-color: #295f4e;
-    transition: 0.7s;
-    border-radius: 0.2em;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #f4e5c2; }
-    .paymentContainer Button:hover {
-      background-color: #6db193;
-      transition: 0.7s; }
-  .paymentContainer .errorMessage {
-    width: 5em;
-    height: 1em;
-    color: #f4e5c2;
-    font-family: 'Inter', sans-serif;
-    font-size: 32px; }
-
-.nav {
-  width: 480px;
-  height: 96px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center; }
-  .nav .go {
-    cursor: pointer;
-    color: #295f4e;
-    font-size: larger; }
-  .nav .toPayment {
-    color: #6db193; }
 
 .homeContainer {
   width: 100%;

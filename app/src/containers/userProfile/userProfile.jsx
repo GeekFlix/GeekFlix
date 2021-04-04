@@ -9,7 +9,7 @@ import {connect} from 'react-redux';
 import {UPDATE} from '../../redux/types/userTypes';
 import {UPDATECARD} from '../../redux/types/paymentTypes';
 
-// import Btn from '../../components/btn/btn.jsx';
+
 
 import logo from '../../assets/img/geekflix-green.png';
 import avatar1 from '../../assets/img/avatar1.png';

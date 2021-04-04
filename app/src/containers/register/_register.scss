@@ -27,33 +27,13 @@
         .toRegister {
             color: $green;
         }
-        
-        
+                
         
     }
 
-    Form {
-        height: $mp-t;
-        width: $mp-p;
-
+    .registerForm {
         display: flex;
         flex-direction: column;
-        justify-content: space-around;
-        align-items: center;
-        
-
-        color: $white;   
-
-        Input {
-            margin-top: $mp-f;
-        }
-
-        
-        .registerButton {
-            @include btnSesion
-            
-        }
-
     }
 
   
