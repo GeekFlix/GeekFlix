@@ -105,7 +105,7 @@ const BtnForm = styled.button`
 	line-height: 45px;
 	width: 30%;
 	background: #000;
-	color: #fff;
+	color: $white;
 	font-weight: bold;
 	border: none;
 	border-radius: 3px;

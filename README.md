@@ -1,70 +1,126 @@
-# Getting Started with Create React App
+<p align="center">
+  <a href="img/geekflix-green.png" rel="noopener">
+ <img src="img/captLogo.png" alt="Project logo"></a>
+</p>
+<h3 align="center">GeekFlix</h3>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<div align="center">
 
-## Available Scripts  
 
-In the project directory, you can run:
+[![Status](https://img.shields.io/badge/status-active-success.svg)]()
+[![GitHub Issues](https://img.shields.io/github/issues/kylelobo/The-Documentation-Compendium.svg)](https://github.com/kylelobo/The-Documentation-Compendium/issues)
+[![GitHub Pull Requests](https://img.shields.io/github/issues-pr/kylelobo/The-Documentation-Compendium.svg)](https://github.com/kylelobo/The-Documentation-Compendium/pulls)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE.md)
 
-### `npm start`
+</div>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+---
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+<p align="center"> Fullstack Project with React and MongoDB
+    <br> 
+</p>
 
-### `npm test`
+## 📝 Table of Contents
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- [Problem Statement](#problem_statement)
+- [Built With](#built)
+- [Idea / Organization](#idea)
+- [Deploy / Testing](#limitations)
+- [Future Scope](#future_scope)
+- [Setting up a local environment](#getting_started)
+- [Usage](#usage)
+- [Authors](#authors)
+- [Acknowledgments](#acknowledgments)
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## ⛏️ Built With <a name = "built"></a>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- [MongoDB](https://www.mongodb.com/) - Database
+- [MongoDBCompass](https://www.mongodb.com/products/compass) - Database
+- [Express](https://expressjs.com/) - Server Framework
+- [NodeJs](https://nodejs.org/en/) - Server Environment
+- [Postman](https://learning.postman.com/docs/getting-started/introduction/) - Server Environment
+- [Docker](https://docs.docker.com/) - Server Deployment
+- [GitFlow](https://www.atlassian.com/es/git/tutorials/comparing-workflows/gitflow-workflow) - Work flow
+- [bcrypt](https://www.npmjs.com/package/bcrypt) - Encryption Library 
+- [jwt](https://jwt.io/) - Librery for Token Signing
+- [Sass](https://sass-lang.com/) - Library
+- [Styled-Components](https://styled-components.com/) - Library
+- [Bootstrap](https://www.npmjs.com/package/bootstrap) - Library
+- [React](https://es.reactjs.org/) - JavaScript library 
+- [Redux](https://es.redux.js.org/) - JavaScript library
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## 💡 Idea / Solution <a name = "idea"></a>
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+The idea of ​​this project is a fullstack web of movie streaming content.
+For this project we have worked in the group organization through agile methodologies with tools such as Trello or GitFlow.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+![Trello](https://user-images.githubusercontent.com/77154578/113519732-69ed8300-958e-11eb-8dbd-1518666d3205.png)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## ⛓️ Deploy / Testing <a name = "limitations"></a>
 
-## Learn More
+You can test the backend of the application through Postman
+(Run in Postman)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## 🚀 Future Scope <a name = "future_scope"></a>
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+In future web updates, more funcionalities will be added.....
 
-### Code Splitting
+## 🏁 Getting Started <a name = "getting_started"></a>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Prerequisites
 
-### Analyzing the Bundle Size
+What things you need to install the software and how to install them.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+```
+npm install
+```
 
-### Making a Progressive Web App
+### Installing
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+A step by step series of examples that tell you how to get a development env running.
 
-### Advanced Configuration
+Say what the step will be
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+```
+npm start
+```
+or
+```
+docker-compose up
+```
 
-### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## 🎈 Usage <a name="usage"></a>
 
-### `npm run build` fails to minify
+There are any views in the app, starting with a home view without log in or register, where you can observe some promotional videos and titles about our movies.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+(Issue de Home sin Login/Registro o Login)
+
+You can log in or register a new account through CRUD's POST method. Once access is obtained, you will be able to access all the content of the web, with a home view in which all the movies are presented with their most important information (GET method). From here you can rent the movies that you like the most!
+
+(Issue de Home con Login, Navbar y acceso a otras vistas (información de la película y alquiler))
+
+In this view, there is a menu where you can access other functionalities such as the user profile, where you can modify personal data and payment methods (PUT method).
+
+In addition, there is also an Administrator role, with exclusive access to rental and user information, and with the power to delete data from the database (DELETE method)
+
+(Issue de vista administrador)
+
+## ✍️ Authors <a name = "authors"></a>
+
+- [@devian5](https://github.com/devian5) - Idea & Initial work
+- [@Alvaro-78](https://github.com/Alvaro-78) - Idea & Initial work
+- [@Carlos-Val](https://github.com/Carlos-Val) - Idea & Initial work
+- [@LauraPorto](https://github.com/LauraPorto) - Idea & Initial work
+
+See also the list of [contributors](https://github.com/kylelobo/The-Documentation-Compendium/contributors)
+who participated in this project.
+
+## 🎉 Acknowledgments <a name = "acknowledgments"></a>
+
+- Hat tip to anyone whose code was used
+- Inspiration
+- References

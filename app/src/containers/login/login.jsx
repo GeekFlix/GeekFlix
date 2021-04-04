@@ -54,10 +54,9 @@ const Login = (props) => {
             const body = {
               email: dataEmail.field, 
               password: dataPassword.field, 
-              userType: dataUser.field
+              userType: dataUser.userType
             }
 
-            console.log(dataUser, 'dataUser')
             if(dataUser.userType === 'Client') {
                 const result = await axios.post('http://localhost:3000/user/login', body)
                 console.log(result.data, 'esto es RESULT');
@@ -66,7 +65,7 @@ const Login = (props) => {
 
             }else {
     
-                const resultAdmin = await axios.post('http://localhost:3000/admin/login',dataUser, dataEmail, dataPassword)
+                const resultAdmin = await axios.post('http://localhost:3000/admin/login',body)
                 props.dispatch({type: ADMINLOGIN, payload: resultAdmin.data});
                 return setTimeout(() => {history.push('/home-admin')}, 100);
             };
