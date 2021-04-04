@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { connect } from 'react-redux';
 import { Button } from 'reactstrap';
@@ -13,6 +13,18 @@ const HomeAdmin = (props) => {
     const [users, setUsers] = useState({
         listUsers : []
     });
+
+    const [rentals, setRentals] = useState({
+        listRentals : []
+    });
+
+    const [userRental, setUserRental] = useState({
+        listUserRental: []
+    });
+
+    useEffect(() => {
+        showRental()
+    }, [])
 
     const logOut =  () => {
 
@@ -30,8 +42,51 @@ const HomeAdmin = (props) => {
         setUsers({
             ...users,listUsers: collectionUsers.data.result
         })
-        console.log(collectionUsers.data)
     };
+
+    const showRental = async () => {
+
+        let collectionRentals = await axios.get('http://localhost:3000/order')
+
+        setRentals({
+            ...rentals, listRentals: collectionRentals.data.result
+        });
+        console.log(collectionRentals)
+        // const saveUserId = collectionRentals.data.result[0].ownerId
+        // const saveUserId = collectionRentals.data.result[0].ownerId
+        
+        // setUserId({
+        //     ...userId, listUserId: saveUserId
+        // });
+        const saveUserId = collectionRentals.data.result.map(rent => rent.ownerId )
+        
+        console.log(saveUserId)
+        
+        mapOwnerId()
+        // getUserByRental(saveUserId)
+    };
+
+    const mapOwnerId = () => {
+
+        console.log("que tiene rentals???",rentals.listRentals)
+        const pepe = rentals.listRentals.map(rent => rent.ownerId )
+        console.log(pepe)
+
+    }
+
+
+
+    
+    const getUserByRental = async (userId) => {
+
+        let collectionUserByRental = await axios.get(`http://localhost:3000/user/${userId}`)
+        console.log(collectionUserByRental)
+        setUserRental({
+            ...userRental, listUserRental: collectionUserByRental.data.result
+        });
+        // console.log("Sabedecirte",listUserRental)
+    };
+
     
     const deleteUser = async (user) => {
 
@@ -43,11 +98,23 @@ const HomeAdmin = (props) => {
         };
     };
 
+    const deleteRental = async (rent) => {
+
+        const selectUser = window.confirm('You are about to delete this rent, are you sure?');
+
+        if(selectUser === true){
+             await axios.delete(`http://localhost:3000/order/${rent._id}`)
+            // showRental()
+        };
+        console.log(deleteRental)
+    };
+
+
     if(props.admin?.email) {
         return(
             <div className="containerAdmin">
                 <div className="headerAdmin">
-                    <div>
+                <div>
                         <Button className="btnStyle" onClick={()=> logOut()} className="btnStyle">Salir</Button>
                     </div>
                     <div className="nameStyle">
@@ -56,8 +123,11 @@ const HomeAdmin = (props) => {
                     <div>
                         <Button className="btnStyle" onClick={()=> showUsers()} className="btnStyle">Mostrar usuarios</Button>
                     </div>
+                    <div>
+                        <Button className="btnStyle" onClick={()=> showRental()} className="btnStyle">Mostrar alquileres</Button>
+                    </div>
                 </div>
-                <div>
+                <div className="usersContainer">
                     {
                         !users.listUsers
                         ?
@@ -84,7 +154,60 @@ const HomeAdmin = (props) => {
                             </div>
                         </>
                     }
-                </div>        
+                </div>
+                <div className="rentalsContainer">
+                    {
+                        !rentals.listRentals
+                        ?
+                        <>
+                            <div>
+                                "No rentals yet"
+                            </div>
+                        </>
+                        :
+                        <>
+                            <div>
+                                {
+                                    rentals.listRentals.map(rent => {
+
+                                        return(
+                                            <div className="userData" key={rent}>
+                                                <div onClick={() => deleteRental(rent)}  className="showData id">ID del alquiler: {rent._id}</div>
+
+                                            </div>
+                                        )
+                                    })
+                                }
+                            </div>
+                        </>
+                    }
+                </div>
+                {/* <div className="rentalsContainer">
+                    {
+                        !userRental.listUserRental
+                        ?
+                        <>
+                            <div>
+                                "No user rental yet"
+                            </div>
+                        </>
+                        :
+                        <>
+                            <div>
+                                {
+                                    userRental.listUserRental.map(renderUser => {
+
+                                        return(
+                                            <div className="userData" key={renderUser}>
+                                                <div onClick={() => deleteRental(renderUser)}  className="showData id">Nombre de usuario que alquiler: {renderUser.userName}</div>
+                                            </div>
+                                        )
+                                    })
+                                }
+                            </div>
+                        </>
+                    }
+                </div>         */}
             </div>
         )
     }else {
@@ -99,9 +222,9 @@ const HomeAdmin = (props) => {
 
 const mapStateToProps = state => {
     return {
-      admin : state.adminReducer.admin,
+        admin : state.adminReducer.admin,
     }
-  };
+};
   
   export default connect(mapStateToProps)(HomeAdmin)
 

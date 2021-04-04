@@ -3,3 +3,4 @@ export const LOGOUT = 'logOut';
 export const REGISTER = 'register';
 export const UPDATE = 'update';
 export const RENTALS = 'rentals';
+export const SAVEMOVIE = 'savemovie';

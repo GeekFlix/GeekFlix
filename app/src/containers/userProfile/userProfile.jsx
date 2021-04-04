@@ -26,6 +26,7 @@ const UserProfile = (props) => {
 
     })
 
+    console.log(props)
     //Estado de dataPayment
     const [dataPayment, setPayment] = useState ({
         visa: props.payment.visa,
@@ -169,12 +170,12 @@ const UserProfile = (props) => {
                             <FormGroup>
                                 <Label for="cvv">CVV </Label>
                                 <br></br>
-                                <Input type="number" id="payment" name="cvv" defaultValue={props.payment.result.cvv} onChange={handleStatePayment}/>
+                                {/* <Input type="number" id="payment" name="cvv" defaultValue={props.payment.result.cvv} onChange={handleStatePayment}/> */}
                             </FormGroup>
                             <FormGroup>
                                 <Label for="cardName">Nombre de la Tarjeta </Label>
                                 <br></br>
-                                <Input type="text" id="payment" name="cardName" defaultValue={props.payment.result.cardName} onChange={handleStatePayment}/>
+                                {/* <Input type="text" id="payment" name="cardName" defaultValue={props.payment.result.cardName} onChange={handleStatePayment}/> */}
                             </FormGroup>
                             <button className="updateButton" onClick={() => updateUser()}>Enviar</button>
                         </Form>

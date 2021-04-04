@@ -1,15 +1,18 @@
 
 import React, { useEffect, useState } from 'react';
-import {connect} from 'react-redux'
+import { connect } from 'react-redux'
 // eslint-disable-next-line
 import Carousel from '../../components/carousel/carousel';
-//import Navbar from '../../components/navbar/navbar';
+import Navbar from '../../components/navbar/navbar';
 import axios from 'axios';
-import {SHOW} from '../../redux/types/movieTypes.js';
+import { SHOW } from '../../redux/types/movieTypes.js';
 import SearchEngine from '../../components/searchEngine/searchEngine';
 import { useHistory } from 'react-router-dom';
-import {LOGOUT} from '../../redux/types/userTypes';
+import { LOGOUT } from '../../redux/types/userTypes';
+import { SAVE } from '../../redux/types/saveMovieType';
 import { Button } from 'reactstrap';
+import logo from '../../assets/img/geekflix-green.png';
+import spinner from '../../assets/img/Half-Moon-Loading.svg'
 
 
 const HomeMovie = (props) => {
@@ -29,16 +32,13 @@ const HomeMovie = (props) => {
         },300);
     };
 
-    const showMovie = () => {
-        setTimeout(() => {history.push('/show-movie')}, 100);
-    };
-
+    
     useEffect(()=>{
-
+        
         getData();
         // eslint-disable-next-line
     },[])
-
+    
     const getData = async () =>{
         const filmCollection = await axios.get('http://localhost:3000/movie/');
         props.dispatch({type: SHOW, payload: filmCollection.data})
@@ -53,55 +53,72 @@ const HomeMovie = (props) => {
           history.push('/user-profile')
         }, 1000);
 
-    }
+    };
 
     
+    const saveMovie = (searchMovie) => {
+        const save = props.dispatch({type: SAVE, payload: searchMovie});
+
+        setTimeout(() => {history.push('/show-movie')}, 100);
+        console.log(save)
+    };
+
     if(!film.movies?.result){
         return (
-            <div>
-                <h1>Estamos en el primero</h1>
+            <div className="spinnerContainer">
+                <img src={spinner} alt="spinner"/>
             </div>
         )
     }else{
         return(
             <div className="homeMovie">
+                {/* <img className="backgroundImage" src="https://i.blogs.es/fd5f1b/avengers-5-lo-que-sabemos/1366_521.jpeg" alt=""/> */}
+                <div className="headerHomeMovie">
+                    <div className="containsNavbar">
+                        <Navbar/>
+                    </div>
+                    <div className="containsLogo" >
+                        <img src={logo} alt=""/>
+                    </div>
                     <div className="searchHeader">
                         <SearchEngine/>
-
                     </div>
-                    <Button className="btnStyle" onClick={()=> logOut()} className="btnStyle">Salir</Button>
+                </div>
+                <div className="containsSearch">
+
+                    
                     <Button className="btnStyle" onClick={()=> redirect()} className="btnStyle">Profile</Button>
                     <div className="textHomeSearch">
                         BUSQUEDAS ANTERIORES:
                     </div>
-                <div>
                     <div className="searchResult">
                         {
                             props.search.map(searchMovie => {
                                 return (
-                                    <div onClick={()=> showMovie(searchMovie)} key={searchMovie._id}>
-                                        <img src={searchMovie.posterUrl} alt="picture"/> 
-                                        <div className="titleMovie">
-                                            Titulo : {searchMovie.title}
-                                        </div>
+                                    <div onClick={()=> saveMovie(searchMovie)} key={searchMovie._id}>
+                                        <img className="imageSearchHomeMovie" src={searchMovie.posterUrl} alt="picture"/> 
+                                        <div className="titleMovie">{searchMovie.title}</div>
                                     </div>
                                 )
                             })
                         }
                     </div>
                 </div>
+<<<<<<< HEAD
                 {/* <Navbar/> */}
+=======
+>>>>>>> ff59490d95939c3d1c3e1ff67ed6767a95257c09
                 <Carousel/>
             </div>
         )
-    }
-}
+    };
+};
 
 const mapStateToProps = state=>{
     return{
         movie: state.movieReducer.movie,
         search: state.movieReducer.query,
-        user: state.userReducer.user
+        saveMovie: state.saveMovieReducer.saveMovie
     };
 };
 

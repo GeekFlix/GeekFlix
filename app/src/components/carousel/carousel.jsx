@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {connect} from 'react-redux';
 // import { RENTALS } from '../../redux/types/userTypes';
 
-import { Swiper, SwiperSlide }  from 'swiper/react';
+import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { A11y, EffectFade, Navigation, Pagination, Scrollbar, Zoom } from 'swiper/core';
 
 import 'swiper/swiper.scss';
@@ -35,7 +35,11 @@ const Carousel = (props) => {
     const biography = props.movie.filter(objectMovie => objectMovie.genres.includes('Biography'));
     const drama = props.movie.filter(objectMovie=> objectMovie.genres.includes('Drama'));
     const adventure = props.movie.filter(objectMovie=> objectMovie.genres.includes('Adventure'));
+<<<<<<< HEAD
 
+=======
+    console.log(drama, 'si quieres unas risas');
+>>>>>>> ff59490d95939c3d1c3e1ff67ed6767a95257c09
     
     SwiperCore.use([Navigation, Pagination, EffectFade, Scrollbar, A11y, Zoom]);
     
@@ -50,7 +54,7 @@ const Carousel = (props) => {
     }else{
         return (
             <div className="mainCarousel">
-                <div className="titleCarouselAdventure">Películas de Aventuras</div>                
+                <div className="titleCarousel">Películas de Aventuras</div>                
                 <div className="carouselAdventure">                     
                     <Swiper
                         spaceBetween={0}
@@ -70,7 +74,7 @@ const Carousel = (props) => {
                             )}
                     </Swiper>
                 </div>
-                <div className="titleCarouselComedy">Películas de Comedia</div>  
+                <div className="titleCarousel">Películas de Comedia</div>  
                 <div className="carouselComedy">                     
                     <Swiper
                         spaceBetween={0}
@@ -90,7 +94,7 @@ const Carousel = (props) => {
                             )}
                     </Swiper>
                 </div>
-                <div className="titleCarouselDrama">Películas de Drama</div> 
+                <div className="titleCarousel">Películas de Drama</div> 
                 <div className="carouselDrama">                     
                     <Swiper
                         spaceBetween={0}
