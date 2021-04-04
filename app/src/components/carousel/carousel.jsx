@@ -19,11 +19,6 @@ const Carousel = (props) => {
 
     // props.dispatch({type: RENTALS, payload: rental})
 
-    const handleState = (event) => {
-        setRental({...rental, rentalMovies: event})
-    };
-  
-
     const thriller = props.movie.filter(objectMovie => objectMovie.genres.includes('Thriller'));
     const comedy = props.movie.filter(objectMovie => objectMovie.genres.includes('Comedy'));
     const animation = props.movie.filter(objectMovie => objectMovie.genres.includes('Animation'));
