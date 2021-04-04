@@ -26,13 +26,12 @@ const HomeMovie = (props) => {
     const logOut =  () => {
 
         props.dispatch({type: LOGOUT, payload : {}});
-    
+        
         setTimeout(()=> {
             history.push('/');
         },300);
     };
 
-    
     useEffect(()=>{
         
         getData();
@@ -42,7 +41,7 @@ const HomeMovie = (props) => {
     const getData = async () =>{
         const filmCollection = await axios.get('http://localhost:3000/movie/');
         props.dispatch({type: SHOW, payload: filmCollection.data})
-        // console.log("peliculas", filmCollection.data.result);
+
         setFilm({
             ...film, movies: filmCollection.data
         });
@@ -55,7 +54,6 @@ const HomeMovie = (props) => {
 
     };
 
-    
     const saveMovie = (searchMovie) => {
         const save = props.dispatch({type: SAVE, payload: searchMovie});
 
@@ -65,8 +63,10 @@ const HomeMovie = (props) => {
 
     if(!film.movies?.result){
         return (
-            <div className="spinnerContainer">
-                <img src={spinner} alt="spinner"/>
+            <div>
+                <div className="spinnerContainer">
+                    <img src={spinner} alt="spinner"/>
+                </div>
             </div>
         )
     }else{
@@ -85,15 +85,13 @@ const HomeMovie = (props) => {
                     </div>
                 </div>
                 <div className="containsSearch">
-
-                    
                     <Button className="btnStyle" onClick={()=> redirect()} className="btnStyle">Profile</Button>
                     <div className="textHomeSearch">
                         BUSQUEDAS ANTERIORES:
                     </div>
                     <div className="searchResult">
                         {
-                            props.search.map(searchMovie => {
+                            props.search?.map(searchMovie => {
                                 return (
                                     <div onClick={()=> saveMovie(searchMovie)} key={searchMovie._id}>
                                         <img className="imageSearchHomeMovie" src={searchMovie.posterUrl} alt="picture"/> 
