@@ -22,9 +22,9 @@ const HomeAdmin = (props) => {
         listUserRental: []
     });
 
-    useEffect(() => {
-        showRental()
-    }, [])
+    // useEffect(() => {
+    //     showRental()
+    // }, [])
 
     const logOut =  () => {
 
@@ -58,36 +58,51 @@ const HomeAdmin = (props) => {
         // setUserId({
         //     ...userId, listUserId: saveUserId
         // });
-        const saveUserId = collectionRentals.data.result.map(rent => rent.ownerId )
+        // const saveUserId = collectionRentals.data.result.map(rent => rent.ownerId )
         
-        console.log(saveUserId)
+        // console.log(saveUserId)
         
-        mapOwnerId()
+        // mapOwnerId()
         // getUserByRental(saveUserId)
     };
 
-    const mapOwnerId = () => {
+    // const mapOwnerId = () => {
 
-        console.log("que tiene rentals???",rentals.listRentals)
-        const pepe = rentals.listRentals.map(rent => rent.ownerId )
-        console.log(pepe)
+    //     console.log("que tiene rentals???",rentals.listRentals)
+    //     const pepe = rentals.listRentals.map(rent => rent.ownerId )
+    //     console.log(pepe)
 
-    }
+    // }
 
-
-
+        
+    // const mapOwnerId = () => {
+    //      rentals.listRentals?.result.map(rent => {
+    //          return (
+    //              <div className="pepi" onClick={()=> getUserByRental(rent)}>
+    //                 ID: {rent.ownerId}
+    //                  <Button>IEEEEEEEEEE</Button>
+    //              </div>
+    //          )
+    //      })
+    // //     console.log("que tiene rentals???",rentals.listRentals)
+    // //     console.log(pepe)
+    // //     getUserByRental(pepe)
+    // };
+  
     
-    const getUserByRental = async (userId) => {
+    // const getUserByRental = async (userId) => {
 
-        let collectionUserByRental = await axios.get(`http://localhost:3000/user/${userId}`)
-        console.log(collectionUserByRental)
-        setUserRental({
-            ...userRental, listUserRental: collectionUserByRental.data.result
-        });
-        // console.log("Sabedecirte",listUserRental)
-    };
+    //     const ownerId = userId.ownerId
 
-    
+    //     const collectionUserByRental = await axios.get(`http://localhost:3000/user/${ownerId}`)
+    //     console.log(collectionUserByRental)
+    //     setUserRental({
+    //         ...userRental, listUserRental: collectionUserByRental.data.result
+    //     });
+    //     console.log(collectionUserByRental)
+    // };
+
+   
     const deleteUser = async (user) => {
 
         const selectUser = window.confirm('You are about to delete this user, are you sure?');
@@ -104,7 +119,7 @@ const HomeAdmin = (props) => {
 
         if(selectUser === true){
              await axios.delete(`http://localhost:3000/order/${rent._id}`)
-            // showRental()
+            showRental()
         };
         console.log(deleteRental)
     };
@@ -143,8 +158,8 @@ const HomeAdmin = (props) => {
                                     users.listUsers.map(user => {
 
                                         return(
-                                            <div className="userData" key={user.userName}>
-                                                <div onClick={() => deleteUser(user)}  className="showData id">ID del usuario: {user._id}</div>
+                                            <div className="userData" key={user._id}>
+                                                 <div onClick={() => deleteUser(user)}  className="showData id">ID del usuario: {user._id}</div>
                                                 <div className="showData">Nombre de usuario: {user.userName}</div>
                                                 <div className="showData">Email: {user.email}</div><br></br>
                                             </div>
@@ -169,11 +184,11 @@ const HomeAdmin = (props) => {
                             <div>
                                 {
                                     rentals.listRentals.map(rent => {
-
+                                        
                                         return(
-                                            <div className="userData" key={rent}>
-                                                <div onClick={() => deleteRental(rent)}  className="showData id">ID del alquiler: {rent._id}</div>
-
+                                            <div onClick={() => deleteRental()} className="userData" key={rent._id}>
+                                                <div className="showData id">usuario: {rent.userName}</div>
+                                                <div className="showData id">usuario: {rent.title}</div>
                                             </div>
                                         )
                                     })
@@ -182,8 +197,8 @@ const HomeAdmin = (props) => {
                         </>
                     }
                 </div>
-                {/* <div className="rentalsContainer">
-                    {
+                <div className="rentalsContainer">
+                    {/* {
                         !userRental.listUserRental
                         ?
                         <>
@@ -196,27 +211,27 @@ const HomeAdmin = (props) => {
                             <div>
                                 {
                                     userRental.listUserRental.map(renderUser => {
-
+                                        
                                         return(
                                             <div className="userData" key={renderUser}>
-                                                <div onClick={() => deleteRental(renderUser)}  className="showData id">Nombre de usuario que alquiler: {renderUser.userName}</div>
+                                                <div className="showData id">Nombre de usuario que alquiler: {renderUser.userName}</div>
                                             </div>
                                         )
                                     })
                                 }
                             </div>
                         </>
-                    }
-                </div>         */}
+                    } */}
+                </div>        
             </div>
-        )
+        );
     }else {
         return (
             <div>
                 No eres el Admin mejor te piras...Plata o Plomo!!!
             </div>
         )
-    }
+    };
     
 };
 

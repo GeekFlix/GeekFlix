@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux'
 // eslint-disable-next-line
@@ -8,7 +7,6 @@ import axios from 'axios';
 import { SHOW } from '../../redux/types/movieTypes.js';
 import SearchEngine from '../../components/searchEngine/searchEngine';
 import { useHistory } from 'react-router-dom';
-import { LOGOUT } from '../../redux/types/userTypes';
 import { SAVE } from '../../redux/types/saveMovieType';
 import { Button } from 'reactstrap';
 import logo from '../../assets/img/geekflix-green.png';
@@ -22,15 +20,6 @@ const HomeMovie = (props) => {
     });
 
     const history = useHistory();
-
-    const logOut =  () => {
-
-        props.dispatch({type: LOGOUT, payload : {}});
-        
-        setTimeout(()=> {
-            history.push('/');
-        },300);
-    };
 
     useEffect(()=>{
         
@@ -54,11 +43,10 @@ const HomeMovie = (props) => {
 
     };
 
-    const saveMovie = (searchMovie) => {
-        const save = props.dispatch({type: SAVE, payload: searchMovie});
+    const saveMovie = (searchMovie, movie) => {
+        const save = props.dispatch({type: SAVE, payload: searchMovie, movie});
 
         setTimeout(() => {history.push('/show-movie')}, 100);
-        console.log(save)
     };
 
     if(!film.movies?.result){
@@ -72,7 +60,7 @@ const HomeMovie = (props) => {
     }else{
         return(
             <div className="homeMovie">
-                {/* <img className="backgroundImage" src="https://i.blogs.es/fd5f1b/avengers-5-lo-que-sabemos/1366_521.jpeg" alt=""/> */}
+                
                 <div className="headerHomeMovie">
                     <div className="containsNavbar">
                         <Navbar/>
@@ -85,7 +73,6 @@ const HomeMovie = (props) => {
                     </div>
                 </div>
                 <div className="containsSearch">
-                    <Button className="btnStyle" onClick={()=> redirect()} className="btnStyle">Profile</Button>
                     <div className="textHomeSearch">
                         BUSQUEDAS ANTERIORES:
                     </div>
