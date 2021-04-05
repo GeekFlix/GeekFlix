@@ -18,7 +18,6 @@ import { BtnContainer, BtnForm, ErrorMessage, SuccessMessage, ValidationIcon, Fo
 
 const UserProfile = (props) => {
 
-    // const URL = 'http://localhost:3000/payment/'
 
     const idUser = props.user._id
     
@@ -31,24 +30,9 @@ const UserProfile = (props) => {
 
     const history = useHistory();
 
-    // const [dataUser, setUser] = useState ({
-    //     userName: props.user.userName || props.user?.result.userName, 
-    //     email: props.user.email || props.user?.result.userName,
-    //     _id: props.user._id 
-
-    // })
-
     const [card, setCard] = useState({
         saveId: []
     });
-
-    // const [dataPayment, setPayment] = useState ({
-    //     visa: '',
-    //     month: '',
-    //     year: '',
-    //     cvv: '',
-    //     cardName: '',
-    // });
 
     //Hooks para cada campo de validación
     const [dataEmail, handleEmail] = useState({field: '', valid: null})
@@ -66,21 +50,9 @@ const UserProfile = (props) => {
     }, [])
 
 
-    // Handlers
-    // const handleStateUser = (event) => {
-    //     setUser({...dataUser, [event.target.name]: event.target.type === "number" ? + event.target.value : event.target.value});
-        
-    // };
-
-    // const stateHandler = (event) => {
-    //     setPayment({...dataPayment, 
-    //         [event.target.name]: event.target.type === 'number' ? +event.target.value : event.target.value});
-
-    // };
-
     const getPayment = async () => {
         try {
-            const dataCard = await axios.get(`http://localhost:3000/payment/user/${idUser}`, config)
+            const dataCard = await axios.get(`http://localhost:3000/payment/${idUser}`, config)
             
             setCard({
                 ...card, saveId: dataCard.data.result[0]._id
