@@ -16,7 +16,7 @@
     cName: 'nav-text'
    },
    {
-     path: '/rental',
+     path: '/user-movie',
      icon: <FaIcons.FaCartPlus />,
      cName: 'nav-text'
    },

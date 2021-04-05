@@ -160,11 +160,7 @@ const Payment = (props) => {
                     </p>
                 </ErrorMessage>}
                 <BtnContainer>
-<<<<<<< HEAD
                     <BtnForm type="submit" onClick={() => sendData()}>Enviar</BtnForm>
-=======
-                    <BtnForm type="submit" onClick={() => sendData()}>KAKA</BtnForm>
->>>>>>> feature/greeting
                     {formValid === true && <SuccessMessage>Formulario completado exitosamente</SuccessMessage>}
                 </BtnContainer>
                 </Form>
