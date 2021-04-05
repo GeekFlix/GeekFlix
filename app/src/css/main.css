@@ -505,7 +505,7 @@
 
 .movieInfo {
   width: 100%;
-  height: 100em;
+  height: 50em;
   background-color: #323232;
   align-items: center;
   justify-content: center;
@@ -619,6 +619,11 @@
     width: 8em;
     border-radius: 50%;
     margin-left: 0.8em; }
+
+.userMovieContainer {
+  width: 100%;
+  height: 100em;
+  background-color: #323232; }
 
 .mainCarousel {
   width: 100%;
