@@ -466,50 +466,74 @@
 .movieInfo {
   width: 100%;
   height: 100em;
-  background-color: #323232; }
+  background-color: #323232;
+  align-items: center;
+  justify-content: center; }
   .movieInfo .headerMovieInfo {
     display: flex;
     justify-content: space-evenly;
-    margin-right: 2em;
     align-items: center;
     height: 5em; }
     .movieInfo .headerMovieInfo .logo {
       cursor: pointer; }
-    .movieInfo .headerMovieInfo .backButton {
-      justify-content: center;
-      color: #f4e5c2;
-      text-transform: uppercase;
-      background: #323232;
-      padding: 20px;
-      border: 4px solid #6db193 !important;
-      border-radius: 6px;
-      transition: all 0.3s ease 0s; }
-      .movieInfo .headerMovieInfo .backButton:hover {
-        color: #f4e5c2 !important;
-        border-radius: 50px;
-        border-color: #295f4e !important;
-        transition: all 0.3s ease 0s; }
   .movieInfo .movieContainer {
     display: flex;
-    margin-left: 2em;
+    justify-content: center;
+    align-items: center;
     margin-top: 2em;
-    width: 50em;
+    width: 100%;
     height: 30em;
     color: #f4e5c2; }
-  .movieInfo .dataStyle {
-    width: 50em;
-    margin-left: 1em;
-    text-align: left; }
-  .movieInfo .genresDiv {
-    margin-top: 1em; }
-  .movieInfo .actorsDiv {
-    margin-top: 1em; }
-  .movieInfo .yearDiv {
-    margin-top: 1em; }
-  .movieInfo .plotDiv {
-    margin-top: 1em; }
+    .movieInfo .movieContainer .pictureDiv img {
+      width: 20em;
+      height: 28em; }
+    .movieInfo .movieContainer .dataStyle {
+      width: 20em;
+      margin-left: 1.5em;
+      text-align: left; }
+      .movieInfo .movieContainer .dataStyle .genresDiv {
+        margin-top: 1em; }
+      .movieInfo .movieContainer .dataStyle .actorsDiv {
+        margin-top: 1em;
+        line-height: 125%; }
+      .movieInfo .movieContainer .dataStyle .yearDiv {
+        margin-top: 1em; }
+      .movieInfo .movieContainer .dataStyle .plotDiv {
+        margin-top: 1em;
+        line-height: 125%; }
+      .movieInfo .movieContainer .dataStyle .priceDiv {
+        margin-top: 1em; }
   .movieInfo .buttonPosition {
-    margin-top: 1em; }
+    margin-top: 1em;
+    margin-right: 2em;
+    justify-content: center;
+    color: #f4e5c2;
+    text-transform: uppercase;
+    background: #323232;
+    padding: 20px;
+    border: 4px solid #6db193 !important;
+    border-radius: 6px;
+    transition: all 0.3s ease 0s; }
+    .movieInfo .buttonPosition:hover {
+      color: #f4e5c2 !important;
+      border-radius: 50px;
+      border-color: #295f4e !important;
+      transition: all 0.3s ease 0s; }
+  .movieInfo .backButton {
+    margin-top: 1em;
+    justify-content: center;
+    color: #f4e5c2;
+    text-transform: uppercase;
+    background: #323232;
+    padding: 20px;
+    border: 4px solid #6db193 !important;
+    border-radius: 6px;
+    transition: all 0.3s ease 0s; }
+    .movieInfo .backButton:hover {
+      color: #f4e5c2 !important;
+      border-radius: 50px;
+      border-color: #295f4e !important;
+      transition: all 0.3s ease 0s; }
 
 .containerHelp {
   width: 100%;
