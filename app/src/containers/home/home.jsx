@@ -35,7 +35,7 @@ const Home = () => {
         <div className="textForRegister">
           <div className="textRegisterTitle"><h1>Todas las películas y series que desees y mucho más...</h1></div>
           <div className="textRegisterSubtitle"><h2>Disfruta donde quieras. Cancela cuando quieras.</h2></div>
-          <div className="textRegisterFinal"><h4>...Pero para todo ello inicie sesión o <Link to="/register" className="styleLink">SUSCRIBANSE!!</Link></h4></div>
+          <div className="textRegisterFinal"><h4>...Pero para todo ello inicie sesión o <Link to="/register" className="styleLink">REGISTRATE!!</Link></h4></div>
         </div>
         <img className="imgMovie" alt="collage" src={collageMovies}/>
         
