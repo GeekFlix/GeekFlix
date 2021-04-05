@@ -11,7 +11,7 @@ import popcorn from '../../assets/img/popcorn.jpg';
 
 //Importaciones para componente y elementos de formulario y validación de errores
 import { BtnContainer, BtnForm, ErrorMessage, SuccessMessage, ValidationIcon, Form } from '../../components/input/elements';
-import { FaRegTimesCircle, FaRegUserCircle } from 'react-icons/fa';
+import { FaRegTimesCircle, FaRegCheckCircle } from 'react-icons/fa';
 import {regExp} from '../../tools/error.handlers';
 import Input from '../../components/input/input';
 
