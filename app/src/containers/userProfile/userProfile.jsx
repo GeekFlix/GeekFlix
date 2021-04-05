@@ -52,7 +52,7 @@ const UserProfile = (props) => {
 
     const getPayment = async () => {
         try {
-            const dataCard = await axios.get(`http://localhost:3000/payment/${idUser}`, config)
+            const dataCard = await axios.get(`http://localhost:3000/payment/user/${idUser}`, config)
             
             setCard({
                 ...card, saveId: dataCard.data.result[0]._id

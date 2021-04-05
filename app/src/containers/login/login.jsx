@@ -32,6 +32,10 @@ const Login = (props) => {
         if(event.keyCode === 13) sendLogin()
     };
 
+    const stateHandler = (event) => {
+      handleUser({...dataUser, [event.target.name]: event.target.type === "number" ? +event.target.value : event.target.value});
+  }
+
 
     const onSubmit = (e) => {
       e.preventDefault();
@@ -42,19 +46,19 @@ const Login = (props) => {
         handleValid(true);
         handleEmail({field: '', valid: null});
         handlePassword({field: '', valid: null});
-        handleUser({userType: 'Client', valid: true})
+        handleUser({userType: 'Client'})
       }else {
         handleValid(false);
       }
     }
-
+    console.log(dataUser.userType);
     const sendLogin = async () => {
 
         try {
             const body = {
               email: dataEmail.field, 
               password: dataPassword.field, 
-              userType: dataUser.userType
+              // userType: dataUser.userType
             }
             console.log(body, 'esto es el body')
 
@@ -115,7 +119,7 @@ const Login = (props) => {
             placeholder="password"
           />
 
-          <select className="select" name="userType" defaultValue={'DEFAULT'} onChange={()=>handleUser()}>
+          <select className="select" name="userType" defaultValue={'DEFAULT'} onChange={stateHandler}>
             <option value="Client">Client</option>
             <option value="Admin">Admin</option>
           </select>
