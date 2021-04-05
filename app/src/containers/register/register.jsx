@@ -5,7 +5,8 @@ import { useHistory } from 'react-router';
 import {regExp} from '../../tools/error.handlers';
 import Input from '../../components/input/input';
 import { BtnContainer, BtnForm, ErrorMessage, SuccessMessage, ValidationIcon, Form } from '../../components/input/elements';
-import { FaRegTimesCircle, FaRegUserCircle } from 'react-icons/fa';
+import { FaRegTimesCircle, FaRegCheckCircle } from 'react-icons/fa';
+
 
 
 import axios from 'axios';

@@ -62,7 +62,7 @@ For this project we have worked in the group organization through agile methodol
 ## ⛓️ Deploy / Testing <a name = "limitations"></a>
 
 You can test the backend of the application through Postman
-(Run in Postman)
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/54461e24112078016bdc)
 
 ## 🚀 Future Scope <a name = "future_scope"></a>
 
