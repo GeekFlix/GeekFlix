@@ -142,5 +142,3 @@ const Login = (props) => {
 }
 
 export default connect()(Login);
-
-
