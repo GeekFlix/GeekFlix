@@ -19,7 +19,7 @@
 }
 
 .nav-menu {
-  background-color: #323232;
+  background-color: #414141;
   width: 250px;
   height: 100vh;
   display: flex;
@@ -33,7 +33,16 @@
 .nav-menu.active {
   left: 0;
   width: 10%;
+  height: 29em;
   transition: 350ms;
+  z-index: 500;
+  border-radius: 0.8em;
+  
+  -webkit-box-shadow: 21px 20px 26px 5px rgba(0,0,0,0.75);
+  -moz-box-shadow: 21px 20px 26px 5px rgba(0,0,0,0.75);
+  box-shadow: 21px 20px 26px 5px rgba(0,0,0,0.75);
+
+  
 }
 
 .nav-text {

@@ -6,6 +6,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
 .stepCollection {
   display: flex;
   flex-direction: column;
@@ -383,7 +384,8 @@
     justify-content: center;
     margin-top: 1em; }
     .homeMovie .containsSearch .textHomeSearch {
-      color: #f4e5c2; }
+      color: #f4e5c2;
+      margin-left: 1em; }
     .homeMovie .containsSearch .searchResult {
       display: grid;
       grid-template-columns: repeat(3, auto);
@@ -398,7 +400,8 @@
         justify-content: center;
         color: #f4e5c2;
         margin-left: 2em;
-        margin-top: 1em; }
+        margin-top: 0.5em;
+        margin-bottom: 2em; }
 
 .containerAdmin {
   display: flex;
@@ -511,6 +514,8 @@
   display: flex;
   flex-direction: column;
   background-color: #323232; }
+  .containerHelp p {
+    font-family: 'Roboto', sans-serif; }
   .containerHelp .headerHelp {
     background-color: #323232b7;
     width: 100%;

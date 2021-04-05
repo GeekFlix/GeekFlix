@@ -84,16 +84,26 @@ const Register = (props) => {
                 <div className="registerForm">
                 <Form action="" onSubmit={onSubmit}>
                     <Input 
-                    state={dataEmail}
-                    type="email" 
-                    label="Email" 
-                    maxLength="50" 
-                    name="email" 
-                    onKeyDown={handleOnKeyDown}
-                    errorLegend='El usuario debe introducir un email'
-                    regExp={regExp.email}
-                    placeholder="email@email.com"
-                    changeState={handleEmail}
+                        state={dataUserName}
+                        type="text" 
+                        label="UserName" 
+                        maxLength="50" 
+                        name="userName" 
+                        changeState={handleUserName} 
+                        onKeyDown={handleOnKeyDown}
+                        placeholder="username"
+                    />
+                    <Input 
+                        state={dataEmail}
+                        type="email" 
+                        label="Email" 
+                        maxLength="50" 
+                        name="email" 
+                        onKeyDown={handleOnKeyDown}
+                        errorLegend='El usuario debe introducir un email'
+                        regExp={regExp.email}
+                        placeholder="email@email.com"
+                        changeState={handleEmail}
                     />
                     <Input 
                         state={dataPassword}
@@ -105,18 +115,9 @@ const Register = (props) => {
                         onKeyDown={handleOnKeyDown}
                         errorLegend='El usuario debe introducir un email'
                         regExp={regExp.password}
-                        placeholder="email@email.com"
+                        placeholder="password"
                     />
-                    <Input 
-                        state={dataUserName}
-                        type="text" 
-                        label="UserName" 
-                        maxLength="50" 
-                        name="userName" 
-                        changeState={handleUserName} 
-                        onKeyDown={handleOnKeyDown}
-                        placeholder="email@email.com"
-                    />
+                   
                     {formValid === false && <ErrorMessage>
                         <p>
                         <ValidationIcon icon={FaRegTimesCircle}></ValidationIcon>

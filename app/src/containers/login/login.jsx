@@ -59,7 +59,7 @@ const Login = (props) => {
 
             if(dataUser.userType === 'Client') {
                 const result = await axios.post('http://localhost:3000/user/login', body)
-                console.log(result.data, 'esto es RESULT');
+                // console.log(result.data, 'esto es RESULT');
                 props.dispatch({type: LOGIN, payload: result.data});
                 return setTimeout(() => {history.push('/home-movie')}, 100);
                 
@@ -111,7 +111,7 @@ const Login = (props) => {
             onKeyDown={handleOnKeyDown}
             errorLegend='El usuario debe introducir un email'
             regExp={regExp.password}
-            placeholder="email@email.com"
+            placeholder="password"
           />
 
           <select className="select" name="userType" defaultValue={'DEFAULT'} onChange={()=>handleUser()}>

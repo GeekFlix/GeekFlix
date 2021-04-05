@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import { useHistory } from 'react-router-dom';
 
 import axios from 'axios';
@@ -7,7 +7,7 @@ import { Form, FormGroup, Label, Input } from 'reactstrap';
 
 import {connect} from 'react-redux';
 import {UPDATE} from '../../redux/types/userTypes';
-import {UPDATECARD} from '../../redux/types/paymentTypes';
+// import {UPDATECARD} from '../../redux/types/paymentTypes';
 
 
 
@@ -17,66 +17,101 @@ import avatar1 from '../../assets/img/avatar1.png';
 
 
 const UserProfile = (props) => {
+
+    // const URL = 'http://localhost:3000/payment/'
+
+    const idUser = props.user._id
+    
+    const token = props.token;
+    const config = {
+        headers: { 
+            'authorization': `token ${token}` 
+        }
+    }
+
     const history = useHistory();
-    //Estado de dataUser
+
     const [dataUser, setUser] = useState ({
         userName: props.user.userName || props.user?.result.userName, 
         email: props.user.email || props.user?.result.userName,
-        _id: props.user._id
+        _id: props.user._id 
 
     })
 
-    console.log(props)
-    //Estado de dataPayment
+    const [card, setCard] = useState({
+        saveId: []
+    });
+
     const [dataPayment, setPayment] = useState ({
-        visa: props.payment.visa,
-        month: props.payment.month,
-        year: props.payment.year,
-        cvv: props.payment.cvv,
-        cardName: props.payment.cardName
-    })
+        visa: '',
+        month: '',
+        year: '',
+        cvv: '',
+        cardName: '',
+    });
+    
+    useEffect(() => {
+        
+        getPayment()
+    }, [])
 
 
-    //Handlers
+    // Handlers
     const handleStateUser = (event) => {
         setUser({...dataUser, [event.target.name]: event.target.type === "number" ? + event.target.value : event.target.value});
         
     };
 
-    const handleStatePayment = (event) => {
-        setPayment({...dataPayment, [event.target.name]: event.target.type === "number" ? + event.target.value : event.target.value})
-      
-    }
-    console.log(props,'PROOOPS PROFILE');
-    //Función para cambiar los datos
-    const updateUser = async () => {
+    const stateHandler = (event) => {
+        setPayment({...dataPayment, 
+            [event.target.name]: event.target.type === 'number' ? +event.target.value : event.target.value});
+
+    };
+
+    const getPayment = async () => {
         try {
-
-            let idUser = props.user._id;
-            let idPayment = props.payment.result?._id;
-            let token = props.user?.token;
+            const dataCard = await axios.get(`http://localhost:3000/payment/user/${idUser}`, config)
             
-            const updateData = window.confirm('Guardado con éxito ahora a ver una peli, no vuelvas aquí');
-            redirect();
-
-            if(updateData === true ){
-                
-                
-                let resultUser = await axios.put(`http://localhost:3000/user/${idUser}`, dataUser, { headers: { authorization: token } });
-                console.log(resultUser);
-                setUser({...dataUser, userName: resultUser.data.userName, email: resultUser.data.email })
-                
-                props.dispatch({type: UPDATE, payload: dataUser});
-
-                console.log('update payment');
-                let resultPayment = await axios.put (`http://localhost:3000/payment/${idPayment}`, dataPayment);
-                setPayment(resultPayment.data)
-
-                props.dispatch({type: UPDATECARD, payload: resultPayment.data});
-            }
+            setCard({
+                ...card, saveId: dataCard.data.result[0]._id
+            })
+            
         } catch (error) {
             console.log(error);
         }
+    }
+
+    const handleOnKeyDown = ( event ) => {
+        if(event.keyCode === 13) pepin()
+    }
+
+
+    const pepin = async () =>{
+        const body = {
+            visa: dataPayment.visa,
+            month: dataPayment.month,
+            year: dataPayment.year,
+            cvv: dataPayment.cvv,
+            cardName: dataPayment.cardName,
+            ownerId: props.user._id
+        }
+
+        const bodyUser = {
+            userName: dataUser.userName,
+            email: dataUser.email,
+            _id: props.user._id
+        }
+        const idPayment = card.saveId;
+
+        const resultPayment = await axios.put(`http://localhost:3000/payment/${idPayment}`, body,{
+        })
+        console.log(resultPayment);
+
+        const resultUser = await axios.put(`http://localhost:3000/user/${idUser}`,bodyUser, config);
+        console.log(resultUser.data);
+        // props.dispatch({type: UPDATE, payload: resultUser.data});
+        // setUser({...dataUser, userName: resultUser.data.userName, email: resultUser.data.email })
+
         
     }
 
@@ -89,8 +124,6 @@ const UserProfile = (props) => {
 
     return (
         <div>
-            <pre>{JSON.stringify(dataUser, null,2)}</pre>
-
             <div className="userContainer">
                 <div className="logoGeek">
                     <img src={logo} alt=""></img>
@@ -100,23 +133,44 @@ const UserProfile = (props) => {
                     </div>
                 </div>
                 <div className="dataUser">
-                    <div className="picProfile"><img src={avatar1} alt="" className="imgAvatar"></img></div>
+                    <div className="picProfile">
+                        <img src={avatar1} alt="" className="imgAvatar"></img>
+                    </div>
                     <div className="cardData">
                         <Form>
                             <FormGroup className="registerFormGroup">
                                 <Label for="userName">Username </Label>
                                 <br></br>
-                                <Input type="text" id="user" name="userName" defaultValue={dataUser.userName} onChange={handleStateUser}/>
+                                <Input 
+                                    type="text" 
+                                    id="user" 
+                                    name="userName" 
+                                    defaultValue={props.user.userName} 
+                                    onChange={handleStateUser}
+                                />
                             </FormGroup>
                             <FormGroup>
                                 <Label for="email">Email </Label>
                                 <br></br>
-                                <Input type="text" id="user" name="email" defaultValue={dataUser.email} onChange={handleStateUser}/>
+                                <Input 
+                                    type="text" 
+                                    id="user" 
+                                    name="email" 
+                                    defaultValue={props.user.email} 
+                                    onChange={handleStateUser}
+                                />
                             </FormGroup>
                             <FormGroup>
                                 <Label for="visa">VISA/Mastercard Número </Label>
                                 <br></br>
-                                <Input type="text" id="payment" name="visa" defaultValue={props.payment.result.visa} onChange={handleStatePayment}/>
+                                <input  
+                                    type="text" 
+                                    id="payment" 
+                                    name="visa"
+                                    maxLength="16" 
+                                    onChange={stateHandler}
+                                    onKeyDown={handleOnKeyDown}
+                                />
                             </FormGroup>
                             <FormGroup>
                             <div className="date-field">
@@ -124,7 +178,11 @@ const UserProfile = (props) => {
                                     Fecha de vencimiento (MM/AAAA)
                                 </div>
                                 <div className="months">
-                                    <select name="month" defaultValue={props.payment.result.month} onChange={handleStatePayment}>
+                                    <select 
+                                        name="month" 
+                                        onChange={stateHandler}
+                                        onKeyDown={handleOnKeyDown}
+                                    >
                                         <option value="DEFAULT" disabled>- Select One -</option>
                                         <option value="january">01</option>
                                         <option value="february">02</option>
@@ -141,7 +199,11 @@ const UserProfile = (props) => {
                                     </select>
                                 </div>
                                 <div className="years">
-                                    <select name="year" defaultValue={props.payment.result.year} onChange={handleStatePayment}>
+                                    <select 
+                                        name="year" name="year" 
+                                        onChange={stateHandler}
+                                        onKeyDown={handleOnKeyDown}
+                                    >
                                         <option value="DEFAULT" disabled>- Select One -</option>
                                         <option value="2021">2021</option>
                                         <option value="2022">2022</option>
@@ -170,16 +232,29 @@ const UserProfile = (props) => {
                             <FormGroup>
                                 <Label for="cvv">CVV </Label>
                                 <br></br>
-                                {/* <Input type="number" id="payment" name="cvv" defaultValue={props.payment.result.cvv} onChange={handleStatePayment}/> */}
+                                <input 
+                                    type="text" 
+                                    id="payment" 
+                                    name="cvv"
+                                    maxLength="3" 
+                                    onChange={stateHandler}
+                                    onKeyDown={handleOnKeyDown}
+                                />
                             </FormGroup>
                             <FormGroup>
                                 <Label for="cardName">Nombre de la Tarjeta </Label>
                                 <br></br>
-                                {/* <Input type="text" id="payment" name="cardName" defaultValue={props.payment.result.cardName} onChange={handleStatePayment}/> */}
+                                <input 
+                                    type="text" 
+                                    id="payment" 
+                                    name="cardName" 
+                                    onChange={stateHandler}
+                                    onKeyDown={handleOnKeyDown}
+                                />
                             </FormGroup>
-                            <button className="updateButton" onClick={() => updateUser()}>Enviar</button>
                         </Form>
                     </div>
+                    <button className="updateButton" onClick={() => pepin()}>Enviar</button>
                 </div>
             </div>            
         </div>
