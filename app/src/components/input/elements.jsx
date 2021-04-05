@@ -78,13 +78,14 @@ const ValidationIcon = styled(FaRegTimesCircle, FaRegUserCircle)`
 	${props => props.valid === 'false' && css`
 		opacity: 1;
 		color: ${colors.errorColor};
+		icon: FaRegTimesCircle;
 	`}
 	${props => props.valid === 'true' && css`
 		opacity: 1;
 		color: ${colors.successColor};
+		icon: FaRegUserCircle;
 	`}
 `;
-
 
 
 const BtnContainer = styled.div`

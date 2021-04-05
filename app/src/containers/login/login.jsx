@@ -96,7 +96,7 @@ const Login = (props) => {
             maxLength="50" 
             name="email" 
             onKeyDown={handleOnKeyDown}
-            errorLegend='El usuario debe introducir un email'
+            errorLegend='El email no tiene el formato esperado'
             regExp={regExp.email}
             placeholder="email@email.com"
             changeState={handleEmail}
@@ -109,7 +109,7 @@ const Login = (props) => {
             name="password" 
             changeState={handlePassword} 
             onKeyDown={handleOnKeyDown}
-            errorLegend='El usuario debe introducir un email'
+            errorLegend='La contraseña no es correcta'
             regExp={regExp.password}
             placeholder="password"
           />

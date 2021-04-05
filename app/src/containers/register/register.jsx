@@ -113,7 +113,7 @@ const Register = (props) => {
                         name="password" 
                         changeState={handlePassword} 
                         onKeyDown={handleOnKeyDown}
-                        errorLegend='El usuario debe introducir un email'
+                        errorLegend='La contraseña debe tener 8 caracteres, mayúscula, minúscula, número y un caracter especial'
                         regExp={regExp.password}
                         placeholder="password"
                     />

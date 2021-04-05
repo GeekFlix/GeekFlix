@@ -87,7 +87,7 @@ const Payment = (props) => {
                     name="visa" 
                     changeState={handleVisa} 
                     onKeyDown={handleOnKeyDown}
-                    errorLegend='El usuario debe introducir un email'
+                    errorLegend='La tarjeta debe de tener 9 números'
                     regExp={regExp.visa}
                     placeholder="Número de tarjeta"
                 />
@@ -99,7 +99,7 @@ const Payment = (props) => {
                     name="cvv" 
                     changeState={handleCvv} 
                     onKeyDown={handleOnKeyDown}
-                    errorLegend='El usuario debe introducir un email'
+                    errorLegend='El código CVV debe contener 3 números'
                     regExp={regExp.cvv}
                     placeholder="CVV"
                 />
@@ -149,7 +149,7 @@ const Payment = (props) => {
                     name="cardName" 
                     changeState={handleCardName} 
                     onKeyDown={handleOnKeyDown}
-                    errorLegend='El usuario debe introducir un email'
+                    errorLegend='Debe escribir el titular de la tarjeta'
                     regExp={regExp.cardName}
                     placeholder="Nombre del titular"
                 />
