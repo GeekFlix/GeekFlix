@@ -36,31 +36,42 @@
     }
 
     .dataUser {
-        height: $mp-z;
-        width: $mp-z-b;
+        
+        width: $mp-z;
 
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         align-items: center;
-        justify-content: center;
+        justify-content: space-evenly;
+    
 
         .picProfile {
-            height: $mp-t;
+            height: $mp-x;
             width: $mp-t;
-
-            border: solid $darkgreen $size-aa;
 
             .imgAvatar {
                 height: $mp-t;
                 width: $mp-t;
+
+                border: solid $darkgreen $size-aa;
             }
         }
-    }
 
-    .buttonUpdate {
-        @include btnOne
-    }
+        .containerData {
+           width: $mp-t;
+           
 
-    
+            select {
+               background-color: $black;
+               border-radius: 3px;
+               height: 35px;
+               width: 60px;
+               line-height: 45px;
+               padding: 0 40px 0 10px;
+               font-weight: bold;
+            }
+
+        }
+    }
 
 }

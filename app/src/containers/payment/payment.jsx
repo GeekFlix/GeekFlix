@@ -7,7 +7,7 @@ import axios from 'axios'
 import {regExp} from '../../tools/error.handlers'
 import Input from '../../components/input/input';
 import { BtnContainer, BtnForm, ErrorMessage, SuccessMessage, ValidationIcon, Form } from '../../components/input/elements';
-import { FaRegTimesCircle, FaRegUserCircle } from 'react-icons/fa';
+import { FaRegTimesCircle, FaRegCheckCircle } from 'react-icons/fa';
 
 import {connect} from 'react-redux';
 import { STORED } from '../../redux/types/paymentTypes';
@@ -103,6 +103,7 @@ const Payment = (props) => {
                     regExp={regExp.cvv}
                     placeholder="CVV"
                 />
+                <label>Fecha de Expiración<br></br>
                 <select name="month" defaultValue={"DEFAULT"} onChange={handleExpiration} onKeyDown={handleOnKeyDown}>
                     <option value="DEFAULT" disabled>- Select One -</option>
                     <option value="january">01</option>
@@ -141,6 +142,7 @@ const Payment = (props) => {
                     <option value="2039">2039</option>
                     <option value="2040">2040</option>
                 </select>
+                </label>
                 <Input 
                     state={dataCardName}
                     type="text" 
@@ -160,11 +162,7 @@ const Payment = (props) => {
                     </p>
                 </ErrorMessage>}
                 <BtnContainer>
-<<<<<<< HEAD
                     <BtnForm type="submit" onClick={() => sendData()}>Enviar</BtnForm>
-=======
-                    <BtnForm type="submit" onClick={() => sendData()}>KAKA</BtnForm>
->>>>>>> feature/greeting
                     {formValid === true && <SuccessMessage>Formulario completado exitosamente</SuccessMessage>}
                 </BtnContainer>
                 </Form>

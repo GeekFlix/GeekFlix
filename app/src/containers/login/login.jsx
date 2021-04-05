@@ -11,7 +11,7 @@ import popcorn from '../../assets/img/popcorn.jpg';
 
 //Importaciones para componente y elementos de formulario y validación de errores
 import { BtnContainer, BtnForm, ErrorMessage, SuccessMessage, ValidationIcon, Form } from '../../components/input/elements';
-import { FaRegTimesCircle, FaRegUserCircle } from 'react-icons/fa';
+import { FaRegTimesCircle } from 'react-icons/fa';
 import {regExp} from '../../tools/error.handlers';
 import Input from '../../components/input/input';
 
@@ -42,7 +42,7 @@ const Login = (props) => {
         handleValid(true);
         handleEmail({field: '', valid: null});
         handlePassword({field: '', valid: null});
-        handleUser({userType: '', valid: true})
+        handleUser({userType: 'Client', valid: true})
       }else {
         handleValid(false);
       }
@@ -56,6 +56,7 @@ const Login = (props) => {
               password: dataPassword.field, 
               userType: dataUser.userType
             }
+            console.log(body, 'esto es el body')
 
             if(dataUser.userType === 'Client') {
                 const result = await axios.post('http://localhost:3000/user/login', body)
