@@ -12,10 +12,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-  
-
     background-color: $black;
-
     height: 100%;
     width: 100%;
     .backgroundImage{
@@ -43,13 +40,17 @@
         }
         .containsLogo{
             width: 40%;
-
+            
         }
         .searchHeader{
             align-items: center;
             justify-content: flex-end;
             width: 30%;
-
+            
+            .userGreeting{
+                margin-top: 1em;
+                color: $white;
+            }
         }
 
     }
