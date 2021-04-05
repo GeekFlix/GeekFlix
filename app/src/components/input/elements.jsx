@@ -8,7 +8,7 @@ const colors = {
 	successColor: "#1ed12d", 
 	backgroundColor: "#323232", 
 	fontColor: "#f4e5c2",
-	darkGreen: "#295f4e"
+	darkGreen: "#295f4e", 
 }
 
 const Form = styled.form`

@@ -64,9 +64,11 @@ For this project we have worked in the group organization through agile methodol
 You can test the backend of the application through Postman
 [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/54461e24112078016bdc)
 
+For more information about the backend code, visit [Backend](https://github.com/GeekFlix/WMO)
+
 ## 🚀 Future Scope <a name = "future_scope"></a>
 
-In future web updates, more funcionalities will be added.....
+In future web updates, more funcionalities will be added such as streaming TV content and series, a design that offers a better browsing experience for the user ...
 
 ## 🏁 Getting Started <a name = "getting_started"></a>
 
@@ -89,7 +91,7 @@ npm start
 ```
 or
 ```
-docker-compose up
+docker-compose up --build
 ```
 
 
@@ -97,17 +99,16 @@ docker-compose up
 
 There are any views in the app, starting with a home view without log in or register, where you can observe some promotional videos and titles about our movies.
 
-(Issue de Home sin Login/Registro o Login)
+![RegisterLogin](https://user-images.githubusercontent.com/77154578/113628390-1f8b0580-9665-11eb-9555-0752b53d168a.gif)
 
 You can log in or register a new account through CRUD's POST method. Once access is obtained, you will be able to access all the content of the web, with a home view in which all the movies are presented with their most important information (GET method). From here you can you can find any movie through our search bar and rent it !
 
-(Issue de Home con Login, Navbar y acceso a otras vistas (información de la película y alquiler))
+![Search](https://user-images.githubusercontent.com/77154578/113629162-4ac22480-9666-11eb-9621-8fc6bceb6ca1.gif)
 
 In this view, there is a menu where you can access other functionalities such as the user profile, where you can modify personal data and payment methods (PUT method).
 
 In addition, there is also an Administrator role, with exclusive access to rental and user information, and with the power to delete data from the database (DELETE method)
 
-(Issue de vista administrador)
 
 ## ✍️ Authors <a name = "authors"></a>
 
@@ -116,11 +117,5 @@ In addition, there is also an Administrator role, with exclusive access to renta
 - [@Carlos-Val](https://github.com/Carlos-Val) - Idea & Initial work
 - [@LauraPorto](https://github.com/LauraPorto) - Idea & Initial work
 
-See also the list of [contributors](https://github.com/kylelobo/The-Documentation-Compendium/contributors)
-who participated in this project.
 
-## 🎉 Acknowledgments <a name = "acknowledgments"></a>
 
-- Hat tip to anyone whose code was used
-- Inspiration
-- References

@@ -1,12 +1,20 @@
 /*Colors*/
 /*Sizes*/
 /*Margin and Padding*/
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
 .stepCollection {
+  font-family: 'Open Sans', sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -27,7 +35,8 @@
       color: #6db193; }
   .stepCollection .registerForm {
     display: flex;
-    flex-direction: column; }
+    flex-direction: column;
+    color: #f8e9c4; }
 
 .loginBody {
   width: 100%;
@@ -55,7 +64,7 @@
       justify-content: center;
       align-items: flex-start; }
       .loginBody .formContainer .contentLogin .titleLoginUp {
-        color: #f4e5c2;
+        color: #f8e9c4;
         font-size: 20px;
         font-family: 'Noto Sans', sans-serif; }
       .loginBody .formContainer .contentLogin .imgLogin {
@@ -66,11 +75,12 @@
           border-radius: 16px; }
   .loginBody .formLogin {
     height: 25em;
-    color: #f4e5c2;
+    color: #f8e9c4;
     display: flex;
     flex-direction: column;
-    align-items: center; }
-    .loginBody .formLogin .select {
+    align-items: center;
+    font-family: 'Open Sans', sans-serif; }
+    .loginBody .formLogin select {
       margin-top: 1em; }
 
 .paymentContainer {
@@ -79,7 +89,8 @@
   align-items: center;
   width: 100%;
   height: 70em;
-  background-color: #323232; }
+  background-color: #323232;
+  font-family: 'Open Sans', sans-serif; }
   .paymentContainer .nav {
     width: 480px;
     height: 96px;
@@ -95,7 +106,8 @@
       color: #6db193; }
   .paymentContainer .paymentForm {
     display: flex;
-    flex-direction: column; }
+    flex-direction: column;
+    color: #f8e9c4; }
     .paymentContainer .paymentForm select {
       background-color: #323232;
       border-radius: 3px;
@@ -143,7 +155,7 @@
       z-index: 500; }
       .homeContainer .header .loginContainer .buttonHome {
         justify-content: center;
-        color: #f4e5c2;
+        color: #f8e9c4;
         text-transform: uppercase;
         background: #323232;
         padding: 20px;
@@ -151,7 +163,7 @@
         border-radius: 6px;
         transition: all 0.3s ease 0s; }
         .homeContainer .header .loginContainer .buttonHome:hover {
-          color: #f4e5c2 !important;
+          color: #f8e9c4 !important;
           border-radius: 50px;
           border-color: #295f4e !important;
           transition: all 0.3s ease 0s; }
@@ -170,8 +182,9 @@
   position: absolute;
   z-index: 2;
   width: 100%;
-  height: 48em;
-  color: white; }
+  height: 30em;
+  color: white;
+  font-size: 24px; }
   .textForRegister .textRegisterTitle {
     width: 50%;
     margin-bottom: 1em;
@@ -189,7 +202,26 @@
     font-family: 'Noto Sans', sans-serif; }
     .textForRegister .textRegisterFinal .styleLink {
       color: #6db193;
-      font-family: 'Inter', sans-serif; }
+      font-family: 'Inter', sans-serif;
+      font-size: 28px; }
+      .textForRegister .textRegisterFinal .styleLink .titleRegister {
+        border: none;
+        background: #6db193;
+        color: #f8e9c4 !important;
+        font-weight: 100;
+        padding: 20px;
+        text-transform: uppercase;
+        border-radius: 6px;
+        display: inline-block;
+        transition: all 0.3s ease 0s; }
+        .textForRegister .textRegisterFinal .styleLink .titleRegister:hover {
+          color: #404040 !important;
+          font-weight: 700 !important;
+          letter-spacing: 3px;
+          background: #295f4e;
+          box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.57);
+          box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.57);
+          transition: all 0.3s ease 0s; }
     .textForRegister .textRegisterFinal .styleLink:hover {
       color: red; }
 
@@ -286,7 +318,8 @@
   height: 100vh;
   width: 100%;
   display: flex;
-  flex-direction: row; }
+  flex-direction: row;
+  font-family: 'Open Sans', sans-serif; }
   .userContainer .logoGeek {
     height: 480px;
     width: 224px;
@@ -304,7 +337,7 @@
       .userContainer .logoGeek .userMenu .btnMenu {
         border: none;
         background: #323232b7;
-        color: #f4e5c2 !important;
+        color: #f8e9c4 !important;
         font-weight: 100;
         padding: 20px;
         text-transform: uppercase;
@@ -333,7 +366,8 @@
         width: 224px;
         border: solid #295f4e 1px; }
     .userContainer .dataUser .containerData {
-      width: 224px; }
+      width: 224px;
+      color: #f8e9c4; }
       .userContainer .dataUser .containerData select {
         background-color: #323232;
         border-radius: 3px;
@@ -349,7 +383,8 @@
   align-items: center;
   background-color: #323232;
   width: 100%;
-  height: 100vh; }
+  height: 100vh;
+  font-family: 'Open Sans', sans-serif; }
 
 .homeMovie {
   display: flex;
@@ -357,7 +392,8 @@
   align-items: center;
   background-color: #323232;
   height: 100%;
-  width: 100%; }
+  width: 100%;
+  font-family: 'Open Sans', sans-serif; }
   .homeMovie .backgroundImage {
     width: 100%;
     height: 35em; }
@@ -381,7 +417,7 @@
       width: 30%; }
       .homeMovie .headerHomeMovie .searchHeader .userGreeting {
         margin-top: 1em;
-        color: #f4e5c2; }
+        color: #f8e9c4; }
   .homeMovie .containsSearch {
     display: flex;
     flex-direction: column;
@@ -389,7 +425,7 @@
     justify-content: center;
     margin-top: 1em; }
     .homeMovie .containsSearch .textHomeSearch {
-      color: #f4e5c2;
+      color: #f8e9c4;
       margin-left: 1em; }
     .homeMovie .containsSearch .searchResult {
       display: grid;
@@ -403,7 +439,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        color: #f4e5c2;
+        color: #f8e9c4;
         margin-left: 2em;
         margin-top: 0.5em;
         margin-bottom: 2em; }
@@ -414,6 +450,7 @@
   align-items: center;
   width: 100%;
   height: 100em;
+  font-family: 'Open Sans', sans-serif;
   background-color: #323232; }
   .containerAdmin .headerAdmin {
     width: 100%;
@@ -423,7 +460,7 @@
     justify-content: space-between; }
   .containerAdmin .btnStyle {
     justify-content: center;
-    color: #f4e5c2;
+    color: #f8e9c4;
     text-transform: uppercase;
     background: #323232;
     padding: 20px;
@@ -431,7 +468,7 @@
     border-radius: 6px;
     transition: all 0.3s ease 0s; }
     .containerAdmin .btnStyle:hover {
-      color: #f4e5c2 !important;
+      color: #f8e9c4 !important;
       border-radius: 50px;
       border-color: #295f4e !important;
       transition: all 0.3s ease 0s; }
@@ -440,12 +477,12 @@
     justify-content: center;
     align-items: center;
     margin-right: 2em;
-    color: #f4e5c2; }
+    color: #f8e9c4; }
   .containerAdmin .listContainer {
     display: flex;
     flex-direction: row;
     background-color: #323232;
-    color: #f4e5c2;
+    color: #f8e9c4;
     margin: 1em; }
     .containerAdmin .listContainer .usersContainer {
       margin-top: 1em; }
@@ -455,7 +492,7 @@
       text-align: center;
       width: 25em;
       height: 5em;
-      color: #f4e5c2;
+      color: #f8e9c4;
       margin: 1em;
       margin-right: 1em; }
     .containerAdmin .listContainer .rentData {
@@ -463,7 +500,7 @@
       width: 25em;
       height: 5em;
       margin: 1em;
-      color: #f4e5c2;
+      color: #f8e9c4;
       margin-left: 1em; }
 
 .movieInfo {
@@ -471,7 +508,8 @@
   height: 100em;
   background-color: #323232;
   align-items: center;
-  justify-content: center; }
+  justify-content: center;
+  font-family: 'Open Sans', sans-serif; }
   .movieInfo .headerMovieInfo {
     display: flex;
     justify-content: space-evenly;
@@ -486,7 +524,7 @@
     margin-top: 2em;
     width: 100%;
     height: 30em;
-    color: #f4e5c2; }
+    color: #f8e9c4; }
     .movieInfo .movieContainer .pictureDiv img {
       width: 20em;
       height: 28em; }
@@ -510,7 +548,7 @@
     margin-top: 1em;
     margin-right: 2em;
     justify-content: center;
-    color: #f4e5c2;
+    color: #f8e9c4;
     text-transform: uppercase;
     background: #323232;
     padding: 20px;
@@ -518,14 +556,14 @@
     border-radius: 6px;
     transition: all 0.3s ease 0s; }
     .movieInfo .buttonPosition:hover {
-      color: #f4e5c2 !important;
+      color: #f8e9c4 !important;
       border-radius: 50px;
       border-color: #295f4e !important;
       transition: all 0.3s ease 0s; }
   .movieInfo .backButton {
     margin-top: 1em;
     justify-content: center;
-    color: #f4e5c2;
+    color: #f8e9c4;
     text-transform: uppercase;
     background: #323232;
     padding: 20px;
@@ -533,18 +571,18 @@
     border-radius: 6px;
     transition: all 0.3s ease 0s; }
     .movieInfo .backButton:hover {
-      color: #f4e5c2 !important;
+      color: #f8e9c4 !important;
       border-radius: 50px;
       border-color: #295f4e !important;
       transition: all 0.3s ease 0s; }
 
 .containerHelp {
   width: 100%;
+  height: 100vh;
   display: flex;
   flex-direction: column;
-  background-color: #323232; }
-  .containerHelp p {
-    font-family: 'Roboto', sans-serif; }
+  background-color: #323232;
+  font-family: 'Open Sans', sans-serif; }
   .containerHelp .headerHelp {
     background-color: #323232b7;
     width: 100%;
@@ -567,14 +605,14 @@
     align-items: center;
     flex-direction: column;
     margin-top: 3em;
-    color: #f4e5c2; }
+    color: #f8e9c4; }
     .containerHelp .textHelp .textTitleHelp {
       height: 3em;
-      font-size: 40px; }
+      font-size: 38px; }
     .containerHelp .textHelp .textExplainHelp {
       height: 10em;
       padding: 0% 20%;
-      font-size: 22px;
+      font-size: 20px;
       line-height: 200%; }
   .containerHelp .helpPhotoDeveloper .photoDevelopers {
     height: 8em;
@@ -589,7 +627,7 @@
   .mainCarousel .titleCarousel {
     display: flex;
     height: 2em;
-    color: #f4e5c2;
+    color: #f8e9c4;
     align-items: center;
     justify-content: flex-start;
     margin-left: 2.5em; }

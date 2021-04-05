@@ -82,12 +82,12 @@ const Payment = (props) => {
                 <Input 
                     state={dataVisa}
                     type="number" 
-                    label="VISA/MasterCard Número" 
+                    label="VISA Número" 
                     maxLength="50" 
                     name="visa" 
                     changeState={handleVisa} 
                     onKeyDown={handleOnKeyDown}
-                    errorLegend='La tarjeta debe de tener 9 números'
+                    errorLegend='La tarjeta debe de empezar por 4 y contener 13-16 números'
                     regExp={regExp.visa}
                     placeholder="Número de tarjeta"
                 />
@@ -103,6 +103,7 @@ const Payment = (props) => {
                     regExp={regExp.cvv}
                     placeholder="CVV"
                 />
+                <br></br>
                 <label>Fecha de Expiración<br></br>
                 <select name="month" defaultValue={"DEFAULT"} onChange={handleExpiration} onKeyDown={handleOnKeyDown}>
                     <option value="DEFAULT" disabled>- Select One -</option>

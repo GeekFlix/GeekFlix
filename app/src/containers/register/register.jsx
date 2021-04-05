@@ -87,7 +87,7 @@ const Register = (props) => {
                     <Input 
                         state={dataUserName}
                         type="text" 
-                        label="UserName" 
+                        label="Usuario" 
                         maxLength="50" 
                         name="userName" 
                         changeState={handleUserName} 
