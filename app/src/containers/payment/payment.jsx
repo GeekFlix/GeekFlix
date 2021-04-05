@@ -15,7 +15,6 @@ import { STORED } from '../../redux/types/paymentTypes';
 
 
 const Payment = (props) => {
-
     const history = useHistory();
 
     //Hooks para cada campo de validación
@@ -36,7 +35,7 @@ const Payment = (props) => {
             dataVisa.valid === 'true' && dataCardName.valid === 'true' && dataCvv.valid === 'true' && dataExpiration !== false
         ){
           handleValid(true);
-          handleVisa({field: '', valid: null});
+          handleVisa({field: ''});/*valid: null*/
           handleCvv({field: '', valid: null});
           handleCardName({field: '', valid: null});
           handleExpiration({month: '', year: ''})
@@ -53,7 +52,8 @@ const Payment = (props) => {
                 month: dataExpiration.month, 
                 year: dataExpiration.year, 
                 cvv: dataCvv.field, 
-                cardName: dataCardName.field
+                cardName: dataCardName.field,
+                ownerId: props.user.result._id
             }
 
             const data = await axios.post('http://localhost:3000/payment/', body)
@@ -88,7 +88,7 @@ const Payment = (props) => {
                     changeState={handleVisa} 
                     onKeyDown={handleOnKeyDown}
                     errorLegend='El usuario debe introducir un email'
-                    regExp={regExp.visa}
+                    // regExp={regExp.visa}
                     placeholder="Número de tarjeta"
                 />
                 <Input 
@@ -160,7 +160,7 @@ const Payment = (props) => {
                     </p>
                 </ErrorMessage>}
                 <BtnContainer>
-                    <BtnForm type="submit" onClick={() => sendData()}></BtnForm>
+                    <BtnForm type="submit" onClick={() => sendData()}>Enviar</BtnForm>
                     {formValid === true && <SuccessMessage>Formulario completado exitosamente</SuccessMessage>}
                 </BtnContainer>
                 </Form>
@@ -170,4 +170,11 @@ const Payment = (props) => {
     )
 }
 
-export default connect()(Payment)
+const mapStateToProps = state=>{
+    return{
+        user: state.userReducer.user
+    };
+};
+
+export default connect (mapStateToProps)(Payment)
+
