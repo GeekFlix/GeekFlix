@@ -35,7 +35,6 @@ const HomeMovie = (props) => {
             ...film, movies: filmCollection.data
         });
     }
-    console.log(props, "props o no props");
 
     const redirect = () => {
         return setTimeout(() => {

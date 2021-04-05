@@ -34,19 +34,17 @@ const Rental = (props) => {
         return setTimeout(() => {history.push('/home-movie')}, 100);
     }
 
+    console.log(props, "props");
+
     return (
         <div >
             <div className="movieInfo">
                 <div className="headerMovieInfo">
-                    <button className="backButton" onClick={() => getBack()}>Ir atrás</button>
                     <div className="imgGeek"><Link className="logo" to='/'><img src={logo} alt="logo"/></Link></div>
                 </div>
                 <div className="movieContainer">
                     <div className="pictureDiv">
                         <img src={props.saveMovie.posterUrl} alt='movie'></img>
-                        <div className="buttonPosition">
-                            <Button onClick={() => sendRental()}>Alquilar</Button>
-                        </div>
                     </div>
                     <div className="dataStyle">
                         <div className="titleDiv">
@@ -56,16 +54,21 @@ const Rental = (props) => {
                             Géneros: {props.saveMovie.genres}
                         </div>
                         <div className="actorsDiv">
-                            Actores: {props.saveMovie.actors}
+                            Actores: <br/>{props.saveMovie.actors}
                         </div>
                         <div className="yearDiv">
                             Año: {props.saveMovie.year}
                         </div>
                         <div className="plotDiv">
-                            Sinópsis: {props.saveMovie.plot}
+                            Sinópsis: <br/>{props.saveMovie.plot}
+                        </div>
+                        <div className="priceDiv">
+                            Precio: 2.5€
                         </div>
                     </div>
                 </div>
+                <Button className="buttonPosition" onClick={() => sendRental()}>Alquilar</Button>
+                <button className="backButton" onClick={() => getBack()}>Ir atrás</button>
             </div>
         </div>
     );
@@ -75,7 +78,8 @@ const mapStateToProps = state => {
     return {
         rentMovie: state.saveMovieReducer.rentMovie,
         saveMovie: state.saveMovieReducer.saveMovie,
-        user: state.userReducer.user
+        user: state.userReducer.user,
+        
     }
 };
 

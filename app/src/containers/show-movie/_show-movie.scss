@@ -2,11 +2,12 @@
     width: 100%;
     height: 100em;
     background-color: $black;
+    align-items: center;
+    justify-content: center;
    
     .headerMovieInfo {
         display: flex;
         justify-content: space-evenly;
-        margin-right: 2em;
         align-items: center;
         height: 5em;
 
@@ -14,43 +15,64 @@
             cursor: pointer;
         }
 
-        .backButton {
-            @include btnOne
-        }
     }
     
-
+    
     .movieContainer {
         display: flex;
-        margin-left: 2em;
+        justify-content: center;
+        align-items: center;
         margin-top: 2em;
-        width: 50em;
+        width: 100%;
         height: 30em;
         color: $white;
-    }
 
-    .dataStyle {
-        width: 50em;
-        margin-left: 1em;
-        text-align: left;
-    }
-    .genresDiv {
-       margin-top: 1em;
-    }
+        .pictureDiv img{
+            width: 20em;
+            height: 28em;
+            
+        }
 
-    .actorsDiv {
-        margin-top: 1em;
-    }
 
-    .yearDiv {
-        margin-top: 1em;
-    }
+        .dataStyle {
+            width: 20em;
+            margin-left: 1.5em;
+            text-align: left;
+    
+    
+            .genresDiv {
+                margin-top: 1em;
+            }
+        
+            .actorsDiv {
+                margin-top: 1em;
+                line-height: 125%;
+            }
+        
+            .yearDiv {
+                margin-top: 1em;
+            }
+        
+            .plotDiv {
+                margin-top: 1em;
+                line-height: 125%;
+            }
 
-    .plotDiv {
-        margin-top: 1em;
+            .priceDiv{
+                margin-top: 1em;
+            }
+        
+        }
     }
-
     .buttonPosition {
         margin-top: 1em;
+        margin-right: 2em;
+        @include btnOne
+
     }
+    .backButton {
+        margin-top: 1em;
+        @include btnOne
+    }
+    
 }

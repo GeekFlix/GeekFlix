@@ -19,7 +19,7 @@ const Help = () => {
             <div className="textHelp">
 
                 <div className="textTitleHelp"><p>¿Necesitas ayuda?</p></div>
-                <div className="textExplainHelp"><p>¡Ahora, ponerse en contacto con Geekflix es más fácil que nunca si lo haces desde la aplicación de Geekflix, entrando en cualquiera de los perfiles de nuestros desarrolladores le podrán ayudar en sus dudas y consultas de GeeFlix.</p> <br/><br/>
+                <div className="textExplainHelp"><p>¡Ahora, ponerse en contacto con Geekflix es más fácil que nunca si lo haces desde la aplicación de Geekflix, entrando en cualquiera de los perfiles de nuestros desarrolladores le podrán ayudar en sus dudas y consultas de GeeFlix.</p><br/>
                 <p>Clickea en las fotos!!</p></div>
                 
             </div>
