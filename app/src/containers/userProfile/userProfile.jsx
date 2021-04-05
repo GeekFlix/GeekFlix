@@ -87,6 +87,7 @@ const UserProfile = (props) => {
 
 
     const pepin = async () =>{
+        
         const body = {
             visa: dataVisa.field, 
             month: dataExpiration.month, 
@@ -112,12 +113,11 @@ const UserProfile = (props) => {
         // props.dispatch({type: UPDATE, payload: resultUser.data});
         // setUser({...dataUser, userName: resultUser.data.userName, email: resultUser.data.email })
 
-        
     }
 
     const redirect = () => {
         return setTimeout(() => {
-          history.push('/home-movie')
+          history.push('/user-movie')
         }, 1000);
 
     }

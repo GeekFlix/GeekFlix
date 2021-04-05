@@ -43,15 +43,16 @@ const HomeAdmin = (props) => {
         setRentals({
             ...rentals, listRentals: collectionRentals.data.result
         });
+        console.log(collectionRentals)
     };
-    console.log(rentals.listRentals)
+
 
     const deleteUser = async (user) => {
 
         const selectUser = window.confirm('You are about to delete this user, are you sure?');
 
         if(selectUser === true){
-             await axios.delete(`http://localhost:3000/user/${user._id}`)
+            await axios.delete(`http://localhost:3000/user/${user._id}`)
             showUsers()
         };
     };
@@ -61,10 +62,10 @@ const HomeAdmin = (props) => {
         const selectUser = window.confirm('You are about to delete this rent, are you sure?');
 
         if(selectUser === true){
-             await axios.delete(`http://localhost:3000/order/${rent._id}`)
+             const deleteRent = await axios.delete(`http://localhost:3000/order/${rent._id}`)
             showRental()
+            console.log(deleteRent)
         };
-        console.log(deleteRental)
     };
 
 
