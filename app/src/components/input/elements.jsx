@@ -1,6 +1,6 @@
 
 import styled, {css} from 'styled-components';
-import { FaRegUserCircle, FaRegTimesCircle } from "react-icons/fa";
+import { FaRegCheckCircle, FaRegTimesCircle } from "react-icons/fa";
 
 const colors = {
 	borderColor: "#050505e1",
@@ -68,7 +68,7 @@ const ErrorLegend = styled.p`
 	`}
 `;
 
-const ValidationIcon = styled(FaRegTimesCircle, FaRegUserCircle)`
+const ValidationIcon = styled(FaRegTimesCircle, FaRegCheckCircle)`
 	position: absolute;
 	right: 10px;
 	bottom: 14px;
@@ -78,13 +78,14 @@ const ValidationIcon = styled(FaRegTimesCircle, FaRegUserCircle)`
 	${props => props.valid === 'false' && css`
 		opacity: 1;
 		color: ${colors.errorColor};
+		icon: FaRegTimesCircle;
 	`}
 	${props => props.valid === 'true' && css`
 		opacity: 1;
 		color: ${colors.successColor};
+		icon: FaRegCheckCircle;
 	`}
 `;
-
 
 
 const BtnContainer = styled.div`

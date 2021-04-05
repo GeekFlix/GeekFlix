@@ -7,7 +7,7 @@ import axios from 'axios'
 import {regExp} from '../../tools/error.handlers'
 import Input from '../../components/input/input';
 import { BtnContainer, BtnForm, ErrorMessage, SuccessMessage, ValidationIcon, Form } from '../../components/input/elements';
-import { FaRegTimesCircle, FaRegUserCircle } from 'react-icons/fa';
+import { FaRegTimesCircle, FaRegCheckCircle } from 'react-icons/fa';
 
 import {connect} from 'react-redux';
 import { STORED } from '../../redux/types/paymentTypes';
@@ -87,8 +87,8 @@ const Payment = (props) => {
                     name="visa" 
                     changeState={handleVisa} 
                     onKeyDown={handleOnKeyDown}
-                    errorLegend='El usuario debe introducir un email'
-                    // regExp={regExp.visa}
+                    errorLegend='La tarjeta debe de tener 9 números'
+                    regExp={regExp.visa}
                     placeholder="Número de tarjeta"
                 />
                 <Input 
@@ -99,10 +99,11 @@ const Payment = (props) => {
                     name="cvv" 
                     changeState={handleCvv} 
                     onKeyDown={handleOnKeyDown}
-                    errorLegend='El usuario debe introducir un email'
+                    errorLegend='El código CVV debe contener 3 números'
                     regExp={regExp.cvv}
                     placeholder="CVV"
                 />
+                <label>Fecha de Expiración<br></br>
                 <select name="month" defaultValue={"DEFAULT"} onChange={handleExpiration} onKeyDown={handleOnKeyDown}>
                     <option value="DEFAULT" disabled>- Select One -</option>
                     <option value="january">01</option>
@@ -141,6 +142,7 @@ const Payment = (props) => {
                     <option value="2039">2039</option>
                     <option value="2040">2040</option>
                 </select>
+                </label>
                 <Input 
                     state={dataCardName}
                     type="text" 
@@ -149,7 +151,7 @@ const Payment = (props) => {
                     name="cardName" 
                     changeState={handleCardName} 
                     onKeyDown={handleOnKeyDown}
-                    errorLegend='El usuario debe introducir un email'
+                    errorLegend='Debe escribir el titular de la tarjeta'
                     regExp={regExp.cardName}
                     placeholder="Nombre del titular"
                 />
@@ -164,7 +166,6 @@ const Payment = (props) => {
                     {formValid === true && <SuccessMessage>Formulario completado exitosamente</SuccessMessage>}
                 </BtnContainer>
                 </Form>
-
             </div>
         </div>
     )

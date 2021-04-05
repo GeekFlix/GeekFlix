@@ -11,7 +11,7 @@ import popcorn from '../../assets/img/popcorn.jpg';
 
 //Importaciones para componente y elementos de formulario y validación de errores
 import { BtnContainer, BtnForm, ErrorMessage, SuccessMessage, ValidationIcon, Form } from '../../components/input/elements';
-import { FaRegTimesCircle, FaRegUserCircle } from 'react-icons/fa';
+import { FaRegTimesCircle } from 'react-icons/fa';
 import {regExp} from '../../tools/error.handlers';
 import Input from '../../components/input/input';
 
@@ -32,6 +32,10 @@ const Login = (props) => {
         if(event.keyCode === 13) sendLogin()
     };
 
+    const stateHandler = (event) => {
+      handleUser({...dataUser, [event.target.name]: event.target.type === "number" ? +event.target.value : event.target.value});
+  }
+
 
     const onSubmit = (e) => {
       e.preventDefault();
@@ -42,20 +46,21 @@ const Login = (props) => {
         handleValid(true);
         handleEmail({field: '', valid: null});
         handlePassword({field: '', valid: null});
-        handleUser({userType: '', valid: true})
+        handleUser({userType: 'Client'})
       }else {
         handleValid(false);
       }
     }
-
+    console.log(dataUser.userType);
     const sendLogin = async () => {
 
         try {
             const body = {
               email: dataEmail.field, 
               password: dataPassword.field, 
-              userType: dataUser.userType
+              // userType: dataUser.userType
             }
+            console.log(body, 'esto es el body')
 
             if(dataUser.userType === 'Client') {
                 const result = await axios.post('http://localhost:3000/user/login', body)
@@ -96,7 +101,7 @@ const Login = (props) => {
             maxLength="50" 
             name="email" 
             onKeyDown={handleOnKeyDown}
-            errorLegend='El usuario debe introducir un email'
+            errorLegend='El email no tiene el formato esperado'
             regExp={regExp.email}
             placeholder="email@email.com"
             changeState={handleEmail}
@@ -109,12 +114,12 @@ const Login = (props) => {
             name="password" 
             changeState={handlePassword} 
             onKeyDown={handleOnKeyDown}
-            errorLegend='El usuario debe introducir un email'
+            errorLegend='La contraseña no es correcta'
             regExp={regExp.password}
             placeholder="password"
           />
 
-          <select className="select" name="userType" defaultValue={'DEFAULT'} onChange={()=>handleUser()}>
+          <select className="select" name="userType" defaultValue={'DEFAULT'} onChange={stateHandler}>
             <option value="Client">Client</option>
             <option value="Admin">Admin</option>
           </select>

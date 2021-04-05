@@ -5,7 +5,8 @@ import { useHistory } from 'react-router';
 import {regExp} from '../../tools/error.handlers';
 import Input from '../../components/input/input';
 import { BtnContainer, BtnForm, ErrorMessage, SuccessMessage, ValidationIcon, Form } from '../../components/input/elements';
-import { FaRegTimesCircle, FaRegUserCircle } from 'react-icons/fa';
+import { FaRegTimesCircle, FaRegCheckCircle } from 'react-icons/fa';
+
 
 
 import axios from 'axios';
@@ -113,7 +114,7 @@ const Register = (props) => {
                         name="password" 
                         changeState={handlePassword} 
                         onKeyDown={handleOnKeyDown}
-                        errorLegend='El usuario debe introducir un email'
+                        errorLegend='La contraseña debe tener 8 caracteres, mayúscula, minúscula, número y un caracter especial'
                         regExp={regExp.password}
                         placeholder="password"
                     />
