@@ -35,6 +35,7 @@ const HomeMovie = (props) => {
             ...film, movies: filmCollection.data
         });
     }
+    console.log(props, "props o no props");
 
     const redirect = () => {
         return setTimeout(() => {
@@ -69,10 +70,14 @@ const HomeMovie = (props) => {
                         <img src={logo} alt=""/>
                     </div>
                     <div className="searchHeader">
+                        <div className="userGreeting">
+                            Bienveni@ {props.user.userName}
+                        </div>
                         <SearchEngine/>
                     </div>
                 </div>
                 <div className="containsSearch">
+                    
                     <div className="textHomeSearch">
                         BUSQUEDAS ANTERIORES:
                     </div>
@@ -89,7 +94,6 @@ const HomeMovie = (props) => {
                         }
                     </div>
                 </div>
-                {/* <Navbar/> */}
                 <Carousel/>
             </div>
         )
@@ -100,7 +104,8 @@ const mapStateToProps = state=>{
     return{
         movie: state.movieReducer.movie,
         search: state.movieReducer.query,
-        saveMovie: state.saveMovieReducer.saveMovie
+        saveMovie: state.saveMovieReducer.saveMovie,
+        user: state.userReducer.user
     };
 };
 
