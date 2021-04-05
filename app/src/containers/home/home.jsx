@@ -35,7 +35,7 @@ const Home = () => {
         <div className="textForRegister">
           <div className="textRegisterTitle"><h1>Todas las películas y series que desees y mucho más...</h1></div>
           <div className="textRegisterSubtitle"><h2>Disfruta donde quieras. Cancela cuando quieras.</h2></div>
-          <div className="textRegisterFinal"><h4>...Pero para todo ello inicie sesión o <Link to="/register" className="styleLink">REGISTRATE!!</Link></h4></div>
+          <div className="textRegisterFinal"><Link to="/register" className="styleLink"><button className="titleRegister"><b>REGÍSTRATE</b></button></Link></div>
         </div>
         <img className="imgMovie" alt="collage" src={collageMovies}/>
         
@@ -46,7 +46,7 @@ const Home = () => {
           </div>
           <div className="imageJoinTv">
             <div className="videoTrailer">
-              {/* <iframe width="560" height="315" src="https://www.youtube.com/embed/SAHnPVcmvTI" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe> */}
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/SAHnPVcmvTI" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
             </div>
           </div>
         </div>
@@ -54,7 +54,7 @@ const Home = () => {
         <div className="joinSeries">
           <div className="imageJoinSeries">
             <div className="seriesTrailer">
-            {/* <iframe width="560" height="315" src="https://www.youtube.com/embed/GipNazWQuqY" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe> */}
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/GipNazWQuqY" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
             </div>
           </div>
           <div className="textPrincipalJoinSeries">

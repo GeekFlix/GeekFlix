@@ -87,6 +87,7 @@ const UserProfile = (props) => {
 
 
     const pepin = async () =>{
+        
         const body = {
             visa: dataVisa.field, 
             month: dataExpiration.month, 
@@ -112,12 +113,11 @@ const UserProfile = (props) => {
         // props.dispatch({type: UPDATE, payload: resultUser.data});
         // setUser({...dataUser, userName: resultUser.data.userName, email: resultUser.data.email })
 
-        
     }
 
     const redirect = () => {
         return setTimeout(() => {
-          history.push('/home-movie')
+          history.push('/user-movie')
         }, 1000);
 
     }
@@ -128,7 +128,7 @@ const UserProfile = (props) => {
                 <div className="logoGeek">
                     <img src={logo} alt=""></img>
                     <div className="userMenu">
-                        <button className="btnMenu" >Mis datos</button>
+                        
                         <button className="btnMenu" onClick={()=> redirect()}>Mis películas</button>
                     </div>
                 </div>
@@ -141,7 +141,7 @@ const UserProfile = (props) => {
                             <Input 
                                 state={dataUserName}
                                 type="text" 
-                                label="UserName" 
+                                label="Usuario" 
                                 maxLength="50" 
                                 name="userName" 
                                 changeState={handleUserName} 
@@ -163,12 +163,12 @@ const UserProfile = (props) => {
                             <Input 
                                 state={dataVisa}
                                 type="number" 
-                                label="VISA/MasterCard Número" 
+                                label="VISA Número" 
                                 maxLength="50" 
                                 name="visa" 
                                 changeState={handleVisa} 
                                 onKeyDown={handleOnKeyDown}
-                                errorLegend='La tarjeta debe de tener 9 números'
+                                errorLegend='La tarjeta debe de empezar por 4 y contener 13-16 números'
                                 regExp={regExp.visa}
                                 placeholder="Número de tarjeta"
                             />

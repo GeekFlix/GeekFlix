@@ -8,6 +8,7 @@ import HomeMovie from './containers/home-movie/home-movie';
 import HomeAdmin from './containers/home-admin/home-admin';
 import UserProfile from './containers/userProfile/userProfile';
 import ShowMovie from  './containers/show-movie/show-movie';
+import UserMovie from './containers/user-movie/user-movie'
 
 import './App.css';
 import './css/main.css';
@@ -33,6 +34,7 @@ function App() {
           <Route path='/user-profile' exact component={UserProfile}/>
           <Route path='/show-movie' exact component={ShowMovie}/>
           <Route path='/help' exact component={Help}/>
+          <Route psth='/user-movie' exact component={UserMovie}/>
         </Switch>
       
       </BrowserRouter>

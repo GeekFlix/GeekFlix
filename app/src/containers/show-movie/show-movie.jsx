@@ -32,7 +32,7 @@ const Rental = (props) => {
    
     const getBack = () => {
         return setTimeout(() => {history.push('/home-movie')}, 100);
-    }
+    };
 
     console.log(props, "props");
 
