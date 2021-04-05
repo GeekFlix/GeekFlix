@@ -56,8 +56,8 @@ const Carousel = (props) => {
                         navigation
                         pagination={{ clickable: true }}
                         scrollbar={{ draggable: true }}
-                        onSwiper={(swiper) => console.log(swiper)}
-                        onSlideChange={() => console.log('slide change')}
+                        // onSwiper={(swiper) => console.log(swiper)}
+                        // onSlideChange={() => console.log('slide change')}
                     >
                             {adventure.map(picture => 
                                 <SwiperSlide>
@@ -76,8 +76,8 @@ const Carousel = (props) => {
                         navigation
                         pagination={{ clickable: true }}
                         scrollbar={{ draggable: true }}
-                        onSwiper={(swiper) => console.log(swiper)}
-                        onSlideChange={() => console.log('slide change')}
+                        // onSwiper={(swiper) => console.log(swiper)}
+                        // onSlideChange={() => console.log('slide change')}
                     >
                             {comedy.map(picture => 
                                 <SwiperSlide>
@@ -96,8 +96,8 @@ const Carousel = (props) => {
                         navigation
                         pagination={{ clickable: true }}
                         scrollbar={{ draggable: true }}
-                        onSwiper={(swiper) => console.log(swiper)}
-                        onSlideChange={() => console.log('slide change')}
+                        // onSwiper={(swiper) => console.log(swiper)}
+                        // onSlideChange={() => console.log('slide change')}
                     >
                             {drama.map(picture => 
                                 <SwiperSlide>

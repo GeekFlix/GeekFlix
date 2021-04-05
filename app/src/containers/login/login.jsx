@@ -59,7 +59,7 @@ const Login = (props) => {
 
             if(dataUser.userType === 'Client') {
                 const result = await axios.post('http://localhost:3000/user/login', body)
-                console.log(result.data, 'esto es RESULT');
+                // console.log(result.data, 'esto es RESULT');
                 props.dispatch({type: LOGIN, payload: result.data});
                 return setTimeout(() => {history.push('/home-movie')}, 100);
                 
