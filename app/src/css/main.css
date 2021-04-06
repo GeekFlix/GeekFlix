@@ -461,11 +461,16 @@
   background-color: #323232; }
   .containerAdmin .headerAdmin {
     width: 100%;
-    height: 4em;
+    height: 6em;
     display: flex;
     align-items: center;
     justify-content: space-between; }
+    .containerAdmin .headerAdmin .logOut {
+      margin-left: 1em; }
+    .containerAdmin .headerAdmin .alquileres {
+      margin: 2em; }
   .containerAdmin .btnStyle {
+    margin-left: 2em;
     justify-content: center;
     color: #f8e9c4;
     text-transform: uppercase;
@@ -633,7 +638,7 @@
   align-items: center;
   background-color: #323232;
   color: #f8e9c4;
-  height: 100vh;
+  height: 50em;
   width: 100%;
   font-family: 'Open Sans', sans-serif; }
   .userMovieContainer .tittleCollection {

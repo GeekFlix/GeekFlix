@@ -50,8 +50,6 @@ const UserMovie = (props) => {
             </div>
             </div>
             <div className="rentalsContainer">
-                <div className="headerTitle">
-                    Lista de Alquileres:
                 </div>
                 Lista de Alquileres de {props.user.userName}
                 {
@@ -78,7 +76,6 @@ const UserMovie = (props) => {
                         </div>
                     </>
                 }
-            </div>
         </div>
     )
 }

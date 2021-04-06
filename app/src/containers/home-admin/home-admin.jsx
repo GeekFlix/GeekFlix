@@ -74,15 +74,17 @@ const HomeAdmin = (props) => {
             <div className="containerAdmin">
                 <div className="headerAdmin">
                 <div>
+                    <div className="logOut">
                         <Button className="btnStyle" onClick={()=> logOut()}>Salir</Button>
                     </div>
+                    </div>
                     <div className="nameStyle">
-                        {props.admin.userName}
+                       Admin: {props.admin.userName}
                     </div>
                     <div>
                         <button className="btnStyle" onClick={()=> showUsers()}>Mostrar usuarios</button>
                     </div>
-                    <div>
+                    <div className="alquileres">
                         <button className="btnStyle" onClick={()=> showRental()}>Mostrar alquileres</button>
                     </div>
                 </div>
