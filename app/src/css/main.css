@@ -623,7 +623,17 @@
 .userMovieContainer {
   width: 100%;
   height: 100em;
-  background-color: #323232; }
+  background-color: #323232;
+  color: #f8e9c4; }
+  .userMovieContainer .tittleCollection {
+    margin-top: 2em; }
+  .userMovieContainer .headerTitle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 5em; }
+  .userMovieContainer .tittleStyle {
+    margin: 1em; }
 
 .mainCarousel {
   width: 100%;

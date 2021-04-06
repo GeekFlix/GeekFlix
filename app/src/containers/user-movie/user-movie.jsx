@@ -40,7 +40,9 @@ const UserMovie = (props) => {
     return (
         <div className="userMovieContainer">
             <div className="rentalsContainer">
-                Lista de Alquileres
+                <div className="headerTitle">
+                    Lista de Alquileres:
+                </div>
                 {
                     !rentals.listRentals
                     ?
@@ -51,13 +53,13 @@ const UserMovie = (props) => {
                     </>
                     :
                     <>
-                        <div>
+                        <div className="tittleCollection">
                             {
                                 rentals.listRentals.map(rentTitle => {
                                     
                                     return(
                                         <div className="rentData" key={rentTitle._id}>
-                                            <div>{rentTitle.title}</div>
+                                            <div className="tittleStyle">{rentTitle.title}</div>
                                         </div>
                                     )
                                 })

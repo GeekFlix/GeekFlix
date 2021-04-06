@@ -3,4 +3,19 @@
     height: 100em;
     background-color: $black;
     color: $white;
+
+    .tittleCollection {
+        margin-top: 2em;
+    }
+
+    .headerTitle {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 5em;
+    }
+
+    .tittleStyle {
+        margin: 1em;
+    }
 }
