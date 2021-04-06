@@ -623,7 +623,8 @@
 .userMovieContainer {
   width: 100%;
   height: 100em;
-  background-color: #323232; }
+  background-color: #323232;
+  color: #f8e9c4; }
 
 .mainCarousel {
   width: 100%;
