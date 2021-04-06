@@ -1,6 +1,6 @@
 <p align="center">
   <a href="" rel="noopener">
- <img src="img/geekflix-green.png" alt="Project logo"></a>
+ <img src="src/assets/img/geekflix-green.png" alt="Project logo"></a>
 </p>
 <h3 align="center">GeekFlix</h3>
 

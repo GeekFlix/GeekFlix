@@ -10,7 +10,7 @@ import {connect} from 'react-redux';
 
 import logo from '../../assets/img/geekflix-green.png';
 import avatar1 from '../../assets/img/avatar1.png';
-
+import Navbar from '../../components/navbar/navbar';
 import { FaRegTimesCircle, FaRegCheckCircle } from 'react-icons/fa';
 import {regExp} from '../../tools/error.handlers';
 import Input from '../../components/input/input';
@@ -125,16 +125,20 @@ const UserProfile = (props) => {
     return (
         <div>
             <div className="userContainer">
-                <div className="logoGeek">
-                    <img src={logo} alt=""></img>
-                    <div className="userMenu">
-                        <button className="btnMenu" >Mis datos</button>
-                        <button className="btnMenu" onClick={()=> redirect()}>Mis películas</button>
+                <div className="headerUserProfile">
+                    <div className="logoG">
+                        <img src={logo} alt=""></img>
+                    </div>
+                    <div className="navbarContainer">
+                        <Navbar/>
                     </div>
                 </div>
                 <div className="dataUser">
                     <div className="picProfile">
                         <img src={avatar1} alt="" className="imgAvatar"></img>
+                        <div className="userMenu">
+                            <button className="btnMenu" onClick={()=> redirect()}>Mis películas</button>
+                        </div>
                     </div>
                     <div className="containerData">
                         <Form action="" onSubmit={onSubmit}>
