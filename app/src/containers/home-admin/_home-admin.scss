@@ -14,13 +14,23 @@
 
     .headerAdmin {
         width: 100%;
-        height: 4em;
+        height: 6em;
         display: flex;
         align-items: center;
         justify-content: space-between;
+
+        .logOut {
+            margin-left: 1em;
+        }
+
+        .alquileres {
+            margin: 2em;
+
+        }
     }
 
     .btnStyle {
+        margin-left: 2em;
         @include btnOne
     }
 
