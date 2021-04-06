@@ -635,6 +635,11 @@
   color: #f8e9c4;
   height: 50em;
   width: 100%;
+<<<<<<< HEAD
+  height: 100em;
+  background-color: #323232;
+  color: #f8e9c4; }
+=======
   font-family: 'Open Sans', sans-serif; }
   .userMovieContainer .tittleCollection {
     margin-top: 2em; }
@@ -664,6 +669,7 @@
   .userMovieContainer .rentalsContainer {
     color: #f8e9c4;
     margin-top: 2em; }
+>>>>>>> 7754d7d56e3134661c3a324997568a884de1cfd9
 
 .mainCarousel {
   width: 100%;
