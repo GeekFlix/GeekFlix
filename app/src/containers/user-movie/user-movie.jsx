@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { connect } from 'react-redux';
+import Navbar from '../../components/navbar/navbar';
+import logo from '../../assets/img/geekflix-green.png';
 
 
 const UserMovie = (props) => {
@@ -39,10 +41,19 @@ const UserMovie = (props) => {
 
     return (
         <div className="userMovieContainer">
+            <div className="headerUserMovie">
+            <div className="navbarContainerUserMovie">
+                <Navbar/>
+            </div>
+            <div className="logoContainerUserMovie" >
+                <img src={logo} alt=""/>
+            </div>
+            </div>
             <div className="rentalsContainer">
                 <div className="headerTitle">
                     Lista de Alquileres:
                 </div>
+                Lista de Alquileres de {props.user.userName}
                 {
                     !rentals.listRentals
                     ?

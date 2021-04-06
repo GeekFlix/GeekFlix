@@ -1,7 +1,7 @@
  import React, { useState } from 'react';
  import {connect} from 'react-redux';
  import * as FaIcons from 'react-icons/fa';
- import * as AiIcons from 'react-icons/ai';
+ //import * as AiIcons from 'react-icons/ai';
  import { Link } from 'react-router-dom';
  import { SideBarData } from '../sideBarData/sideBarData';
  import './navbar.css';
@@ -9,6 +9,7 @@
  import { IconContext } from 'react-icons';
  import { LOGOUT } from '../../redux/types/userTypes';
  import { useHistory } from 'react-router-dom';
+ 
  
 
 

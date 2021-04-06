@@ -1,64 +1,70 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 
 .userContainer {
-
-    background-color: $black;
-    height: 100vh;
+    height: 100%;
     width: 100%;
-    
-    display: flex;
-    flex-direction: row;
-
+    background-color: $black;
     
     font-family: 'Open Sans', sans-serif;
-  
+    display: flex;
+    flex-direction: column;
     
+    align-items: center;
+    justify-content: center;
 
-    .logoGeek {
-        height: $mp-x;
-        width: $mp-t;
+    .headerUserProfile{
+        width: 100%;
+        height: 6em;
 
-        display: flex;
-        flex-direction: column;
-        justify-content: left;
 
-        margin: $mp-h;
-        margin-bottom: $mp-t;
-        
-        .userMenu {
-            width: $mp-t;
-            height: $mp-s;
-            margin-top: $mp-p;
-
-            display: flex;
-            flex-direction: column;
-
-            .btnMenu {
-                @include btnTwo
-            }
-
+        .logoG  {
+            height: 0.1em;
+            
+            margin-top: 1em;
+            
+            align-items: flex-start;
+            justify-content: flex-start;
+            
+        }
+        .navbarContainer{
+            margin-left: 2.5em;
         }
     }
 
+    
     .dataUser {
         
         width: $mp-z;
-
+        
         display: flex;
         flex-direction: row;
         align-items: center;
         justify-content: space-evenly;
-    
-
+        
+        
         .picProfile {
             height: $mp-x;
             width: $mp-t;
-
+            
             .imgAvatar {
                 height: $mp-t;
                 width: $mp-t;
-
+                
                 border: solid $darkgreen $size-aa;
+            }
+            .userMenu {
+                width: $mp-t;
+                height: $mp-s;
+                margin-top: $mp-h;
+                
+                display: flex;
+                flex-direction: column;
+        
+                .btnMenu {
+                    @include btnTwo;
+                    
+                }
+        
             }
         }
 

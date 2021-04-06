@@ -1,6 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
 .userMovieContainer {
-    width: 100%;
-    height: 100em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     background-color: $black;
     color: $white;
 
@@ -18,4 +21,39 @@
     .tittleStyle {
         margin: 1em;
     }
+    height: 100vh;
+    width: 100%;
+
+    font-family: 'Open Sans', sans-serif;
+
+    .headerUserMovie{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 6em;
+
+        .navbarContainerUserMovie{
+            margin-left: 2em;
+            margin-top: 1em;
+            align-items: center;
+            width: 40%;
+            justify-content: flex-start;
+        }
+
+        .logoContainerUserMovie{
+            width: 68%;
+            display:flex;
+            align-items: flex-start;
+        }
+    }
+
+    .rentalsContainer{
+        color: $white;
+        margin-top: 2em;
+
+    }
+
+
+
 }

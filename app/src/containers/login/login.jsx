@@ -89,7 +89,7 @@ const Login = (props) => {
       <div className="imgGeek"><Link to='/'><img src={logo} alt="logo"/></Link></div>
       <div className="formContainer">
         <div className="contentLogin">
-          <div className="titleLoginUp">Ponte cómodo...</div>
+          <div className="titleLoginUp">Ponte cómod@...</div>
           <div className="imgLogin"><img src={popcorn} alt="logo" className="img"></img></div>
       </div>
       <div className="formLogin">

@@ -46,7 +46,7 @@ const Home = () => {
           </div>
           <div className="imageJoinTv">
             <div className="videoTrailer">
-              {/* <iframe width="560" height="315" src="https://www.youtube.com/embed/SAHnPVcmvTI" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe> */}
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/SAHnPVcmvTI" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
             </div>
           </div>
         </div>
@@ -54,7 +54,7 @@ const Home = () => {
         <div className="joinSeries">
           <div className="imageJoinSeries">
             <div className="seriesTrailer">
-            {/* <iframe width="560" height="315" src="https://www.youtube.com/embed/GipNazWQuqY" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe> */}
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/GipNazWQuqY" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
             </div>
           </div>
           <div className="textPrincipalJoinSeries">
