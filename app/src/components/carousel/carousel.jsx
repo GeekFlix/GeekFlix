@@ -65,7 +65,7 @@ const Carousel = (props) => {
                                         <img src={picture.posterUrl}/>
                                     </div>  
                                 </SwiperSlide>
-                            )};
+                            )}
                     </Swiper>
                 </div>
                 <div className="titleCarousel">Películas de Comedia</div>  
@@ -85,7 +85,7 @@ const Carousel = (props) => {
                                         <img src={picture.posterUrl}/>
                                     </div>  
                                 </SwiperSlide>
-                            )};
+                            )}
                     </Swiper>
                 </div>
                 <div className="titleCarousel">Películas de Drama</div> 
@@ -105,7 +105,7 @@ const Carousel = (props) => {
                                         <img src={picture.posterUrl}/>
                                     </div>  
                                 </SwiperSlide>
-                            )};
+                            )}
                     </Swiper>
                 </div>  
             </div>   
